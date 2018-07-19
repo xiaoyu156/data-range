@@ -3,6 +3,7 @@ package ac.iie.permission_manager.controller;
 import ac.iie.common.response.Response;
 import ac.iie.permission_manager.bean.User;
 import com.github.pagehelper.Page;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,7 @@ import java.util.Map;
  **/
 @RestController
 @RequestMapping(value = "user")
+@Slf4j
 public class UserController extends BaseController {
 
     @RequestMapping(path = "/list", method = RequestMethod.GET)

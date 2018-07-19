@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ac.iie.server.dao.CompetitionMapper">
+  <resultMap id="BaseResultMap" type="ac.iie.server.domain.Competition">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="data_desc" jdbcType="VARCHAR" property="dataDesc" />
+    <result column="is_include_media" jdbcType="BIT" property="isIncludeMedia" />
+    <result column="data_url" jdbcType="VARCHAR" property="dataUrl" />
+    <result column="program_url" jdbcType="VARCHAR" property="programUrl" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="join_num" jdbcType="INTEGER" property="joinNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="type_id" jdbcType="VARCHAR" property="typeId" />
+    <result column="bonus" jdbcType="INTEGER" property="bonus" />
+    <result column="score_items" jdbcType="VARCHAR" property="scoreItems" />
+    <result column="key_data_map" jdbcType="VARCHAR" property="keyDataMap" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_competition
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="ac.iie.server.domain.Competition">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_competition (title, description, data_desc, 
+      is_include_media, data_url, program_url, 
+      `type`, publish_time, update_time, 
+      join_num, `status`, logo_url, 
+      end_time, type_id, bonus, 
+      score_items, key_data_map, content
+      )
+    values (#{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{dataDesc,jdbcType=VARCHAR}, 
+      #{isIncludeMedia,jdbcType=BIT}, #{dataUrl,jdbcType=VARCHAR}, #{programUrl,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{publishTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{joinNum,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{logoUrl,jdbcType=VARCHAR}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=VARCHAR}, #{bonus,jdbcType=INTEGER}, 
+      #{scoreItems,jdbcType=VARCHAR}, #{keyDataMap,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Competition">
+    update t_competition
+    set title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      data_desc = #{dataDesc,jdbcType=VARCHAR},
+      is_include_media = #{isIncludeMedia,jdbcType=BIT},
+      data_url = #{dataUrl,jdbcType=VARCHAR},
+      program_url = #{programUrl,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=INTEGER},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      join_num = #{joinNum,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      logo_url = #{logoUrl,jdbcType=VARCHAR},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=VARCHAR},
+      bonus = #{bonus,jdbcType=INTEGER},
+      score_items = #{scoreItems,jdbcType=VARCHAR},
+      key_data_map = #{keyDataMap,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, title, description, data_desc, is_include_media, data_url, program_url, 
+    `type`, publish_time, update_time, join_num, `status`, logo_url, end_time, type_id, 
+    bonus, score_items, key_data_map, content
+    from t_competition
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, title, description, data_desc, is_include_media, data_url, program_url, 
+    `type`, publish_time, update_time, join_num, `status`, logo_url, end_time, type_id, 
+    bonus, score_items, key_data_map, content
+    from t_competition
+  </select>
+</mapper>

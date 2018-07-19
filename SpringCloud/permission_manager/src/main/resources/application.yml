@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/,http://127.0.0.1:1112/eureka/
+server:
+  port: 12345
+spring:
+  application:
+    name: permission_manager
+  datasource:
+     url: jdbc:mysql://127.0.0.1:3306/data_range?useUnicode=true&characterEncoding=UTF-8
+     username: root
+     password: 123
+     driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: ac.iie.permission_manager.bean
+
+logging:
+  level:
+    cn.ac.iie.kg_manager: debug

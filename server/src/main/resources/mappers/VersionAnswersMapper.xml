@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ac.iie.server.dao.VersionAnswersMapper">
+  <resultMap id="BaseResultMap" type="ac.iie.server.domain.VersionAnswers">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_comp_id" jdbcType="VARCHAR" property="userCompId" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="result_url" jdbcType="VARCHAR" property="resultUrl" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="resource" jdbcType="INTEGER" property="resource" />
+    <result column="run_command" jdbcType="VARCHAR" property="runCommand" />
+    <result column="score_1" jdbcType="DOUBLE" property="score1" />
+    <result column="score_2" jdbcType="DOUBLE" property="score2" />
+    <result column="score_3" jdbcType="DOUBLE" property="score3" />
+    <result column="score_4" jdbcType="DOUBLE" property="score4" />
+    <result column="score_5" jdbcType="DOUBLE" property="score5" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_version_answers
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="ac.iie.server.domain.VersionAnswers">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_version_answers (user_comp_id, version, result_url, 
+      upload_time, `status`, detail, 
+      `resource`, run_command, score_1, 
+      score_2, score_3, score_4, 
+      score_5)
+    values (#{userCompId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{resultUrl,jdbcType=VARCHAR}, 
+      #{uploadTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, 
+      #{resource,jdbcType=INTEGER}, #{runCommand,jdbcType=VARCHAR}, #{score1,jdbcType=DOUBLE}, 
+      #{score2,jdbcType=DOUBLE}, #{score3,jdbcType=DOUBLE}, #{score4,jdbcType=DOUBLE}, 
+      #{score5,jdbcType=DOUBLE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.VersionAnswers">
+    update t_version_answers
+    set user_comp_id = #{userCompId,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      result_url = #{resultUrl,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      `status` = #{status,jdbcType=INTEGER},
+      detail = #{detail,jdbcType=VARCHAR},
+      `resource` = #{resource,jdbcType=INTEGER},
+      run_command = #{runCommand,jdbcType=VARCHAR},
+      score_1 = #{score1,jdbcType=DOUBLE},
+      score_2 = #{score2,jdbcType=DOUBLE},
+      score_3 = #{score3,jdbcType=DOUBLE},
+      score_4 = #{score4,jdbcType=DOUBLE},
+      score_5 = #{score5,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
+    run_command, score_1, score_2, score_3, score_4, score_5
+    from t_version_answers
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
+    run_command, score_1, score_2, score_3, score_4, score_5
+    from t_version_answers
+  </select>
+</mapper>

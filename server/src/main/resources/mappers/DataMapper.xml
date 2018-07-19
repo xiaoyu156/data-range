@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ac.iie.server.dao.DataMapper">
+  <resultMap id="BaseResultMap" type="ac.iie.server.domain.Data">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="data_index" jdbcType="INTEGER" property="dataIndex" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="comp_id" jdbcType="VARCHAR" property="compId" />
+    <result column="media_urls" jdbcType="VARCHAR" property="mediaUrls" />
+    <result column="standard_answer" jdbcType="VARCHAR" property="standardAnswer" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_data
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="ac.iie.server.domain.Data">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_data (data_index, `type`, score, 
+      comp_id, media_urls, standard_answer
+      )
+    values (#{dataIndex,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{score,jdbcType=DOUBLE}, 
+      #{compId,jdbcType=VARCHAR}, #{mediaUrls,jdbcType=VARCHAR}, #{standardAnswer,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Data">
+    update t_data
+    set data_index = #{dataIndex,jdbcType=INTEGER},
+      `type` = #{type,jdbcType=INTEGER},
+      score = #{score,jdbcType=DOUBLE},
+      comp_id = #{compId,jdbcType=VARCHAR},
+      media_urls = #{mediaUrls,jdbcType=VARCHAR},
+      standard_answer = #{standardAnswer,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, data_index, `type`, score, comp_id, media_urls, standard_answer
+    from t_data
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, data_index, `type`, score, comp_id, media_urls, standard_answer
+    from t_data
+  </select>
+</mapper>

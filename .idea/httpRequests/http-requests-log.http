@@ -1,0 +1,32 @@
+GET http://localhost:12345/user/list?pageNum=1&pageSize=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-18T062524.200.json
+
+###
+
+GET http://localhost:12345/user/list?pageNum=1&pageSize=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-18T062355.200.json
+
+###
+
+GET http://localhost:12345/user/list?pageNum=1&pageSize=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-18T061621.200.json
+
+###
+
+GET http://localhost:12345/user/list
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-18T061605.400.json
+
+###
+

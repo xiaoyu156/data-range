@@ -1,8 +1,12 @@
 package ac.iie.server.dao;
 
 import ac.iie.server.domain.UserCompetition;
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Mapper
+@Repository
 public interface UserCompetitionMapper {
     int deleteByPrimaryKey(String id);
 

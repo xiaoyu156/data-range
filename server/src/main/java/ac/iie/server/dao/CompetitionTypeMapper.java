@@ -1,8 +1,12 @@
 package ac.iie.server.dao;
 
 import ac.iie.server.domain.CompetitionType;
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Mapper
+@Repository
 public interface CompetitionTypeMapper {
     int deleteByPrimaryKey(String id);
 
@@ -13,4 +17,6 @@ public interface CompetitionTypeMapper {
     List<CompetitionType> selectAll();
 
     int updateByPrimaryKey(CompetitionType record);
+
+
 }

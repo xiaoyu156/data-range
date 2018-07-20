@@ -7,6 +7,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -26,5 +27,29 @@ public class UserServiceImpl extends BaseService implements UserService{
     @Override
     public User getUser(String id) {
         return userMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateUser(User user) {
+        int i = userMapper.updateByPrimaryKey(user);
+        return i;
+    }
+
+    @Override
+    public int deleteUser(String id) {
+        int i = userMapper.deleteByPrimaryKey(id);
+        return i;
+    }
+
+    @Override
+    public int deleteUsers(Collection<String> ids) {
+        int i = userMapper.deleteAll(ids);
+        return i;
+    }
+
+    @Override
+    public int addUser(User user) {
+        int i = userMapper.insert(user);
+        return i;
     }
 }

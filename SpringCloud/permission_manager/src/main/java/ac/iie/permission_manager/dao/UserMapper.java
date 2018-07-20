@@ -4,6 +4,7 @@ import ac.iie.permission_manager.bean.User;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Collection;
 import java.util.List;
 
 @Mapper
@@ -23,4 +24,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     Page<User> selectAll();
+
+    int deleteAll(Collection<String> ids);
 }

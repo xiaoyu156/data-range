@@ -3,6 +3,7 @@ package ac.iie.permission_manager.service;
 import ac.iie.permission_manager.bean.User;
 import com.github.pagehelper.Page;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -14,4 +15,8 @@ import java.util.List;
 public interface UserService {
     Page<User> getAllUsers(int pageNum, int pageSize);
     User getUser(String id);
+    int updateUser(User user);
+    int deleteUser(String id);
+    int deleteUsers(Collection<String> ids);
+    int addUser(User user);
 }

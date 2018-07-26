@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpringCloud/SpringCloud.iml" filepath="$PROJECT_DIR$/SpringCloud/SpringCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/auth/auth.iml" filepath="$PROJECT_DIR$/cloud/auth/auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/data-range.iml" filepath="$PROJECT_DIR$/data-range.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloud/eureka/eureka.iml" filepath="$PROJECT_DIR$/SpringCloud/eureka/eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringCloud/eureka/eureka.iml" filepath="$PROJECT_DIR$/SpringCloud/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/eureka_server/eureka_server.iml" filepath="$PROJECT_DIR$/cloud/eureka_server/eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/gateway/gateway.iml" filepath="$PROJECT_DIR$/cloud/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloud/gateway/gateway.iml" filepath="$PROJECT_DIR$/SpringCloud/gateway/gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringCloud/gateway/gateway.iml" filepath="$PROJECT_DIR$/SpringCloud/gateway/gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringCloud/permission_manager/permission_manager.iml" filepath="$PROJECT_DIR$/SpringCloud/permission_manager/permission_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/permission_manager/permission_manager.iml" filepath="$PROJECT_DIR$/cloud/permission_manager/permission_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloud/permission_manager/permission_manager.iml" filepath="$PROJECT_DIR$/SpringCloud/permission_manager/permission_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />

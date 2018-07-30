@@ -15,7 +15,6 @@ public class CompetitionTypeServiceImpl extends BaseService implements Competiti
         super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper);
     }
 
-
     @Override
     public int insert(CompetitionType competitionType) {
         return competitionTypeMapper.insert(competitionType);
@@ -27,19 +26,17 @@ public class CompetitionTypeServiceImpl extends BaseService implements Competiti
     }
 
     @Override
-    public int deleteCompetitionType(String id) {
-        int deleteTypeNum;
+    public void deleteCompetitionType(String id) {
         int deleteCompetitionNum;
         /*
         删除比赛类型
          */
-        deleteTypeNum = competitionTypeMapper.deleteByPrimaryKey(id);
+        competitionTypeMapper.deleteByPrimaryKey(id);
         /*
         逻辑修改比赛关联
          */
         deleteCompetitionNum = competitionMapper.updateCompetitionTypeByTypeId(id);
-
-        return deleteTypeNum;
+        log.info("删除比赛类型id：" + id + ",修改比赛:" + deleteCompetitionNum);
     }
 
     @Override

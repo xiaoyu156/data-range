@@ -10,7 +10,8 @@ public interface CompetitionTypeService {
 
     List<CompetitionType> getCompetitionTypes();
 
-    int deleteCompetitionType(String id);
+    @Transactional(rollbackFor = Exception.class)
+    void deleteCompetitionType(String id);
 
     int updateCompetitionType(CompetitionType competitionType);
 

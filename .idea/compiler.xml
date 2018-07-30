@@ -7,20 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="auth" />
+        <module name="cloud" />
         <module name="common" />
-        <module name="eureka" />
-        <module name="gateway" />
-        <module name="permission_manager" />
+        <module name="eureka_server" />
         <module name="server" />
-        <module name="SpringCloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="cloud" target="1.8" />
       <module name="common" target="1.8" />
       <module name="data-range" target="1.8" />
       <module name="eureka" target="1.8" />
+      <module name="eureka_server" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="permission_manager" target="1.8" />
+      <module name="permission_manager_2" target="1.8" />
       <module name="server" target="1.8" />
       <module name="SpringCloud" target="1.8" />
     </bytecodeTargetLevel>

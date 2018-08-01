@@ -18,7 +18,12 @@ public class CompetitionTypeServiceTest {
     @Test
     public void insert() {
         CompetitionType competitionType = new CompetitionType();
-        competitionType.setName("算法大赛");
+        competitionType.setName("视频抽帧大赛");
         competitionTypeService.insert(competitionType);
+    }
+
+    @Test
+    public void query() {
+        System.out.println(competitionTypeService.getCompetitionTypes());
     }
 }

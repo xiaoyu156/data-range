@@ -23,12 +23,11 @@
         <result column="content" jdbcType="LONGVARCHAR" property="content"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from t_competition
-    where id = #{id,jdbcType=VARCHAR}
-  </delete>
+        delete from t_competition where id = #{id,jdbcType=VARCHAR}
+    </delete>
     <insert id="insert" parameterType="ac.iie.server.domain.Competition">
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
-            select replace(uuid(),'-','') from dual
+            select replace(uuid(),'-','') from dual;
         </selectKey>
         insert into t_competition (id,title, description, data_desc,
         is_include_media, data_url, program_url,
@@ -47,42 +46,87 @@
         )
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Competition">
-    update t_competition
-    set title = #{title,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
-      data_desc = #{dataDesc,jdbcType=VARCHAR},
-      is_include_media = #{isIncludeMedia,jdbcType=BIT},
-      data_url = #{dataUrl,jdbcType=VARCHAR},
-      program_url = #{programUrl,jdbcType=VARCHAR},
-      `type` = #{type,jdbcType=INTEGER},
-      publish_time = #{publishTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      join_num = #{joinNum,jdbcType=INTEGER},
-      `status` = #{status,jdbcType=INTEGER},
-      logo_url = #{logoUrl,jdbcType=VARCHAR},
-      end_time = #{endTime,jdbcType=TIMESTAMP},
-      type_id = #{typeId,jdbcType=VARCHAR},
-      bonus = #{bonus,jdbcType=INTEGER},
-      score_items = #{scoreItems,jdbcType=VARCHAR},
-      key_data_map = #{keyDataMap,jdbcType=VARCHAR},
-      content = #{content,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
+        update t_competition
+        set title            = #{title,jdbcType=VARCHAR},
+            description      = #{description,jdbcType=VARCHAR},
+            data_desc        = #{dataDesc,jdbcType=VARCHAR},
+            is_include_media = #{isIncludeMedia,jdbcType=BIT},
+            data_url         = #{dataUrl,jdbcType=VARCHAR},
+            program_url      = #{programUrl,jdbcType=VARCHAR},
+            `type`           = #{type,jdbcType=INTEGER},
+            publish_time     = #{publishTime,jdbcType=TIMESTAMP},
+            update_time      = #{updateTime,jdbcType=TIMESTAMP},
+            join_num         = #{joinNum,jdbcType=INTEGER},
+            `status`         = #{status,jdbcType=INTEGER},
+            logo_url         = #{logoUrl,jdbcType=VARCHAR},
+            end_time         = #{endTime,jdbcType=TIMESTAMP},
+            type_id          = #{typeId,jdbcType=VARCHAR},
+            bonus            = #{bonus,jdbcType=INTEGER},
+            score_items      = #{scoreItems,jdbcType=VARCHAR},
+            key_data_map     = #{keyDataMap,jdbcType=VARCHAR},
+            content          = #{content,jdbcType=LONGVARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, title, description, data_desc, is_include_media, data_url, program_url, 
-    `type`, publish_time, update_time, join_num, `status`, logo_url, end_time, type_id, 
-    bonus, score_items, key_data_map, content
-    from t_competition
-    where id = #{id,jdbcType=VARCHAR}
-  </select>
+        select
+            id,
+            title,
+            description,
+            data_desc,
+            is_include_media,
+            data_url,
+            program_url,
+            `type`,
+            publish_time,
+            update_time,
+            join_num,
+            `status`,
+            logo_url,
+            end_time,
+            type_id,
+            bonus,
+            score_items,
+            key_data_map,
+            content
+        from t_competition
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
     <select id="selectAll" resultMap="BaseResultMap">
-    select id, title, description, data_desc, is_include_media, data_url, program_url, 
-    `type`, publish_time, update_time, join_num, `status`, logo_url, end_time, type_id, 
-    bonus, score_items, key_data_map, content
-    from t_competition
-  </select>
+        select
+            id,
+            title,
+            description,
+            data_desc,
+            is_include_media,
+            data_url,
+            program_url,
+            `type`,
+            publish_time,
+            update_time,
+            join_num,
+            `status`,
+            logo_url,
+            end_time,
+            type_id,
+            bonus,
+            score_items,
+            key_data_map,
+            content
+        from t_competition
+    </select>
 
     <update id="updateCompetitionTypeByTypeId" parameterType="java.lang.String">
-    update `t_competition` set  `type_id`=null  where `type_id`=#{id,jdbcType=VARCHAR}
+        update `t_competition`
+        set `type_id` = null
+        where `type_id` = #{id,jdbcType=VARCHAR}
     </update>
+
+    <select id="getCompetitions" parameterType="Map">
+        select * from `t_competition`
+        <include refid="selectWhere"/>
+    </select>
+    <sql id="selectWhere">
+        <if test="conditions!=null">
+        </if>
+    </sql>
 </mapper>

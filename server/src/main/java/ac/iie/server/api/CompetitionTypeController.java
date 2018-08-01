@@ -1,11 +1,16 @@
 package ac.iie.server.api;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.verifier.CompetitionVFier;
+import ac.iie.server.service.CompetitionService;
+import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,8 +31,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CompetitionTypeController extends BaseController {
 
-    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionVFier competitionVFier) {
-        super(competitionTypeService, competitionVFier);
+
+    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService,
+                                     CompetitionVFier competitionVFier) {
+        super(competitionTypeService, competitionService, competitionVFier);
     }
 
     /**
@@ -174,9 +181,31 @@ public class CompetitionTypeController extends BaseController {
 
     @RequestMapping(value = "/{id}/competition", method = RequestMethod.GET)
     @ResponseBody
-    public Response getCompetitionsByType(@PathVariable String id) {
+    public Response getCompetitionsByType(@PathVariable String id, int type, int pageNum, int pageSize) {
+        /*
+         数据校验与整理
+         */
+        //考虑到切换选项卡时后端分页，靶场模式和竞赛模式分开调用
+        // 在权限表配置type值，用户获取权限信息，与传入type做比较
+        pageNum = pageNum == 0 ? 1 : pageNum;
+        pageSize = pageSize == 0 ? 10 : pageSize;
 
-        return null;
+        Map<String, Object> conditions = new HashMap<>();
+        //type_id 类别id,type模式类型
+        conditions.put("type_id", id);
+        conditions.put("type", type);
+
+        /*
+        数据操作
+         */
+        PageInfo pageInfo;
+        try {
+            pageInfo = competitionService.getCompetitions(conditions, pageSize, pageNum);
+        } catch (Exception e) {
+            log.error("获取赛程错误！");
+            return Response.databaseError("获取赛程错误");
+        }
+        return Response.operateSucessAndHaveData(pageInfo);
     }
 
 }

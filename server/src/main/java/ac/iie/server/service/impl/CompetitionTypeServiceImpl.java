@@ -3,6 +3,8 @@ package ac.iie.server.service.impl;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.CompetitionType;
 import ac.iie.server.service.CompetitionTypeService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,10 @@ public class CompetitionTypeServiceImpl extends BaseService implements Competiti
 
     @Override
     public List<CompetitionType> getCompetitionTypes() {
-        return competitionTypeMapper.selectAll();
+        PageInfo<CompetitionType> page = PageHelper.startPage(1, 1).doSelectPageInfo(() -> competitionTypeMapper.selectAll());
+        System.out.println(page.getPageSize());
+        System.out.println(page);
+        return page.getList();
     }
 
     @Override

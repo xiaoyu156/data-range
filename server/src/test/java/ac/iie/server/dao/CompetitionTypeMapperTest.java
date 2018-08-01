@@ -1,6 +1,9 @@
 package ac.iie.server.dao;
 
 import ac.iie.server.domain.CompetitionType;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +40,13 @@ public class CompetitionTypeMapperTest {
 
     @Test
     public void updateByPrimaryKey() {
+    }
+
+    @Test
+    public void testGson(){
+        Gson gson=new Gson();
+        JsonObject jsonObject=new JsonObject();
+        jsonObject.addProperty("s","s");
+        System.out.println(jsonObject.get("a"));
     }
 }

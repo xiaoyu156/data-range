@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Mapper
 @Repository
 public interface UserCompetitionMapper {
@@ -17,4 +18,6 @@ public interface UserCompetitionMapper {
     List<UserCompetition> selectAll();
 
     int updateByPrimaryKey(UserCompetition record);
+
+    List<UserCompetition> selectByUidAndComId(UserCompetition userCompetition);
 }

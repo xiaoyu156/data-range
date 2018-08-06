@@ -23,7 +23,8 @@
         <result column="content" jdbcType="LONGVARCHAR" property="content"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-        delete from t_competition where id = #{id,jdbcType=VARCHAR}
+        delete from t_competition
+        where id = #{id,jdbcType=VARCHAR}
     </delete>
     <insert id="insert" parameterType="ac.iie.server.domain.Competition">
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
@@ -129,4 +130,10 @@
         <if test="conditions!=null">
         </if>
     </sql>
+
+    <!--<update id="updateCompetitionStatus" parameterType="">-->
+        <!--update `t_competition`-->
+        <!--set `status` = #{status,jdbcType=INTEGER}-->
+        <!--where `id` = #{id,jdbcType=VARCHAR}-->
+    <!--</update>-->
 </mapper>

@@ -7,10 +7,10 @@ import java.util.Map;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.service.CompetitionService;
+import ac.iie.server.service.UserCompetitionService;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,9 +32,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CompetitionTypeController extends BaseController {
 
 
-    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService,
-                                     CompetitionVFier competitionVFier) {
-        super(competitionTypeService, competitionService, competitionVFier);
+    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
+        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
     }
 
     /**
@@ -139,7 +138,7 @@ public class CompetitionTypeController extends BaseController {
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Response getCompetitionById(@PathVariable String id) {
+    public Response getCompetitionTypeById(@PathVariable String id) {
         if (StringUtils.isAllBlank(id)) {
             return Response.paramError("id 不能为空！");
         }
@@ -161,7 +160,7 @@ public class CompetitionTypeController extends BaseController {
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public Response getCompetitions() {
+    public Response getCompetitionTypes() {
         List<CompetitionType> competitionTypes;
 
         try {
@@ -207,6 +206,7 @@ public class CompetitionTypeController extends BaseController {
         }
         return Response.operateSucessAndHaveData(pageInfo);
     }
+
 
 }
 

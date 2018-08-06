@@ -31,13 +31,12 @@ pagehelper:
 logging:
   config: classpath:log4j2-test.xml
 yaml:
-   effective:
-    - www.baidu.com
-    - www.toutiao.com
-   extractUserRule: { "www.baidu.com":"select * from", "www.toutiao.com":"select * from"}
-   interfaceOuterAddress: { "www.baidu.com-1":"10.136.73.81", "www.toutiao.com-1":"10.136.73.81"}
-   interfaceInnerAddress: { "isNomArticle":"10.136.73.81", "ss":"10.136.73.81"}
-   maxThreads: 100
+   baseUrl: "J://work"
+   zipDataUrl: "zip_data"
+   logoUrl: "logo"
+   dataUrl: "data"
+   programUrl: "program"
+
 
 
 

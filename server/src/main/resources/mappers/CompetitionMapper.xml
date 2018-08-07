@@ -131,9 +131,14 @@
         </if>
     </sql>
 
+    <select id="getCompetitonByStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select *
+        from t_competition
+        where status = {#status,jdbcType = INTEGER}
+    </select>
     <!--<update id="updateCompetitionStatus" parameterType="">-->
-        <!--update `t_competition`-->
-        <!--set `status` = #{status,jdbcType=INTEGER}-->
-        <!--where `id` = #{id,jdbcType=VARCHAR}-->
+    <!--update `t_competition`-->
+    <!--set `status` = #{status,jdbcType=INTEGER}-->
+    <!--where `id` = #{id,jdbcType=VARCHAR}-->
     <!--</update>-->
 </mapper>

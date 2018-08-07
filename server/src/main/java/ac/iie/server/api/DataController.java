@@ -56,6 +56,15 @@ public class DataController extends BaseController<Competition> {
         }
         String path = getAbsolutePath(type, comName);
         String url = path + File.separator + file.getOriginalFilename();
+        boolean flag = saveFile(file, url, path);
+        if (flag) {
+            return Response.operateSucessAndHaveData(url);
+        } else {
+            return Response.databaseError("文件上传失败！");
+        }
+    }
+
+    private boolean saveFile(CommonsMultipartFile file, String url, String path) {
         boolean flag;
         try {
             byte[] getData = file.getBytes();
@@ -69,13 +78,8 @@ public class DataController extends BaseController<Competition> {
             log.error("====================保存数据失败：" + url);
             flag = false;
         }
-        if (flag) {
-            return Response.operateSucessAndHaveData(url);
-        } else {
-            return Response.databaseError("文件上传失败！");
-        }
+        return flag;
     }
-
 
     private String getAbsolutePath(int type, String comName) {
         String filePath = systemConfig.getBaseUrl() + File.separator + comName;

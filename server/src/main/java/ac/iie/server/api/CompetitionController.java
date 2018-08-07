@@ -349,6 +349,8 @@ public class CompetitionController extends BaseController<Competition> {
      * @return:
      * @date: 2018-8-6 16:31
      */
+    @RequestMapping(value = "/update-status", method = RequestMethod.GET)
+    @ResponseBody
     public Response updataCompetitionStatus(String compId, int status) {
         Competition competition = new Competition();
         competition.setId(compId);

@@ -20,4 +20,6 @@ public interface CompetitionMapper {
     int updateByPrimaryKey(Competition record);
 
     int updateCompetitionTypeByTypeId(String id);
+
+    List<Competition> getCompetitonByStatus(int status);
 }

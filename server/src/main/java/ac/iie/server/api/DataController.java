@@ -4,7 +4,7 @@ import ac.iie.common.utils.FileUtil;
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.base.Contants;
-import ac.iie.server.api.base.SystemConfig;
+import ac.iie.server.config.SystemConfig;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.domain.Competition;
 import ac.iie.server.service.CompetitionService;

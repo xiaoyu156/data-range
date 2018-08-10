@@ -1,4 +1,4 @@
-package ac.iie.server.api.base;
+package ac.iie.server.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -22,4 +22,6 @@ public interface CompetitionMapper {
     int updateCompetitionTypeByTypeId(String id);
 
     List<Competition> getCompetitonByStatus(int status);
+
+
 }

@@ -1,13 +1,11 @@
 package ac.iie.server.service.impl;
 
 import ac.iie.common.utils.CompressUtil;
-import ac.iie.common.utils.FileUtil;
-import ac.iie.server.api.base.SystemConfig;
+import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.Competition;
 import ac.iie.server.domain.Data;
 import ac.iie.server.service.IProcService;
-import ac.iie.server.service.impl.BaseService;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -16,13 +14,14 @@ import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.exception.ZipException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description: 业务过程异步处理
@@ -36,6 +35,9 @@ public class ProcServiceImpl extends BaseService implements IProcService {
 
     @Autowired
     SystemConfig systemConfig;
+
+    @Autowired
+    RedisTemplate redisTemplate;
 
 
     public ProcServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper) {
@@ -81,7 +83,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         log.info("*******************开始处理数据集**************");
         String dataZipUrl = competition.getDataUrl();
         String path = dataZipUrl.substring(0, dataZipUrl.indexOf("/", -2)) + File.separator + systemConfig.getDataUrl();
-
+        String filePath = dataZipUrl.substring(0, dataZipUrl.indexOf(".", -1)) + ".txt";
         boolean flag = false;
         try {
             log.info("******************开始解压数据集***********");
@@ -103,10 +105,9 @@ public class ProcServiceImpl extends BaseService implements IProcService {
             if (!file.exists()) {
                 return flag;
             }
-            @Cleanup InputStream inputStream;
             String descJson = "";
             try {
-                inputStream = new FileInputStream(file);
+                @Cleanup InputStream inputStream = new FileInputStream(file);
                 byte b[] = new byte[1024];
                 inputStream.read(b);
                 descJson = new String(b);
@@ -118,26 +119,85 @@ public class ProcServiceImpl extends BaseService implements IProcService {
                 return flag;
             }
             int count = jsonObject.get("count").getAsInt();
+            log.info("***************************正在解析多媒体文件：[" + count + "]个***************");
             JsonArray datas = jsonObject.get("data").getAsJsonArray();
-            Data data = null;
-            String md5 = null;
-            String ext = null;
+            Data data;
             for (JsonElement je : datas) {
                 data = new Data();
                 data.setCompId(competition.getId());
                 data.setType(0);
-                md5 = je.getAsJsonObject().get("md5").getAsString();
-                ext = je.getAsJsonObject().get("ext").getAsString();
+                String md5 = je.getAsJsonObject().get("md5").getAsString();
+                String ext = je.getAsJsonObject().get("ext").getAsString();
                 data.setMediaUrls(md5 + "." + ext);
+                dataMapper.insert(data);
             }
         } else {
+            File file = new File(filePath);
+            if (!file.exists()) {
 
+            } else {
+                List<String> textJson = new ArrayList<>();
+                try {
+                    @Cleanup InputStream inputStream = new FileInputStream(file);
+                    @Cleanup BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    String str = null;
+                    while ((str = bufferedReader.readLine()) != null) {
+                        textJson.add(str);
+                    }
+                    if (saveData(textJson, competition.getId())) {
+                        saveRedis(textJson, competition.getId());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        return false;
+        flag = true;
+        return flag;
+    }
+
+    /**
+     * @Description: 数据集保存redis
+     * @param:
+     * @return:
+     * @date: 2018-8-9 9:44
+     */
+    private boolean saveRedis(List<String> lines, String compId) {
+        int size = lines.size();
+        if (size > 0) {
+            Map<Integer, Object> map = new HashMap<>(lines.size());
+            for (int i = 0; i < size; i++) {
+                map.put(i, lines.get(i));
+            }
+            try {
+                redisTemplate.opsForHash().putAll(compId, map);
+            } catch (Exception ex) {
+                log.error("-----------------------[" + compId + "]比赛，数据集存入redis失败！--------");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @Description: 保存到数据库
+     * @param:
+     * @return:
+     * @date: 2018-8-9 14:51
+     */
+    private boolean saveData(List<String> lines, String compId) {
+        int indexNum = lines.size();
+        Data data;
+        for (int i = 0; i < indexNum; i++) {
+            data = new Data();
+            data.setDataIndex(i);
+            data.setCompId(compId);
+            data.setType(0);
+        }
+        return true;
     }
 
     private boolean dealProgram(Competition competition) {
-
         return false;
     }
 }

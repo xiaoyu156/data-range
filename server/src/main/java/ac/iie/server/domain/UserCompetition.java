@@ -2,6 +2,7 @@ package ac.iie.server.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class UserCompetition implements Serializable {
     private String id;
@@ -15,6 +16,12 @@ public class UserCompetition implements Serializable {
     private Integer status;
 
     private Integer type;
+
+    public UserCompetition() {
+    }
+
+    private Competition competition;
+
 
     private static final long serialVersionUID = 1L;
 
@@ -66,20 +73,24 @@ public class UserCompetition implements Serializable {
         this.type = type;
     }
 
+    public Competition getCompetition() {
+        return competition;
+    }
+
+    public void setCompetition(Competition competition) {
+        this.competition = competition;
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", competitionId=").append(competitionId);
-        sb.append(", userId=").append(userId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", status=").append(status);
-        sb.append(", type=").append(type);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return "UserCompetition{" +
+                "id='" + id + '\'' +
+                ", competitionId='" + competitionId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", createTime=" + createTime +
+                ", status=" + status +
+                ", type=" + type +
+                ", competition=" + competition +
+                '}';
     }
 }

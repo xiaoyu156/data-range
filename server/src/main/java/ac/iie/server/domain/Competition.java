@@ -2,6 +2,7 @@ package ac.iie.server.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Competition implements Serializable {
     private String id;
@@ -41,6 +42,16 @@ public class Competition implements Serializable {
     private String keyDataMap;
 
     private String content;
+
+    private List<User> users;
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
     private static final long serialVersionUID = 1L;
 
@@ -221,7 +232,7 @@ public class Competition implements Serializable {
         sb.append(", scoreItems=").append(scoreItems);
         sb.append(", keyDataMap=").append(keyDataMap);
         sb.append(", content=").append(content);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append(",users").append(users);
         sb.append("]");
         return sb.toString();
     }

@@ -1,4 +1,4 @@
-package ac.iie.server.task;
+package ac.iie.server.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +24,7 @@ public class TaskConfig {
         scheduler.setPoolSize(10);
         //线程名字前缀
         scheduler.setThreadNamePrefix("dataRange-task-thread");
+        log.info("=============================Task Component Init Success==============");
         return scheduler;
     }
 }

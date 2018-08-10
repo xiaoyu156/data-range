@@ -158,7 +158,7 @@ public class CompetitionController extends BaseController<Competition> {
      * @return:
      * @date: 2018-8-6 16:08
      */
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     @ResponseBody
     public Response updateCompetition(@RequestBody String param) {
         Gson gson = new Gson();

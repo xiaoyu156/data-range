@@ -14,12 +14,12 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
     <insert id="insert" parameterType="ac.iie.server.domain.UserCompetition">
-        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-            SELECT LAST_INSERT_ID()
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual;
         </selectKey>
-        insert into t_user_competition (competition_id, user_id, create_time,
+        insert into t_user_competition (id,competition_id, user_id, create_time,
         `status`, `type`)
-        values (#{competitionId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+        values (#{id,jdbcType=VARCHAR},#{competitionId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
         #{status,jdbcType=INTEGER}, #{type,jdbcType=INTEGER})
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.UserCompetition">

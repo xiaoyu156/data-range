@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ac.iie.server.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="ac.iie.server.domain.User">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="id_card" jdbcType="VARCHAR" property="idCard"/>
+        <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp"/>
+        <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="realname" jdbcType="VARCHAR" property="realname"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+    </resultMap>
+
+    <resultMap id="UserCompetitionResultMap" type="ac.iie.server.domain.User" extends="BaseResultMap">
+        <collection property="userCompetitions" javaType="ArrayList" ofType="ac.iie.server.domain.UserCompetition">
+            <id column="id" jdbcType="VARCHAR" property="id"/>
+            <result column="competition_id" jdbcType="VARCHAR" property="competitionId"/>
+            <result column="user_id" jdbcType="VARCHAR" property="userId"/>
+            <result column="status" jdbcType="INTEGER" property="status"/>
+            <result column="type" jdbcType="INTEGER" property="type"/>
+        </collection>
+    </resultMap>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_user
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="ac.iie.server.domain.User">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        insert into t_user (id,create_time, update_time, address,
+        email, id_card, last_login_ip,
+        last_login_time, `password`, phone,
+        realname, `status`, username
+        )
+        values ( #{id,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+        #{address,jdbcType=VARCHAR},
+        #{email,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{lastLoginIp,jdbcType=VARCHAR},
+        #{lastLoginTime,jdbcType=TIMESTAMP}, #{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+        #{realname,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}
+        )
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.User">
+    update t_user
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      address = #{address,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      `password` = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, create_time, update_time, address, email, id_card, last_login_ip, last_login_time, 
+    `password`, phone, realname, `status`, username
+    from t_user
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select id, create_time, update_time, address, email, id_card, last_login_ip, last_login_time, 
+    `password`, phone, realname, `status`, username
+    from t_user
+   </select>
+    <select id="selectUserCompetitions" resultMap="UserCompetitionResultMap" parameterType="java.lang.String">
+        select
+        u.*,
+        uc.id as uc_id,
+        uc.user_id user_id,
+        uc.competition_id as competition_id,
+        uc.status as uc_status,
+        uc.type as us_type
+        from  t_user_competition uc  left outer join t_user u on uc.user_id=u.id and u.id=#{userId,jdbcType=VARCHAR}
+    </select>
+</mapper>

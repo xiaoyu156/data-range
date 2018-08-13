@@ -4,9 +4,13 @@ import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.domain.Competition;
+import ac.iie.server.domain.VersionAnswers;
 import ac.iie.server.service.CompetitionService;
 import ac.iie.server.service.CompetitionTypeService;
 import ac.iie.server.service.UserCompetitionService;
+import ac.iie.server.service.VersionAnswersService;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +26,8 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class UserAnswerController extends BaseController<Competition> {
 
-    public UserAnswerController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
+    public UserAnswerController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService) {
+        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService, versionAnswersService);
     }
 
     /**
@@ -35,7 +39,48 @@ public class UserAnswerController extends BaseController<Competition> {
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
     public Response answerCommit(@RequestParam String param) {
-        return null;
+        Gson gson = new Gson();
+        VersionAnswers versionAnswers = new VersionAnswers();
+        /*
+        数据校验与封装
+         */
+        if (StringUtils.isBlank(param)) {
+            return Response.paramError("参数错误");
+        }
+        JsonObject paramsObj = gson.fromJson(param, JsonObject.class);
+        if (paramsObj.isJsonNull() || paramsObj.isJsonObject()) {
+            return Response.paramError("非json格式入参，请检查");
+        }
+        //参赛用户id
+        if (paramsObj.get("user_comp_id") == null || StringUtils.isBlank(paramsObj.get("user_comp_id").getAsString())) {
+            return Response.paramError("user_comp_id为必填项");
+        }
+        versionAnswers.setUserCompId(paramsObj.get("user_comp_id").getAsString());
+
+        //本次答案版本
+        if (paramsObj.get("version") == null || StringUtils.isBlank(paramsObj.get("version").getAsString())) {
+            return Response.paramError("version为必填项");
+        }
+        versionAnswers.setVersion(paramsObj.get("version").getAsString());
+
+        //数据集url，需要校验是否上传数据集
+        if (paramsObj.get("result_url") == null || StringUtils.isBlank(paramsObj.get("result_url").getAsString())) {
+            return Response.paramError("result_url为必填项");
+        }
+        versionAnswers.setResultUrl(paramsObj.get("result_url").getAsString());
+
+        //答案的运行命令
+        if (paramsObj.get("run_command") == null || StringUtils.isBlank(paramsObj.get("run_command").getAsString())) {
+            return Response.paramError("run_command为必填项");
+        }
+        versionAnswers.setRunCommand(paramsObj.get("run_command").getAsString());
+
+        if (versionAnswersService.commitAnswer(versionAnswers)) {
+            return Response.operateSucessNoData();
+        } else {
+            return Response.databaseError("用户答案提交失败");
+        }
+
     }
 
 }

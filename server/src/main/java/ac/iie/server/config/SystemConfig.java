@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 /**
  * @Description: 系统配置
  * @Author: wangxiaoyua
@@ -20,4 +22,5 @@ public class SystemConfig {
     private String dataUrl;
     private String programUrl;
     private String zipDataUrl;
+    private Map<String, String> cloudService;
 }

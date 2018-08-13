@@ -32,7 +32,6 @@ import java.util.Map;
 @Slf4j
 public class CompetitionController extends BaseController<Competition> {
 
-
     public CompetitionController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
         super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
     }
@@ -264,7 +263,6 @@ public class CompetitionController extends BaseController<Competition> {
         return Response.operateSucessNoData();
     }
 
-
     /**
      * @Description: 比赛查询接口
      * @param:
@@ -316,7 +314,6 @@ public class CompetitionController extends BaseController<Competition> {
         }
     }
 
-
     /**
      * @Description: 用户参加比赛接口
      * @param:
@@ -351,7 +348,7 @@ public class CompetitionController extends BaseController<Competition> {
      */
     @RequestMapping(value = "/update-status", method = RequestMethod.GET)
     @ResponseBody
-    public Response updataCompetitionStatus(String compId, int status) {
+    public Response updateCompetitionStatus(String compId, int status) {
         Competition competition = new Competition();
         competition.setId(compId);
         competition.setStatus(status);

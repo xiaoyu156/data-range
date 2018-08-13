@@ -8,6 +8,7 @@ public interface Contants {
     int FILE_LOGO = 1;
     int FILE_DATA = 2;
     int FILE_PROGRAM = 3;
+    int FILE_USER_ANSWER = 4;
 
     /**
      * 比赛状态比赛状态
@@ -28,5 +29,11 @@ public interface Contants {
     int COMPETITION_END = 5;
     //6:已删除，默认0
     int COMPETITION_DELETE = 6;
+
+    /**
+     * 接口类型
+     */
+    String POST_INTERFACE = "POST";
+    String GET_INTERFACE = "GET";
 
 }

@@ -20,9 +20,13 @@ public class TaskConfig {
     @Bean
     public TaskScheduler taskScheduler() {
         ThreadPoolTaskScheduler scheduler = new ThreadPoolTaskScheduler();
-        //线程池大小
+        /*
+         线程池大小
+         */
         scheduler.setPoolSize(10);
-        //线程名字前缀
+        /*
+          线程名字前缀
+         */
         scheduler.setThreadNamePrefix("dataRange-task-thread");
         log.info("=============================Task Component Init Success==============");
         return scheduler;

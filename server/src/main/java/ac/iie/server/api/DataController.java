@@ -48,7 +48,7 @@ public class DataController extends BaseController<Competition> {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public Response dataUpload(@RequestParam("fileName") CommonsMultipartFile file, int type, String comName) {
-        if (type > Contants.FILE_PROGRAM || type < Contants.FILE_LOGO) {
+        if (type > Contants.FILE_PROGRAM || type < Contants.FILE_USER_ANSWER) {
             return Response.paramError("type不合法，请检查！");
         }
         if (StringUtils.isBlank(comName) || StringUtils.isBlank(comName)) {

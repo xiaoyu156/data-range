@@ -22,8 +22,8 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="ac.iie.server.domain.VersionAnswers">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select replace(uuid(),'-','') from dual;
     </selectKey>
     insert into t_version_answers (user_comp_id, version, result_url, 
       upload_time, `status`, detail, 

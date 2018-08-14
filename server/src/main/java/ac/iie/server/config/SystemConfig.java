@@ -22,5 +22,6 @@ public class SystemConfig {
     private String dataUrl;
     private String programUrl;
     private String zipDataUrl;
+    private String cloudTarget;
     private Map<String, String> cloudService;
 }

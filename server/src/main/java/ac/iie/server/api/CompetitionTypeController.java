@@ -8,6 +8,7 @@ import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.service.CompetitionService;
 import ac.iie.server.service.UserCompetitionService;
+import ac.iie.server.service.VersionAnswersService;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 
@@ -32,8 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CompetitionTypeController extends BaseController {
 
 
-    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
+    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService) {
+        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService, versionAnswersService);
     }
 
     /**
@@ -178,6 +179,13 @@ public class CompetitionTypeController extends BaseController {
         }
     }
 
+    /**
+     * @Description: 根据比赛类型和办赛类型查询，需要校验权限
+     *
+     * @param:
+     * @return:
+     * @date: 2018-8-14 9:48
+     */
     @RequestMapping(value = "/{id}/competition", method = RequestMethod.GET)
     @ResponseBody
     public Response getCompetitionsByType(@PathVariable String id, int type, int pageNum, int pageSize) {
@@ -189,7 +197,7 @@ public class CompetitionTypeController extends BaseController {
         pageNum = pageNum == 0 ? 1 : pageNum;
         pageSize = pageSize == 0 ? 10 : pageSize;
 
-        Map<String, Object> conditions = new HashMap<>();
+        Map<String, Object> conditions = new HashMap<>(10);
         //type_id 类别id,type模式类型
         conditions.put("type_id", id);
         conditions.put("type", type);

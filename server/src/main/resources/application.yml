@@ -1,5 +1,8 @@
 server:
   port: 8080
+  servlet:
+    path: /api
+
 spring:
     datasource:
         name: test
@@ -42,8 +45,11 @@ yaml:
    logoUrl: "logo"
    dataUrl: "data"
    programUrl: "program"
-   userAnswer: "userAnswer"
-   cloudService: { ""}
+   userAnswerResult: "userAnswerResult"
+   userAnswerResult: "userAnswerEngine"
+   cloudTarget: "localhost:8080"
+   cloudService: {"createEvaluation":"/evaluating/create/evaluating/create","queryEvaluation":"/evaluating/query",
+   "createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
 
 
 

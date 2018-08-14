@@ -8,6 +8,7 @@ import ac.iie.server.domain.UserCompetition;
 import ac.iie.server.service.CompetitionService;
 import ac.iie.server.service.CompetitionTypeService;
 import ac.iie.server.service.UserCompetitionService;
+import ac.iie.server.service.VersionAnswersService;
 import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -32,8 +33,9 @@ import java.util.Map;
 @Slf4j
 public class CompetitionController extends BaseController<Competition> {
 
-    public CompetitionController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
+
+    public CompetitionController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService) {
+        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService, versionAnswersService);
     }
 
     /**
@@ -55,7 +57,7 @@ public class CompetitionController extends BaseController<Competition> {
         }
 
         JsonObject paramsObj = gson.fromJson(param, JsonObject.class);
-        if (paramsObj.isJsonNull() || paramsObj.isJsonObject()) {
+        if (paramsObj.isJsonNull() ||! paramsObj.isJsonObject()) {
             return Response.paramError("非json格式入参，请检查");
         }
         //**************************************************必填参数校验************************************************
@@ -105,7 +107,7 @@ public class CompetitionController extends BaseController<Competition> {
         if (paramsObj.get("type") == null) {
             return Response.paramError("type为必填项");
         }
-        competition.setType(paramsObj.get("type_id").getAsInt());
+        competition.setType(paramsObj.get("type").getAsInt());
 
         //举办方列表
         JsonElement userObj = paramsObj.get("users");

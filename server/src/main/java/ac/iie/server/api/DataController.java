@@ -10,6 +10,7 @@ import ac.iie.server.domain.Competition;
 import ac.iie.server.service.CompetitionService;
 import ac.iie.server.service.CompetitionTypeService;
 import ac.iie.server.service.UserCompetitionService;
+import ac.iie.server.service.VersionAnswersService;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -32,11 +33,8 @@ import java.io.OutputStreamWriter;
 @Slf4j
 public class DataController extends BaseController<Competition> {
 
-    @Autowired
-    SystemConfig systemConfig;
-
-    public DataController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService);
+    public DataController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig) {
+        super(competitionTypeService, competitionService, userCompetitionService, versionAnswersService, systemConfig);
     }
 
     /**
@@ -48,51 +46,20 @@ public class DataController extends BaseController<Competition> {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public Response dataUpload(@RequestParam("fileName") CommonsMultipartFile file, int type, String comName) {
-        if (type > Contants.FILE_PROGRAM || type < Contants.FILE_USER_ANSWER) {
+        if (type < Contants.FILE_LOGO || type > Contants.FILE_USER_ANSWER_ENGINE) {
             return Response.paramError("type不合法，请检查！");
         }
         if (StringUtils.isBlank(comName) || StringUtils.isBlank(comName)) {
             return Response.paramError("comName不合法，请检查！");
         }
-        String path = getAbsolutePath(type, comName);
+        String path = this.getAbsolutePath(type, comName);
         String url = path + File.separator + file.getOriginalFilename();
-        boolean flag = saveFile(file, url, path);
+        boolean flag = this.saveFile(file, url, path);
         if (flag) {
             return Response.operateSucessAndHaveData(url);
         } else {
             return Response.databaseError("文件上传失败！");
         }
-    }
-
-    private boolean saveFile(CommonsMultipartFile file, String url, String path) {
-        boolean flag;
-        try {
-            byte[] getData = file.getBytes();
-            FileUtil.createDir(path);
-            File localFile = new File(url);
-            @Cleanup OutputStreamWriter ow = new OutputStreamWriter(new FileOutputStream(localFile), "utf-8");
-            ow.write(new String(getData));
-            flag = true;
-            log.info("=====================保存数据成功：" + url);
-        } catch (Exception e) {
-            log.error("====================保存数据失败：" + url);
-            flag = false;
-        }
-        return flag;
-    }
-
-    private String getAbsolutePath(int type, String comName) {
-        String filePath = systemConfig.getBaseUrl() + File.separator + comName;
-        if (type == Contants.FILE_DATA) {
-            filePath = filePath + File.separator + systemConfig.getZipDataUrl();
-        }
-        if (type == Contants.FILE_LOGO) {
-            filePath = filePath + File.separator + systemConfig.getLogoUrl();
-        }
-        if (type == Contants.FILE_PROGRAM) {
-            filePath = filePath + File.separator + systemConfig.getProgramUrl();
-        }
-        return filePath;
     }
 
 }

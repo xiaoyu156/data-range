@@ -13,7 +13,6 @@ import com.google.gson.JsonObject;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.exception.ZipException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -33,16 +32,15 @@ import java.util.Map;
 @Service(value = "procService")
 public class ProcServiceImpl extends BaseService implements IProcService {
 
-    @Autowired
-    SystemConfig systemConfig;
 
-    @Autowired
-    RedisTemplate redisTemplate;
-
-
-    public ProcServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper) {
-        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper);
+    public ProcServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper, SystemConfig systemConfig, RedisTemplate redisTemplate) {
+        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper, systemConfig, redisTemplate);
     }
+
+    /**
+     * 谷歌json解析对象
+     */
+    private static Gson gson = new Gson();
 
     /**
      * @Description: 创建比赛时数据集和评测程序的处理过程
@@ -59,18 +57,15 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         try {
             competitions = competitionMapper.getCompetitonByStatus(1);
         } catch (Exception e) {
-
+            log.error("获取需要处理的比赛数据失败！");
+            return;
         }
         int dealNum = competitions.size();
         log.info("*****************本次任务获取[" + dealNum + "]个比赛任务进行处理***************");
         for (int i = 0; i < dealNum; i++) {
             Competition competition = competitions.get(i);
             log.info("********************开始处理[" + competition.getTitle() + "]比赛");
-            if (!dealData(competition)) {
-                dealProgram(competition);
-            } else {
 
-            }
         }
     }
 
@@ -84,77 +79,89 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         String dataZipUrl = competition.getDataUrl();
         String path = dataZipUrl.substring(0, dataZipUrl.indexOf("/", -2)) + File.separator + systemConfig.getDataUrl();
         String filePath = dataZipUrl.substring(0, dataZipUrl.indexOf(".", -1)) + ".txt";
-        boolean flag = false;
         try {
             log.info("******************开始解压数据集***********");
             CompressUtil.unZip(dataZipUrl, path, null);
         } catch (ZipException e) {
             log.error("**************数据集解压失败，程序返回*****");
             e.printStackTrace();
-            return flag;
+            return false;
         }
         /*
         类型标志，如果是true则是多媒体类型多媒体类型读取描述文件；如果是false则直接读取文本文件
          */
         boolean typeFlag = competition.getIsIncludeMedia();
-        Gson gson = new Gson();
+
         if (typeFlag) {
-            String desc = path + File.separator + "desc.json";
-            //检查是否存在多媒体描述文件如果
-            File file = new File(desc);
-            if (!file.exists()) {
-                return flag;
-            }
-            String descJson = "";
-            try {
-                @Cleanup InputStream inputStream = new FileInputStream(file);
-                byte b[] = new byte[1024];
-                inputStream.read(b);
-                descJson = new String(b);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            JsonObject jsonObject = gson.fromJson(descJson, JsonObject.class);
-            if (!jsonObject.isJsonObject()) {
-                return flag;
-            }
-            int count = jsonObject.get("count").getAsInt();
-            log.info("***************************正在解析多媒体文件：[" + count + "]个***************");
-            JsonArray datas = jsonObject.get("data").getAsJsonArray();
-            Data data;
-            for (JsonElement je : datas) {
-                data = new Data();
-                data.setCompId(competition.getId());
-                data.setType(0);
-                String md5 = je.getAsJsonObject().get("md5").getAsString();
-                String ext = je.getAsJsonObject().get("ext").getAsString();
-                data.setMediaUrls(md5 + "." + ext);
-                dataMapper.insert(data);
-            }
+
         } else {
             File file = new File(filePath);
             if (!file.exists()) {
 
             } else {
-                List<String> textJson = new ArrayList<>();
-                try {
-                    @Cleanup InputStream inputStream = new FileInputStream(file);
-                    @Cleanup BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    String str = null;
-                    while ((str = bufferedReader.readLine()) != null) {
-                        textJson.add(str);
-                    }
-                    if (saveData(textJson, competition.getId())) {
-                        saveRedis(textJson, competition.getId());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
             }
         }
-        flag = true;
-        return flag;
+        return true;
     }
+
+    private boolean dealMediaFile(Competition competition, String path) {
+        String desc = path + File.separator + "desc.json";
+        //检查是否存在多媒体描述文件如果
+        File file = new File(desc);
+        if (!file.exists()) {
+            log.error("*******************************>文件" + desc + "不存在程序返回");
+            return false;
+        }
+        String descJson;
+        try {
+            @Cleanup InputStream inputStream = new FileInputStream(file);
+            byte b[] = new byte[1024];
+            inputStream.read(b);
+            descJson = new String(b);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        JsonObject jsonObject = gson.fromJson(descJson, JsonObject.class);
+        if (!jsonObject.isJsonObject()) {
+            log.error("json文件解析错误！");
+            return false;
+        }
+        int count = jsonObject.get("count").getAsInt();
+        log.info("***************************正在解析多媒体文件：[" + count + "]个***************");
+        JsonArray datas = jsonObject.get("data").getAsJsonArray();
+        Data data;
+        for (JsonElement je : datas) {
+            data = new Data();
+            data.setCompId(competition.getId());
+            data.setType(0);
+            String md5 = je.getAsJsonObject().get("md5").getAsString();
+            String ext = je.getAsJsonObject().get("ext").getAsString();
+            data.setMediaUrls(md5 + "." + ext);
+            dataMapper.insert(data);
+        }
+        return true;
+    }
+
+    private boolean dealTextFile(Competition competition, File file) {
+        List<String> textJson = new ArrayList<>();
+        try {
+            @Cleanup InputStream inputStream = new FileInputStream(file);
+            @Cleanup BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String str;
+            while ((str = bufferedReader.readLine()) != null) {
+                textJson.add(str);
+            }
+            if (saveData(textJson, competition.getId())) {
+                saveRedis(textJson, competition.getId());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     /**
      * @Description: 数据集保存redis

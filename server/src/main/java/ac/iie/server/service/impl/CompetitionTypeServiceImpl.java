@@ -24,10 +24,10 @@ public class CompetitionTypeServiceImpl extends BaseService implements Competiti
 
     @Override
     public List<CompetitionType> getCompetitionTypes() {
-        PageInfo<CompetitionType> page = PageHelper.startPage(1, 1).doSelectPageInfo(() -> competitionTypeMapper.selectAll());
-        System.out.println(page.getPageSize());
-        System.out.println(page);
-        return page.getList();
+//        PageInfo<CompetitionType> page = PageHelper.startPage(1, 1).doSelectPageInfo(() -> competitionTypeMapper.selectAll());
+//        System.out.println(page.getPageSize());
+//        System.out.println(page);
+        return competitionTypeMapper.selectAll();
     }
 
     @Override

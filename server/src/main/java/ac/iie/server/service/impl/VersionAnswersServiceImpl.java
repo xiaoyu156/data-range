@@ -1,8 +1,10 @@
 package ac.iie.server.service.impl;
 
+import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.VersionAnswers;
 import ac.iie.server.service.VersionAnswersService;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,8 +16,9 @@ import org.springframework.stereotype.Service;
 @Service(value = "versionAnswersService")
 public class VersionAnswersServiceImpl extends BaseService implements VersionAnswersService {
 
-    public VersionAnswersServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper) {
-        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper);
+
+    public VersionAnswersServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper, SystemConfig systemConfig, RedisTemplate redisTemplate) {
+        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper, systemConfig, redisTemplate);
     }
 
     /**

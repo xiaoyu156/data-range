@@ -23,5 +23,7 @@ public class SystemConfig {
     private String programUrl;
     private String zipDataUrl;
     private String cloudTarget;
+    private String userAnswerResultUrl;
+    private String userAnswerEngineUrl;
     private Map<String, String> cloudService;
 }

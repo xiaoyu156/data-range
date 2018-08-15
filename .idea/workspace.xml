@@ -1,95 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8eba026-5408-4559-9051-35802b86a00e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/650292b8-7c51-46a9-bcc3-9b1065b5fb55.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/AuthApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/config/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/domain/Authority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/domain/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/domain/base/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/endpoint/RevokeTokenEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/repository/AuthorityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/java/ac/iie/auth/service/security/JPAUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/auth/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/cloud.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/eureka_server/src/test/java/ac/iie/eureka_server/EurekaServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud/permission_manager/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="b8eba026-5408-4559-9051-35802b86a00e" name="Default" comment="Merge branch 'master' of https://github.com/xiaoyu156/data-range&#10;&#10;# Conflicts:&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml&#10;#&#9;.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_1_6_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_ipc_reactor_netty_0_7_8_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_core_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_spring_webflux_5_0_7_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/wangxiaoyu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_axet_zip4j_1_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/SpringCloud.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/src/main/java/ac/iie/eureka/EurekaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/src/main/java/ac/iie/eureka_server/EurekaServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer2.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/eureka/src/test/java/ac/iie/eureka/EurekaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/auth/src/test/java/ac/iie/auth/AuthApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/eureka_server/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/permission_manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/src/main/java/ac/iie/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/src/main/java/ac/iie/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/gateway/src/test/java/ac/iie/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/src/test/java/ac/iie/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/gateway/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/PermissionManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/permission_manager/src/main/java/ac/iie/permission_manager/PermissionManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/bean/Permission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/bean/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/bean/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/BaseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/PermissionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/RoleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/PermissionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/RoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/PermissionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/base/BaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/PermissionServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/RoleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/permission_manager/src/test/java/ac/iie/permission_manager/PermissionManagerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/permission_manager/src/test/java/ac/iie/permission_manager/PermissionManagerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringCloud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-07-18T061605.400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-07-18T061621.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-07-18T062355.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-07-18T062524.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Contants.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Contants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/SystemConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/SystemConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/DataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/DataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,12 +49,17 @@
     <ignored path="$PROJECT_DIR$/SpringCloud/gateway/target/" />
     <ignored path="$PROJECT_DIR$/SpringCloud/permission_manager/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <ignored path="$PROJECT_DIR$/cloud/eureka_server/target/" />
+    <ignored path="$PROJECT_DIR$/cloud/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/data_range$ServerApplication.ic" NAME="ServerApplication Coverage Results" MODIFIED="1533716299885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -117,16 +72,131 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data_range@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Response.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java">
+      <file leaf-file-name="ProcServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-730">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="433">
+              <caret line="278" column="48" lean-forward="true" selection-start-line="277" selection-start-column="11" selection-end-line="278" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAnswerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1661">
+              <caret line="102" column="25" lean-forward="true" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+              <folding>
+                <element signature="method#updateCompetition#0;class#CompetitionController#0" />
+                <element signature="method#getCompetitions#0;class#CompetitionController#0" />
+                <element signature="method#getCompetition#0;class#CompetitionController#0" />
+                <element signature="method#joinCompetion#0;class#CompetitionController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionTypeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+              <folding>
+                <element signature="method#addType#0;class#CompetitionTypeController#0" />
+                <element signature="method#deleteCompetitionById#0;class#CompetitionTypeController#0" />
+                <element signature="method#updateCompetitionBy#0;class#CompetitionTypeController#0" />
+                <element signature="method#getCompetitionTypeById#0;class#CompetitionTypeController#0" />
+                <element signature="method#getCompetitionTypes#0;class#CompetitionTypeController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Competition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="228" column="18" selection-start-line="228" selection-start-column="18" selection-end-line="228" selection-end-column="18" />
+              <folding>
+                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="e#1100#1101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloudServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="36" column="81" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -136,47 +206,77 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>red</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response41.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/base/response/Response.java" />
-        <option value="$PROJECT_DIR$/common/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/eureka/src/main/java/ac/iie/eureka/EurekaApplication.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/PermissionController.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/eureka/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/PermissionController.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/base/BaseService.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/PermissionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/RoleMapper.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/PermissionMapper.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/Controller.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/PermissionManagerApplication.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer1.yml" />
-        <option value="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer2.yml" />
-        <option value="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/SpringCloud/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/pom.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/UserService.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/RedisConfigProp.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/RedisConfiguration.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/redis.config.properties" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/ServerApplicationTests.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/DataService.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/ServerApplication.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/DataMapper.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/impl/DataServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mybatis-generator/mybatis-generator.xml" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/DataMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/UserCompetitionServiceTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/User.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserMapperTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/VersionAnswersService.java" />
+        <option value="$PROJECT_DIR$/server/doc/ReadMe.md" />
+        <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/SendHttpRequest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/ICloudService.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/META-INF/additional-spring-configuration-metadata.json" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/TaskConfig.java" />
+        <option value="$PROJECT_DIR$/server/doc/work.md" />
+        <option value="$PROJECT_DIR$/server/doc/permission.md" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/BaseService.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImli.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/SystemConfig.java" />
+        <option value="$PROJECT_DIR$/server/pom.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/DataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Contants.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/Test.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" />
       </list>
     </option>
   </component>
@@ -189,15 +289,41 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="I:/tools/maven/repository" />
-        <option name="mavenHome" value="I:/tools/apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="I:/tools/maven/settings.xml" />
+        <option name="localRepository" value="J:\maven\repository" />
+        <option name="mavenHome" value="F:/program files/apache-maven-3.3.9-bin/apache-maven-3.3.9" />
+        <option name="userSettingsFile" value="J:\maven\settings.xml" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -208,495 +334,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="y" value="1" />
-    <option name="width" value="1378" />
-    <option name="height" value="773" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>AOP</id>
-          </State>
-          <State>
-            <id>Abstraction issuesJava</id>
-          </State>
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Accessibility</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Correctness</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Internationalization</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Internationalization &gt; Bidirectional Text</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Performance</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Security</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Usability</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Usability &gt; Typography</id>
-          </State>
-          <State>
-            <id>Android Lint for Kotlin</id>
-          </State>
-          <State>
-            <id>Ant inspections</id>
-          </State>
-          <State>
-            <id>Application Server Specific Inspections</id>
-          </State>
-          <State>
-            <id>ArquillianJava</id>
-          </State>
-          <State>
-            <id>Assignment issuesJava</id>
-          </State>
-          <State>
-            <id>Assignment issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Bitwise operation issuesJava</id>
-          </State>
-          <State>
-            <id>Bitwise operation issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CDI(Contexts and Dependency Injection) issues</id>
-          </State>
-          <State>
-            <id>CSS</id>
-          </State>
-          <State>
-            <id>Class metricsJava</id>
-          </State>
-          <State>
-            <id>Class structureJava</id>
-          </State>
-          <State>
-            <id>Cloning issuesJava</id>
-          </State>
-          <State>
-            <id>Code StyleScala</id>
-          </State>
-          <State>
-            <id>Code maturity issuesJava</id>
-          </State>
-          <State>
-            <id>Code style issuesJava</id>
-          </State>
-          <State>
-            <id>Code style issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CodeSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>CoffeeScript</id>
-          </State>
-          <State>
-            <id>CollectionsScala</id>
-          </State>
-          <State>
-            <id>Compiler issuesJava</id>
-          </State>
-          <State>
-            <id>Control flow issuesGroovy</id>
-          </State>
-          <State>
-            <id>Control flow issuesJava</id>
-          </State>
-          <State>
-            <id>Control flow issuesJavaScript</id>
-          </State>
-          <State>
-            <id>DOM issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Data flow issuesJava</id>
-          </State>
-          <State>
-            <id>Data flow issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Declaration redundancyJava</id>
-          </State>
-          <State>
-            <id>Dependency issuesJava</id>
-          </State>
-          <State>
-            <id>ECMAScript 6 migration aidsJavaScript</id>
-          </State>
-          <State>
-            <id>Encapsulation issuesJava</id>
-          </State>
-          <State>
-            <id>Error handlingJava</id>
-          </State>
-          <State>
-            <id>Error handlingJavaScript</id>
-          </State>
-          <State>
-            <id>Faces Model</id>
-          </State>
-          <State>
-            <id>Finalization issuesJava</id>
-          </State>
-          <State>
-            <id>FlexUnit inspections</id>
-          </State>
-          <State>
-            <id>Flow type checkerJavaScript</id>
-          </State>
-          <State>
-            <id>General</id>
-          </State>
-          <State>
-            <id>GeneralJava</id>
-          </State>
-          <State>
-            <id>GeneralJavaScript</id>
-          </State>
-          <State>
-            <id>GeneralScala</id>
-          </State>
-          <State>
-            <id>Google Web Toolkit issues</id>
-          </State>
-          <State>
-            <id>Gradle</id>
-          </State>
-          <State>
-            <id>GrailsGroovy</id>
-          </State>
-          <State>
-            <id>Groovy</id>
-          </State>
-          <State>
-            <id>Guice Inspections</id>
-          </State>
-          <State>
-            <id>HTML</id>
-          </State>
-          <State>
-            <id>Hibernate Issues</id>
-          </State>
-          <State>
-            <id>ImportsJava</id>
-          </State>
-          <State>
-            <id>Inheritance issuesJava</id>
-          </State>
-          <State>
-            <id>Initialization issuesJava</id>
-          </State>
-          <State>
-            <id>Internationalization issues</id>
-          </State>
-          <State>
-            <id>Internationalization issuesJava</id>
-          </State>
-          <State>
-            <id>Invalid elementsCSS</id>
-          </State>
-          <State>
-            <id>J2ME issuesJava</id>
-          </State>
-          <State>
-            <id>JBoss Seam issues</id>
-          </State>
-          <State>
-            <id>JPA issues</id>
-          </State>
-          <State>
-            <id>JSP Inspections</id>
-          </State>
-          <State>
-            <id>JUnit issuesJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java 5Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java 7Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java 8Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java EE issues</id>
-          </State>
-          <State>
-            <id>Java interop issuesKotlin</id>
-          </State>
-          <State>
-            <id>Java language level issuesJava</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>JavaBeans issuesJava</id>
-          </State>
-          <State>
-            <id>JavaFX</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript function metricsJavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript validity issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Javadoc issuesJava</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>Kotlin Android</id>
-          </State>
-          <State>
-            <id>Less</id>
-          </State>
-          <State>
-            <id>Logging issuesJava</id>
-          </State>
-          <State>
-            <id>Manifest</id>
-          </State>
-          <State>
-            <id>Maven</id>
-          </State>
-          <State>
-            <id>Memory issuesJava</id>
-          </State>
-          <State>
-            <id>Method metricsGroovy</id>
-          </State>
-          <State>
-            <id>Method metricsJava</id>
-          </State>
-          <State>
-            <id>Method signatureScala</id>
-          </State>
-          <State>
-            <id>Modularization issuesJava</id>
-          </State>
-          <State>
-            <id>Naming conventionsGroovy</id>
-          </State>
-          <State>
-            <id>Naming conventionsJava</id>
-          </State>
-          <State>
-            <id>Naming conventionsJavaScript</id>
-          </State>
-          <State>
-            <id>Naming conventionsKotlin</id>
-          </State>
-          <State>
-            <id>Numeric issuesJava</id>
-          </State>
-          <State>
-            <id>OSGi</id>
-          </State>
-          <State>
-            <id>Other problemsKotlin</id>
-          </State>
-          <State>
-            <id>OtherCollectionsScala</id>
-          </State>
-          <State>
-            <id>Packaging issuesJava</id>
-          </State>
-          <State>
-            <id>Pattern Validation</id>
-          </State>
-          <State>
-            <id>Performance issuesJava</id>
-          </State>
-          <State>
-            <id>Play</id>
-          </State>
-          <State>
-            <id>Plugin DevKit</id>
-          </State>
-          <State>
-            <id>Portability issuesJava</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsCSS</id>
-          </State>
-          <State>
-            <id>Probable bugsCoffeeScript</id>
-          </State>
-          <State>
-            <id>Probable bugsGradle</id>
-          </State>
-          <State>
-            <id>Probable bugsGroovy</id>
-          </State>
-          <State>
-            <id>Probable bugsJava</id>
-          </State>
-          <State>
-            <id>Probable bugsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsKotlin</id>
-          </State>
-          <State>
-            <id>Properties Files</id>
-          </State>
-          <State>
-            <id>Properties FilesJava</id>
-          </State>
-          <State>
-            <id>RESTful Web Service</id>
-          </State>
-          <State>
-            <id>Redundant constructsKotlin</id>
-          </State>
-          <State>
-            <id>Reflective access issuesJava</id>
-          </State>
-          <State>
-            <id>SQL</id>
-          </State>
-          <State>
-            <id>Sass/SCSS</id>
-          </State>
-          <State>
-            <id>Scala</id>
-          </State>
-          <State>
-            <id>Scala/Akka</id>
-          </State>
-          <State>
-            <id>Security issuesJava</id>
-          </State>
-          <State>
-            <id>Serialization issuesJava</id>
-          </State>
-          <State>
-            <id>SetupSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>Simplifications: otherCollectionsScala</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring AOPSpring</id>
-          </State>
-          <State>
-            <id>Spring BootSpring</id>
-          </State>
-          <State>
-            <id>Spring CoreSpring</id>
-          </State>
-          <State>
-            <id>Spring Web ServicesSpring</id>
-          </State>
-          <State>
-            <id>Struts</id>
-          </State>
-          <State>
-            <id>Struts 1Struts</id>
-          </State>
-          <State>
-            <id>Style issuesKotlin</id>
-          </State>
-          <State>
-            <id>StyleGroovy</id>
-          </State>
-          <State>
-            <id>Syntactic SimplificationScala</id>
-          </State>
-          <State>
-            <id>TestNGJava</id>
-          </State>
-          <State>
-            <id>Threading issuesGroovy</id>
-          </State>
-          <State>
-            <id>Threading issuesJava</id>
-          </State>
-          <State>
-            <id>TypeScript</id>
-          </State>
-          <State>
-            <id>UI Form Problems</id>
-          </State>
-          <State>
-            <id>Visibility issuesJava</id>
-          </State>
-          <State>
-            <id>WebSocket issues</id>
-          </State>
-          <State>
-            <id>XML</id>
-          </State>
-          <State>
-            <id>XMLSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-          <State>
-            <id>XSLT</id>
-          </State>
-          <State>
-            <id>sbt</id>
-          </State>
-          <State>
-            <id>toString() issuesJava</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Android</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -704,8 +345,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -713,11 +355,179 @@
               <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
               <item name="data-range" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="ac" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="ac" type="462c0819:PsiDirectoryNode" />
+              <item name="iie" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="ac" type="462c0819:PsiDirectoryNode" />
+              <item name="iie" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -727,28 +537,507 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="test Restf&#9;ACTION&#9;WebServicesPlugin.CreateRESTClient&#10;test re&#9;ACTION&#9;WebServicesPlugin.CreateRESTClient&#10;maven&#9;ACTION&#9;ActivateMavenProjectsToolWindow&#10;mav&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/演示文稿1.zip" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ac.iie.server.service" />
+      <recent name="ac.iie.server.dao" />
+      <recent name="ac.iie.server.service.impl" />
+      <recent name="ac.iie.server.api.base" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ac.iie.server" />
+      <recent name="ac.iie.server.api" />
+      <recent name="ac.iie.server.service.impl" />
+      <recent name="ac.iie.server.service" />
       <recent name="ac.iie.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\work\workspacei\data-range\server\doc" />
+      <recent name="I:\work\workspacei\data-range\common\src\main\java\ac\iie\common\utils" />
+      <recent name="I:\work\workspacei\data-range\server" />
       <recent name="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources" />
       <recent name="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ac.iie.server.api.base" />
+      <recent name="ac.iie.server.service.impl" />
+      <recent name="ac.iie.server.service" />
+      <recent name="ac.iie.server.api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\work\workspacei\data-range\doc" />
     </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/data/upload" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="comName" />
+                <option name="value" value="演示文稿1.zip" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="MetaFile" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;users&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: 1000,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/演示文稿1.zip" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/data/upload" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="comName" />
+                <option name="value" value="演示文稿1.zip" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;users&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: 1000,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/演示文稿1.zip" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="comName" />
+                <option name="value" value="演示文稿1.zip" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;users&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: 1000,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="$USER_HOME$/Desktop/演示文稿1.zip" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;users&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: 1000,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;users&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: &quot;sds&quot;,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;5bf61c3b93cd11e88121201a0633876d&quot;,   &quot;bonus&quot;: &quot;sds&quot;,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;title&quot;: &quot;test competition&quot;,   &quot;description&quot;: &quot;test &quot;,   &quot;data_desc&quot;: &quot;test data&quot;,   &quot;is_include_media&quot;: true,   &quot;data_url&quot;: &quot;/sdss&quot;,   &quot;program_url&quot;: &quot;sdss&quot;,   &quot;type&quot;: 0,   &quot;publish_time&quot;: &quot;&quot;,   &quot;update_time&quot;: &quot;&quot;,   &quot;logo_url&quot;: &quot;&quot;,   &quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],   &quot;end_time&quot;: &quot;&quot;,   &quot;content&quot;: &quot;sdsds&quot;,   &quot;type_id&quot;: &quot;&quot;,   &quot;bonus&quot;: &quot;sds&quot;,   &quot;score_items&quot;: &quot;dsd&quot;,   &quot;key_data_map&quot;: &quot;ds&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &#9;&quot;title&quot;: &quot;test&quot;, &#9;&quot;description&quot;: &quot;hello&quot;, &#9;&quot;data_desc&quot;: &quot;数据集&quot;, &#9;&quot;is_include_media&quot;: true, &#9;&quot;data_url&quot;: &quot;/sdss&quot;, &#9;&quot;program_url&quot;: &quot;/ddd.zip&quot;, &#9;&quot;type&quot;: &quot;0&quot;, &#9;&quot;publish_time&quot;: &quot;&quot;, &#9;&quot;update_time&quot;: &quot;&quot;, &#9;&quot;join_num&quot;: &quot;&quot;, &#9;&quot;status&quot;: &quot;&quot;, &#9;&quot;logo_url&quot;: &quot;sdsds&quot;, &#9;&quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;], &#9;&quot;end_time&quot;: &quot;&quot;, &#9;&quot;content&quot;: &quot;dfdf&quot;, &#9;&quot;type_id&quot;: &quot;1&quot;, &#9;&quot;bonus&quot;: 10000, &#9;&quot;score_items&quot;: &quot;dddf&quot;, &#9;&quot;key_data_map&quot;: &quot;sdsd&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &#9;&quot;title&quot;: &quot;test&quot;, &#9;&quot;description&quot;: &quot;hello&quot;, &#9;&quot;data_desc&quot;: &quot;数据集&quot;, &#9;&quot;is_include_media&quot;: true, &#9;&quot;data_url&quot;: &quot;/sdss&quot;, &#9;&quot;program_url&quot;: &quot;/ddd.zip&quot;, &#9;&quot;type&quot;: &quot;0&quot;, &#9;&quot;publish_time&quot;: &quot;&quot;, &#9;&quot;update_time&quot;: &quot;&quot;, &#9;&quot;join_num&quot;: &quot;&quot;, &#9;&quot;status&quot;: &quot;&quot;, &#9;&quot;logo_url&quot;: &quot;sdsds&quot;, &#9;&quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;], &#9;&quot;end_time&quot;: &quot;&quot;, &#9;&quot;content&quot;: &quot;dfdf&quot;, &#9;&quot;type_id&quot;: &quot;1&quot;, &#9;&quot;bonus&quot;: 10000, &#9;&quot;score_items&quot;: &quot;[&quot;&quot;:]&quot;, &#9;&quot;key_data_map&quot;: &quot;sdsd&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &#9;&quot;title&quot;: &quot;test&quot;, &#9;&quot;description&quot;: &quot;hello&quot;, &#9;&quot;data_desc&quot;: &quot;数据集&quot;, &#9;&quot;is_include_media&quot;: true, &#9;&quot;data_url&quot;: &quot;/sdss&quot;, &#9;&quot;program_url&quot;: &quot;/ddd.zip&quot;, &#9;&quot;type&quot;: &quot;0&quot;, &#9;&quot;publish_time&quot;: &quot;&quot;, &#9;&quot;update_time&quot;: &quot;&quot;, &#9;&quot;join_num&quot;: &quot;&quot;, &#9;&quot;status&quot;: &quot;&quot;, &#9;&quot;logo_url&quot;: &quot;sdsds&quot;, &#9;&quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;], &#9;&quot;end_time&quot;: &quot;&quot;, &#9;&quot;content&quot;: &quot;dfdf&quot;, &#9;&quot;type_id&quot;: &quot;1&quot;, &#9;&quot;bonus&quot;: 10000, &#9;&quot;score_items&quot;: &quot;[&quot;&quot;:]&quot;, &#9;&quot;key_data_map&quot;: &quot;sdsd&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &#9;&quot;title&quot;: &quot;test&quot;, &#9;&quot;description&quot;: &quot;hello&quot;, &#9;&quot;data_desc&quot;: &quot;数据集&quot;, &#9;&quot;is_include_media&quot;: true, &#9;&quot;data_url&quot;: &quot;/sdss&quot;, &#9;&quot;program_url&quot;: &quot;/ddd.zip&quot;, &#9;&quot;type&quot;: &quot;0&quot;, &#9;&quot;publish_time&quot;: &quot;&quot;, &#9;&quot;update_time&quot;: &quot;&quot;, &#9;&quot;join_num&quot;: &quot;&quot;, &#9;&quot;status&quot;: &quot;&quot;, &#9;&quot;logo_url&quot;: &quot;sdsds&quot;, &#9;&quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;], &#9;&quot;end_time&quot;: &quot;&quot;, &#9;&quot;content&quot;: &quot;dfdf&quot;, &#9;&quot;type_id&quot;: &quot;1&quot;, &#9;&quot;bonus&quot;: 10000, &#9;&quot;score_items&quot;: &quot;[&quot;&quot;:]&quot;, &#9;&quot;key_data_map&quot;: &quot;sdsd&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competitione/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &#9;&quot;title&quot;: &quot;test&quot;, &#9;&quot;description&quot;: &quot;hello&quot;, &#9;&quot;data_desc&quot;: &quot;数据集&quot;, &#9;&quot;is_include_media&quot;: true, &#9;&quot;data_url&quot;: &quot;/sdss&quot;, &#9;&quot;program_url&quot;: &quot;/ddd.zip&quot;, &#9;&quot;type&quot;: &quot;0&quot;, &#9;&quot;publish_time&quot;: &quot;&quot;, &#9;&quot;update_time&quot;: &quot;&quot;, &#9;&quot;join_num&quot;: &quot;&quot;, &#9;&quot;status&quot;: &quot;&quot;, &#9;&quot;logo_url&quot;: &quot;sdsds&quot;, &#9;&quot;user_ids&quot;: [&quot;1&quot;,&quot;2&quot;], &#9;&quot;end_time&quot;: &quot;&quot;, &#9;&quot;content&quot;: &quot;dfdf&quot;, &#9;&quot;type_id&quot;: &quot;1&quot;, &#9;&quot;bonus&quot;: 10000, &#9;&quot;score_items&quot;: &quot;[&quot;&quot;:]&quot;, &#9;&quot;key_data_map&quot;: &quot;sdsd&quot; } " />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="2" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api/competition-type/list" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/api" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="pageNum" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="pageSize" />
+                <option name="value" value="10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:12345" />
@@ -816,12 +1105,115 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PermissionManagerApplication">
+  <component name="RunManager" selected="Application.Test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.Test" />
+      <module name="server" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.iie.server.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="CompetitionMapperTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.iie.server.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ac.iie.server.dao" />
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.CompetitionMapperTest" />
+      <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="CompetitionTypeServiceTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.iie.server.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ac.iie.server.service" />
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.service.CompetitionTypeServiceTest" />
+      <option name="METHOD_NAME" value="query" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserCompetitionServiceTest.joinCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.iie.server.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ac.iie.server.service" />
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.service.UserCompetitionServiceTest" />
+      <option name="METHOD_NAME" value="joinCompetition" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserMapperTest.selectUserCompetitions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.iie.server.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ac.iie.server.dao" />
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="selectUserCompetitions" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -904,7 +1296,21 @@
       <item itemvalue="Spring Boot.PermissionManagerApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="JUnit.UserMapperTest.selectUserCompetitions" />
+      <item itemvalue="JUnit.CompetitionMapperTest.insert" />
+      <item itemvalue="JUnit.UserCompetitionServiceTest.joinCompetition" />
+      <item itemvalue="JUnit.CompetitionTypeServiceTest.query" />
+      <item itemvalue="Application.Test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.UserMapperTest.selectUserCompetitions" />
+        <item itemvalue="JUnit.CompetitionTypeServiceTest.query" />
+        <item itemvalue="JUnit.UserCompetitionServiceTest.joinCompetition" />
+        <item itemvalue="JUnit.CompetitionMapperTest.insert" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -928,6 +1334,26 @@
       <workItem from="1532077261307" duration="2796000" />
       <workItem from="1532080883953" duration="34000" />
       <workItem from="1532911184256" duration="462000" />
+      <workItem from="1532913851202" duration="10386000" />
+      <workItem from="1532932352217" duration="12454000" />
+      <workItem from="1532996972015" duration="14025000" />
+      <workItem from="1533058726006" duration="5836000" />
+      <workItem from="1533074887992" duration="3957000" />
+      <workItem from="1533081298312" duration="6237000" />
+      <workItem from="1533172031804" duration="8011000" />
+      <workItem from="1533193195098" duration="3573000" />
+      <workItem from="1533257933369" duration="16970000" />
+      <workItem from="1533516971856" duration="14765000" />
+      <workItem from="1533603894500" duration="3344000" />
+      <workItem from="1533608814597" duration="10346000" />
+      <workItem from="1533634712309" duration="1389000" />
+      <workItem from="1533692382540" duration="18712000" />
+      <workItem from="1533778570808" duration="19238000" />
+      <workItem from="1533862934474" duration="20882000" />
+      <workItem from="1534124072505" duration="5285000" />
+      <workItem from="1534140334861" duration="12142000" />
+      <workItem from="1534208437754" duration="19877000" />
+      <workItem from="1534296254261" duration="25354000" />
     </task>
     <task id="LOCAL-00001" summary="框架搭建完毕">
       <created>1531909610905</created>
@@ -964,76 +1390,208 @@
       <option name="project" value="LOCAL" />
       <updated>1531967869875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'master' of https://github.com/xiaoyu156/data-range&#10;&#10;# Conflicts:&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml&#10;#&#9;.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_1_6_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_ipc_reactor_netty_0_7_8_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_core_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_spring_webflux_5_0_7_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml&#10;#&#9;.idea/workspace.xml">
+      <created>1532912469429</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532912469429</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge branch 'master' of https://github.com/xiaoyu156/data-range&#10;&#10;# Conflicts:&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml&#10;#&#9;.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_1_6_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_ipc_reactor_netty_0_7_8_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_core_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_spring_webflux_5_0_7_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml&#10;#&#9;.idea/workspace.xml">
+      <created>1532933106189</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1532933106189</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加全局pom">
+      <created>1532933670129</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1532933670130</updated>
+    </task>
+    <task id="LOCAL-00009" summary="业务接口开发">
+      <created>1533083891115</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533083891115</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改">
+      <created>1533549750770</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533549750770</updated>
+    </task>
+    <task id="LOCAL-00011" summary="比赛接口">
+      <created>1533549828211</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533549828211</updated>
+    </task>
+    <task id="LOCAL-00012" summary="数据集异步处理逻辑实现">
+      <created>1533635920260</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1533635920260</updated>
+    </task>
+    <task id="LOCAL-00013" summary="数据集处理流程">
+      <created>1533894956400</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1533894956400</updated>
+    </task>
+    <task id="LOCAL-00014" summary="项目整理">
+      <created>1534154830229</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1534154830229</updated>
+    </task>
+    <task id="LOCAL-00015" summary="项目梳理">
+      <created>1534154857267</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1534154857267</updated>
+    </task>
+    <task id="LOCAL-00016" summary="文档完善，后台整理">
+      <created>1534241877061</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1534241877061</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 21m 46s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 24m 47s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 31m 34s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 35m 20s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 36m 50s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 40m 50s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 42m 44s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.10 at 16h 46m 42s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.14 at 09h 27m 33s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserMapperTest_selectUserCompetitions - 2018.08.14 at 09h 28m 59s.xml">
+      <configuration name="UserMapperTest.selectUserCompetitions" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34455000" />
+    <option name="totallyTimeSpent" value="268759000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="1" width="1378" height="773" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5200286" side_tool="true" weight="0.32904884" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.3297568" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50341684" side_tool="true" weight="0.51419556" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.12708019" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3290469" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.46056783" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3503876" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32868218" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.47997138" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" weight="0.59125966" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4828326" weight="0.32904884" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2613803" />
+      <window_info anchor="bottom" id="REST Client" order="7" sideWeight="0.49713877" weight="0.59534883" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.47997138" weight="0.31472868" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49658313" weight="0.51007754" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32868218" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48215643" weight="0.5968992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" weight="0.59125966" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5200286" side_tool="true" weight="0.32904884" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25985402" />
-      <window_info anchor="bottom" id="Jindent" order="7" weight="0.32904884" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4828326" weight="0.32904884" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.3297568" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.47997138" weight="0.32904884" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="REST Client" order="7" sideWeight="0.49713877" weight="0.32904884" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32904884" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.6561514" />
+      <window_info anchor="bottom" id="Jindent" order="7" visible="true" weight="0.14003044" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="REST Client" order="8" sideWeight="0.49713877" weight="0.59534883" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49658313" visible="true" weight="0.51007754" />
+      <window_info anchor="bottom" id="Spring" order="9" weight="0.32868218" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Jindent" order="10" visible="true" weight="0.14003044" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48215643" weight="0.5968992" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.6561514" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50341684" side_tool="true" weight="0.51419556" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3503876" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.46056783" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32868218" />
+      <window_info anchor="bottom" id="Database Changes" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.47997138" weight="0.31472868" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.12708019" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3290469" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1071,126 +1629,403 @@
     <MESSAGE value="框架搭建完毕" />
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/master'&#10;&#10;# Conflicts:&#10;#&#9;common/pom.xml&#10;#&#9;common/src/main/java/ac/iie/common/response/Response.java&#10;#&#9;common/src/main/java/ac/iie/common/response/ReturnCode.java&#10;#&#9;common/src/main/java/ac/iie/common/utils/Response.java&#10;#&#9;common/src/main/java/ac/iie/common/utils/ReturnCode.java&#10;#&#9;server/src/main/java/ac/iie/server/base/response/Response.java&#10;#&#9;server/src/main/java/ac/iie/server/base/response/ReturnCode.java" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;common/pom.xml&#10;#&#9;common/src/main/java/ac/iie/common/response/Response.java&#10;#&#9;common/src/main/java/ac/iie/common/utils/Response.java&#10;#&#9;server/src/main/java/ac/iie/server/base/response/Response.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;common/pom.xml&#10;#&#9;common/src/main/java/ac/iie/common/response/Response.java&#10;#&#9;common/src/main/java/ac/iie/common/utils/Response.java&#10;#&#9;server/src/main/java/ac/iie/server/base/response/Response.java" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/xiaoyu156/data-range&#10;&#10;# Conflicts:&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml&#10;#&#9;.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml&#10;#&#9;.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_25_Final.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_1_6_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__io_projectreactor_ipc_reactor_netty_0_7_8_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_3_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_core_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_2_0_0_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_springframework_spring_webflux_5_0_7_RELEASE.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml&#10;#&#9;.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="添加全局pom" />
+    <MESSAGE value="业务接口开发" />
+    <MESSAGE value="修改" />
+    <MESSAGE value="比赛接口" />
+    <MESSAGE value="数据集异步处理逻辑实现" />
+    <MESSAGE value="数据集处理流程" />
+    <MESSAGE value="项目整理" />
+    <MESSAGE value="项目梳理" />
+    <MESSAGE value="文档完善，后台整理" />
+    <option name="LAST_COMMIT_MESSAGE" value="文档完善，后台整理" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/DataMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="325">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/util/RedisUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="46" column="15" lean-forward="true" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/ReturnCode.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/VersionAnswers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="-162">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/UserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/UserMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/UserMapper.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="-108">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/base/BaseService.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="66" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="9" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/UserCompetitionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/VersionAnswersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/WEB-INF/classes/cn/iie/icm/action/ActionIndex.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/ReadMe.md">
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/UUIDFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-661">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/ICloudService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/META-INF/additional-spring-configuration-metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1309">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/TaskConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/doc/ReadMe.md" />
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/CompetitionTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/doc/work.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="945">
+            <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/generatorConfig.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/eureka/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/gateway/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/RoleService.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/PermissionController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/BaseController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/RoleController.java" />
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/PermissionMapper.java" />
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer1.yml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application-peer2.yml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/eureka/src/main/resources/application.yml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/eureka/src/main/java/ac/iie/eureka/EurekaApplication.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/PermissionManagerApplication.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/application.yml" />
-    <entry file="jar://I:/tools/maven/repository/com/github/pagehelper/pagehelper/5.0.1/pagehelper-5.0.1.jar!/com/github/pagehelper/PageHelper.class" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/data-range.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/base/BaseService.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-730">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/ReturnCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/UserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources/mapping/UserMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/UserMapper.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/controller/PermissionController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/dao/RoleMapper.java" />
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4078">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/bean/Permission.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/PermissionService.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/RoleServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/SpringCloud/permission_manager/src/main/java/ac/iie/permission_manager/service/impl/PermissionServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/log/test.log">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/doc/permission.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="417">
+            <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/log4j2-test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/log/test.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/log4j2-dev.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/RedisConfigProp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/ServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/SendHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/IProcService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="19" column="4" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/SystemConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="933">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1969#1970#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/DataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-411">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Contants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/redis.config.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="135" column="1" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="36" column="81" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="228" column="18" selection-start-line="228" selection-start-column="18" selection-end-line="228" selection-end-column="18" />
+          <folding>
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="method#addType#0;class#CompetitionTypeController#0" />
+            <element signature="method#deleteCompetitionById#0;class#CompetitionTypeController#0" />
+            <element signature="method#updateCompetitionBy#0;class#CompetitionTypeController#0" />
+            <element signature="method#getCompetitionTypeById#0;class#CompetitionTypeController#0" />
+            <element signature="method#getCompetitionTypes#0;class#CompetitionTypeController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding>
+            <element signature="method#updateCompetition#0;class#CompetitionController#0" />
+            <element signature="method#getCompetitions#0;class#CompetitionController#0" />
+            <element signature="method#getCompetition#0;class#CompetitionController#0" />
+            <element signature="method#joinCompetion#0;class#CompetitionController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="278" column="48" lean-forward="true" selection-start-line="277" selection-start-column="11" selection-end-line="278" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1661">
+          <caret line="102" column="25" lean-forward="true" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
@@ -1255,6 +2090,18 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
@@ -1268,5 +2115,8 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
   </component>
 </project>

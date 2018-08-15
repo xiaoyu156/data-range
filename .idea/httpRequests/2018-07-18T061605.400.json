@@ -1,7 +1,0 @@
-{
-  "timestamp": "2018-07-18T10:16:05.846+0000",
-  "status": 400,
-  "error": "Bad Request",
-  "message": "Required int parameter 'pageNum' is not present",
-  "path": "/user/list"
-}

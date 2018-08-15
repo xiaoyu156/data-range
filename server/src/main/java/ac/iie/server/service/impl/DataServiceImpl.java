@@ -6,6 +6,7 @@ import ac.iie.server.dao.*;
 import ac.iie.server.domain.Competition;
 import ac.iie.server.domain.Data;
 import ac.iie.server.service.DataService;
+import ac.iie.server.service.ICloudService;
 import ac.iie.server.service.IProcService;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -34,8 +35,10 @@ import java.util.Map;
 @Service(value = "dataService")
 public class DataServiceImpl extends BaseService implements DataService {
 
-    public DataServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper) {
-        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper);
+
+
+    public DataServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper, SystemConfig systemConfig, RedisTemplate redisTemplate) {
+        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper, systemConfig, redisTemplate);
     }
 
     /**

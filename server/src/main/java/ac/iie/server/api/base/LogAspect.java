@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 @Slf4j
 public class LogAspect {
-
     /**
      * @Description: 切入点定义
      * @param:
@@ -72,6 +71,10 @@ public class LogAspect {
      */
     @AfterReturning(returning = "obj", pointcut = "accessPoint()")
     public void doAfterReturning(Object obj) {
-        log.info("response={}", obj.toString());
+        if (obj == null) {
+            log.info("没有返回值");
+        } else {
+            log.info("response:" + obj.toString());
+        }
     }
 }

@@ -1,11 +1,13 @@
 package ac.iie.server.service.impl;
 
+import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.CompetitionType;
 import ac.iie.server.service.CompetitionTypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +15,10 @@ import java.util.List;
 @Slf4j
 @Service
 public class CompetitionTypeServiceImpl extends BaseService implements CompetitionTypeService {
-    public CompetitionTypeServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper) {
-        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper);
+
+
+    public CompetitionTypeServiceImpl(CompetitionMapper competitionMapper, CompetitionTypeMapper competitionTypeMapper, DataMapper dataMapper, UserCompetitionMapper userCompetitionMapper, VersionAnswersMapper versionAnswersMapper, SystemConfig systemConfig, RedisTemplate redisTemplate) {
+        super(competitionMapper, competitionTypeMapper, dataMapper, userCompetitionMapper, versionAnswersMapper, systemConfig, redisTemplate);
     }
 
     @Override

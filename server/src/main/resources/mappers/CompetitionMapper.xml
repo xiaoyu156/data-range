@@ -21,6 +21,8 @@
         <result column="score_items" jdbcType="VARCHAR" property="scoreItems"/>
         <result column="key_data_map" jdbcType="VARCHAR" property="keyDataMap"/>
         <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+        <result column="run_command" jdbcType="LONGVARCHAR" property="runCommand"/>
+        <result column="status_msg" jdbcType="LONGVARCHAR" property="status_msg"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete from t_competition
@@ -35,7 +37,7 @@
         `type`, publish_time, update_time,
         join_num, `status`, logo_url,
         end_time, type_id, bonus,
-        score_items, key_data_map, content
+        score_items, key_data_map, content, run_command,status_msg
         )
         values (#{id,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
         #{dataDesc,jdbcType=VARCHAR},
@@ -43,7 +45,8 @@
         #{type,jdbcType=INTEGER}, #{publishTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
         #{joinNum,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{logoUrl,jdbcType=VARCHAR},
         #{endTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=VARCHAR}, #{bonus,jdbcType=INTEGER},
-        #{scoreItems,jdbcType=VARCHAR}, #{keyDataMap,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+        #{scoreItems,jdbcType=VARCHAR}, #{keyDataMap,jdbcType=VARCHAR},
+        #{content,jdbcType=LONGVARCHAR},#{runCommand,jdbcType=LONGVARCHAR},#{statusMsg,jdbcType=LONGVARCHAR}
         )
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Competition">
@@ -65,7 +68,9 @@
             bonus            = #{bonus,jdbcType=INTEGER},
             score_items      = #{scoreItems,jdbcType=VARCHAR},
             key_data_map     = #{keyDataMap,jdbcType=VARCHAR},
-            content          = #{content,jdbcType=LONGVARCHAR}
+            content          = #{content,jdbcType=LONGVARCHAR},
+            run_command      = #{runCommand,jdbcType=VARCHAR},
+            status_msg      = #{status,jdbcType=VARCHAR}
         where id = #{id,jdbcType=VARCHAR}
     </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -88,7 +93,8 @@
             bonus,
             score_items,
             key_data_map,
-            content
+            content,
+            run_command
         from t_competition
         where id = #{id,jdbcType=VARCHAR}
     </select>
@@ -112,7 +118,8 @@
             bonus,
             score_items,
             key_data_map,
-            content
+            content,
+            run_command
         from t_competition
     </select>
 
@@ -136,9 +143,9 @@
         from t_competition
         where status = {#status,jdbcType = INTEGER}
     </select>
-    <!--<update id="updateCompetitionStatus" parameterType="">-->
-    <!--update `t_competition`-->
-    <!--set `status` = #{status,jdbcType=INTEGER}-->
-    <!--where `id` = #{id,jdbcType=VARCHAR}-->
-    <!--</update>-->
+    <update id="updateCompetitionStatus">
+    update `t_competition`
+    set `status` = #{status,jdbcType=INTEGER},`status_msg`= #{statusMsg,jdbcType=VARCHAR}
+    where `id` = #{id,jdbcType=VARCHAR}
+    </update>
 </mapper>

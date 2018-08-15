@@ -2,13 +2,13 @@ package ac.iie.server.api;
 
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
+import ac.iie.server.api.base.Contants;
 import ac.iie.server.api.verifier.CompetitionVFier;
+import ac.iie.server.config.SystemConfig;
 import ac.iie.server.domain.Competition;
+import ac.iie.server.domain.UserCompetition;
 import ac.iie.server.domain.VersionAnswers;
-import ac.iie.server.service.CompetitionService;
-import ac.iie.server.service.CompetitionTypeService;
-import ac.iie.server.service.UserCompetitionService;
-import ac.iie.server.service.VersionAnswersService;
+import ac.iie.server.service.*;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
@@ -26,8 +26,10 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class UserAnswerController extends BaseController<Competition> {
 
-    public UserAnswerController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService, versionAnswersService);
+    private static Gson gson = new Gson();
+
+    public UserAnswerController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig, ICloudService cloudService) {
+        super(competitionTypeService, competitionService, userCompetitionService, versionAnswersService, systemConfig, cloudService);
     }
 
     /**
@@ -81,6 +83,25 @@ public class UserAnswerController extends BaseController<Competition> {
             return Response.databaseError("用户答案提交失败");
         }
 
+    }
+
+    /**
+     * @Description:
+     * @param:
+     * @return:
+     * @date: 2018-8-15 18:01
+     */
+    private boolean createDetetion(VersionAnswers versionAnswers) {
+        try {
+            String results = cloudService.cloudService("", Contants.CLOUD_CREATE_DETE, Contants.POST_INTERFACE);
+            JsonObject jsonObject = gson.fromJson(results, JsonObject.class);
+            log.info("***************创建评测任务云平台返回结果：" + results);
+            return "ok".equals(jsonObject.get("status").getAsString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("调用云平台创建测评服务失败：");
+            return false;
+        }
     }
 
 }

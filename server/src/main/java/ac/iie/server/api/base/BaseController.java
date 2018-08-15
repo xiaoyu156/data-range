@@ -3,14 +3,13 @@ package ac.iie.server.api.base;
 import ac.iie.common.utils.FileUtil;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.config.SystemConfig;
-import ac.iie.server.service.CompetitionService;
-import ac.iie.server.service.UserCompetitionService;
-import ac.iie.server.service.VersionAnswersService;
+import ac.iie.server.service.*;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ac.iie.server.service.CompetitionTypeService;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
@@ -30,24 +29,28 @@ public abstract class BaseController<T> {
     public UserCompetitionService userCompetitionService;
     public VersionAnswersService versionAnswersService;
     public SystemConfig systemConfig;
+    public ICloudService cloudService;
 
     @Autowired
-    public BaseController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig) {
+    public BaseController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig, ICloudService cloudService) {
         this.competitionTypeService = competitionTypeService;
         this.competitionService = competitionService;
         this.userCompetitionService = userCompetitionService;
         this.versionAnswersService = versionAnswersService;
         this.systemConfig = systemConfig;
+        this.cloudService = cloudService;
     }
 
-    protected boolean saveFile(CommonsMultipartFile file, String url, String path) {
+
+    protected boolean saveFile(MultipartFile file, String url, String path) {
         boolean flag;
         try {
             byte[] getData = file.getBytes();
             FileUtil.createDir(path);
-            File localFile = new File(url);
-            @Cleanup OutputStreamWriter ow = new OutputStreamWriter(new FileOutputStream(localFile), "utf-8");
-            ow.write(new String(getData));
+            FileUtils.writeByteArrayToFile(new File(url), getData);
+//            File localFile = new File(url);
+//            @Cleanup OutputStreamWriter ow = new OutputStreamWriter(new FileOutputStream(localFile));
+//            ow.write(new String(getData));
             flag = true;
             log.info("=====================保存数据成功：" + url);
         } catch (Exception e) {

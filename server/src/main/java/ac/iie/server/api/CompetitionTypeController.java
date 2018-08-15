@@ -6,9 +6,8 @@ import java.util.Map;
 
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.verifier.CompetitionVFier;
-import ac.iie.server.service.CompetitionService;
-import ac.iie.server.service.UserCompetitionService;
-import ac.iie.server.service.VersionAnswersService;
+import ac.iie.server.config.SystemConfig;
+import ac.iie.server.service.*;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import ac.iie.common.utils.Response;
 import ac.iie.server.domain.CompetitionType;
-import ac.iie.server.service.CompetitionTypeService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,8 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CompetitionTypeController extends BaseController {
 
 
-    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, CompetitionVFier competitionVFier, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService) {
-        super(competitionTypeService, competitionService, competitionVFier, userCompetitionService, versionAnswersService);
+    public CompetitionTypeController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig, ICloudService cloudService) {
+        super(competitionTypeService, competitionService, userCompetitionService, versionAnswersService, systemConfig, cloudService);
     }
 
     /**

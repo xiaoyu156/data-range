@@ -47,4 +47,13 @@ public interface Contants {
     String POST_INTERFACE = "POST";
     String GET_INTERFACE = "GET";
 
+    /**
+     * 云平台接口key
+     */
+    String CLOUD_CREATE_EVA = "createEvaluation";
+    String CLOUD_QUERY_EVA = "queryEvaluation";
+    String CLOUD_CREATE_DETE = "createDetection";
+    String CLOUD_QUERY_DETE = "queryDetection";
+    String CLOUD_UPLOAD_RESULT = "/result_file/upload";
+
 }

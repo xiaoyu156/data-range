@@ -23,6 +23,10 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    servlet:
+      multipart:
+        max-file-size: 1024Mb
+        max-request-size: 1024Mb
 
 mybatis:
   mapper-locations: classpath:mappers/*.xml
@@ -45,11 +49,10 @@ yaml:
    logoUrl: "logo"
    dataUrl: "data"
    programUrl: "program"
-   userAnswerResult: "userAnswerResult"
-   userAnswerResult: "userAnswerEngine"
+   userAnswerResultUrl: "userAnswerResult"
+   userAnswerEngineUrl: "userAnswerEngine"
    cloudTarget: "localhost:8080"
-   cloudService: {"createEvaluation":"/evaluating/create/evaluating/create","queryEvaluation":"/evaluating/query",
-   "createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
+   cloudService: {"createEvaluation":"/evaluating/create/evaluating/create","queryEvaluation":"/evaluating/query","createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
 
 
 

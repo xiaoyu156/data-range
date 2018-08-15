@@ -43,6 +43,24 @@ public class Competition implements Serializable {
 
     private String content;
 
+    private String runCommand;
+
+    public Boolean getIncludeMedia() {
+        return isIncludeMedia;
+    }
+
+    public void setIncludeMedia(Boolean includeMedia) {
+        isIncludeMedia = includeMedia;
+    }
+
+    public String getRunCommand() {
+        return runCommand;
+    }
+
+    public void setRunCommand(String runCommand) {
+        this.runCommand = runCommand;
+    }
+
     private List<User> users;
 
     public List<User> getUsers() {
@@ -209,31 +227,28 @@ public class Competition implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", title=").append(title);
-        sb.append(", description=").append(description);
-        sb.append(", dataDesc=").append(dataDesc);
-        sb.append(", isIncludeMedia=").append(isIncludeMedia);
-        sb.append(", dataUrl=").append(dataUrl);
-        sb.append(", programUrl=").append(programUrl);
-        sb.append(", type=").append(type);
-        sb.append(", publishTime=").append(publishTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", joinNum=").append(joinNum);
-        sb.append(", status=").append(status);
-        sb.append(", logoUrl=").append(logoUrl);
-        sb.append(", endTime=").append(endTime);
-        sb.append(", typeId=").append(typeId);
-        sb.append(", bonus=").append(bonus);
-        sb.append(", scoreItems=").append(scoreItems);
-        sb.append(", keyDataMap=").append(keyDataMap);
-        sb.append(", content=").append(content);
-        sb.append(",users").append(users);
-        sb.append("]");
-        return sb.toString();
+        return "Competition{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", dataDesc='" + dataDesc + '\'' +
+                ", isIncludeMedia=" + isIncludeMedia +
+                ", dataUrl='" + dataUrl + '\'' +
+                ", programUrl='" + programUrl + '\'' +
+                ", type=" + type +
+                ", publishTime=" + publishTime +
+                ", updateTime=" + updateTime +
+                ", joinNum=" + joinNum +
+                ", status=" + status +
+                ", logoUrl='" + logoUrl + '\'' +
+                ", endTime=" + endTime +
+                ", typeId='" + typeId + '\'' +
+                ", bonus=" + bonus +
+                ", scoreItems='" + scoreItems + '\'' +
+                ", keyDataMap='" + keyDataMap + '\'' +
+                ", content='" + content + '\'' +
+                ", runCommand='" + runCommand + '\'' +
+                ", users=" + users +
+                '}';
     }
 }

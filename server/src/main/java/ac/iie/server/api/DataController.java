@@ -58,7 +58,7 @@ public class DataController extends BaseController<Competition> {
         if (StringUtils.isBlank(comName) || StringUtils.isBlank(comName)) {
             return Response.paramError("comName不合法，请检查！");
         }
-        String path = this.getAbsolutePath(type, comName);
+        String path = this.getAbsolutePath(type, comName,null,null);
         String url = path + File.separator + file.getOriginalFilename();
         boolean flag = this.saveFile(file, url, path);
         if (flag) {

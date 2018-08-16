@@ -14,6 +14,9 @@ import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 /**
  * @Description: 参赛者答案接口
@@ -30,6 +33,37 @@ public class UserAnswerController extends BaseController<Competition> {
 
     public UserAnswerController(CompetitionTypeService competitionTypeService, CompetitionService competitionService, UserCompetitionService userCompetitionService, VersionAnswersService versionAnswersService, SystemConfig systemConfig, ICloudService cloudService) {
         super(competitionTypeService, competitionService, userCompetitionService, versionAnswersService, systemConfig, cloudService);
+    }
+
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public Response dataUpload(@RequestParam("MetaFile") MultipartFile file, int type, String comName, String userid, String version) {
+        if (type < Contants.COMMON_PATTERN || type > Contants.TARGET_PATTERN) {
+            return Response.paramError("type不合法，请检查！");
+        }
+        if (StringUtils.isBlank(comName) || StringUtils.isBlank(comName)) {
+            return Response.paramError("comName不合法，请检查！");
+        }
+        if (StringUtils.isBlank(userid) || StringUtils.isBlank(userid)) {
+            return Response.paramError("userId不合法，请检查！");
+        }
+        if (StringUtils.isBlank(version) || StringUtils.isBlank(version)) {
+            return Response.paramError("version不合法，请检查！");
+        }
+        int fileType;
+        if (type == 0) {
+            fileType = Contants.FILE_USER_ANSWER_RESULT;
+        } else {
+            fileType = Contants.FILE_USER_ANSWER_ENGINE;
+        }
+        String path = this.getAbsolutePath(fileType, comName, userid, version);
+        String url = path + File.separator + file.getOriginalFilename();
+        boolean flag = this.saveFile(file, url, path);
+        if (flag) {
+            return Response.operateSucessAndHaveData(url);
+        } else {
+            return Response.databaseError("文件上传失败！");
+        }
     }
 
     /**
@@ -82,7 +116,6 @@ public class UserAnswerController extends BaseController<Competition> {
         } else {
             return Response.databaseError("用户答案提交失败");
         }
-
     }
 
     /**
@@ -91,7 +124,8 @@ public class UserAnswerController extends BaseController<Competition> {
      * @return:
      * @date: 2018-8-15 18:01
      */
-    private boolean createDetetion(VersionAnswers versionAnswers) {
+    private boolean answerCommitCloud(VersionAnswers versionAnswers, int type) {
+
         try {
             String results = cloudService.cloudService("", Contants.CLOUD_CREATE_DETE, Contants.POST_INTERFACE);
             JsonObject jsonObject = gson.fromJson(results, JsonObject.class);
@@ -102,6 +136,39 @@ public class UserAnswerController extends BaseController<Competition> {
             log.error("调用云平台创建测评服务失败：");
             return false;
         }
+    }
+
+    private String gnerateJson(VersionAnswers versionAnswers, int type) {
+        JsonObject result = new JsonObject();
+        if (type == Contants.COMMON_PATTERN) {
+//            projectID:’77aac21’
+//            projectName:   test //项目名称（英文）
+//            type: 0/1  //0：大赛模式，1：靶场模式
+//            imageUrl：192.168.11.51/img/test.tar  //镜像文件下载地址
+//            resource: 1/2/3/4  //1： (2核，4G)，2：（4核，8G），3：（8核，16G），4：（16核，24G）
+//            requestAddress: /evaluating/test  //测评服务地址
+//            runCommand：start.sh  //启动脚本
+//            serviceVersion：1   //服务版本
+            result.addProperty("projectID", versionAnswers.getId());
+            result.addProperty("projectName", "");
+            result.addProperty("imageUrl", versionAnswers.getResultUrl());
+            result.addProperty("type", type);
+            result.addProperty("resource", versionAnswers.getResource());
+            result.addProperty("requestAddress", "");
+            result.addProperty("runCommand", versionAnswers.getRunCommand());
+            result.addProperty("serviceVersion", versionAnswers.getVersion());
+        }
+        if (type == Contants.TARGET_PATTERN) {
+//            projectID:’77aac21’
+//            projectName: test  //项目名称（英文）
+//            teamName:   test //团队名称（英文）
+//            version：1   //任务版本
+            result.addProperty("projectID", versionAnswers.getId());
+            result.addProperty("teamName", "");
+            result.addProperty("Url", versionAnswers.getResultUrl());
+            result.addProperty("version", versionAnswers.getVersion());
+        }
+        return result.toString();
     }
 
 }

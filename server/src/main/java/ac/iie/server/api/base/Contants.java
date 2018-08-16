@@ -3,6 +3,12 @@ package ac.iie.server.api.base;
 public interface Contants {
 
     /**
+     * 比赛模式0:普通比赛模式，1：
+     */
+    int COMMON_PATTERN = 0;
+    int TARGET_PATTERN = 1;
+
+    /**
      * 文件上传类型
      */
     int FILE_LOGO = 1;

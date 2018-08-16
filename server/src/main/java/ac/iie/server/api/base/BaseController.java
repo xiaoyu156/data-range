@@ -60,7 +60,7 @@ public abstract class BaseController<T> {
         return flag;
     }
 
-    protected String getAbsolutePath(int type, String comName) {
+    protected String getAbsolutePath(int type, String comName, String userId, String version) {
         String filePath = systemConfig.getBaseUrl() + File.separator + comName;
         if (type == Contants.FILE_DATA) {
             filePath = filePath + File.separator + systemConfig.getZipDataUrl();
@@ -70,6 +70,12 @@ public abstract class BaseController<T> {
         }
         if (type == Contants.FILE_PROGRAM) {
             filePath = filePath + File.separator + systemConfig.getProgramUrl();
+        }
+        if (type == Contants.FILE_USER_ANSWER_RESULT) {
+            filePath = filePath + File.separator + systemConfig.getUserAnswerResultUrl() + File.separator + userId + File.separator + version;
+        }
+        if (type == Contants.FILE_USER_ANSWER_RESULT) {
+            filePath = filePath + File.separator + systemConfig.getUserAnswerEngineUrl() + File.separator + userId + File.separator + version;
         }
         return filePath;
     }

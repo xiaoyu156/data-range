@@ -32,6 +32,46 @@ public class VersionAnswers implements Serializable {
 
     private Double score5;
 
+    private Integer type;
+
+    private String imageUrl;
+
+    private String userId;
+
+    private String userName;
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public String getId() {
@@ -148,26 +188,25 @@ public class VersionAnswers implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", userCompId=").append(userCompId);
-        sb.append(", version=").append(version);
-        sb.append(", resultUrl=").append(resultUrl);
-        sb.append(", uploadTime=").append(uploadTime);
-        sb.append(", status=").append(status);
-        sb.append(", detail=").append(detail);
-        sb.append(", resource=").append(resource);
-        sb.append(", runCommand=").append(runCommand);
-        sb.append(", score1=").append(score1);
-        sb.append(", score2=").append(score2);
-        sb.append(", score3=").append(score3);
-        sb.append(", score4=").append(score4);
-        sb.append(", score5=").append(score5);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return "VersionAnswers{" +
+                "id='" + id + '\'' +
+                ", userCompId='" + userCompId + '\'' +
+                ", version='" + version + '\'' +
+                ", resultUrl='" + resultUrl + '\'' +
+                ", uploadTime=" + uploadTime +
+                ", status=" + status +
+                ", detail='" + detail + '\'' +
+                ", resource=" + resource +
+                ", runCommand='" + runCommand + '\'' +
+                ", score1=" + score1 +
+                ", score2=" + score2 +
+                ", score3=" + score3 +
+                ", score4=" + score4 +
+                ", score5=" + score5 +
+                ", type=" + type +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }

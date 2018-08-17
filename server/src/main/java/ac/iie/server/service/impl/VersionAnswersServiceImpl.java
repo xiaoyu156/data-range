@@ -7,6 +7,8 @@ import ac.iie.server.service.VersionAnswersService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @Description: 用户答案
  * @Author: wangxiaoyua
@@ -36,6 +38,11 @@ public class VersionAnswersServiceImpl extends BaseService implements VersionAns
             return false;
         }
         return num > 0;
+    }
+
+    @Override
+    public List<VersionAnswers> getUserAnswerByUserCompId(String userCompId) {
+        return versionAnswersMapper.selectAllByUserComp(userCompId);
     }
 
 }

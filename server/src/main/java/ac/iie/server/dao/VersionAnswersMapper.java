@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Mapper
 @Repository
 public interface VersionAnswersMapper {
@@ -17,4 +18,6 @@ public interface VersionAnswersMapper {
     List<VersionAnswers> selectAll();
 
     int updateByPrimaryKey(VersionAnswers record);
+
+    List<VersionAnswers> selectAllByUserComp(String userComp);
 }

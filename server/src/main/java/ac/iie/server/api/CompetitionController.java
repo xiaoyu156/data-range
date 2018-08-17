@@ -2,6 +2,7 @@ package ac.iie.server.api;
 
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
+import ac.iie.server.api.base.Constant;
 import ac.iie.server.api.verifier.CompetitionVFier;
 import ac.iie.server.config.SystemConfig;
 import ac.iie.server.domain.Competition;
@@ -55,7 +56,7 @@ public class CompetitionController extends BaseController<Competition> {
         }
 
         JsonObject paramsObj = gson.fromJson(param, JsonObject.class);
-        if (paramsObj.isJsonNull() ||! paramsObj.isJsonObject()) {
+        if (paramsObj.isJsonNull() || !paramsObj.isJsonObject()) {
             return Response.paramError("非json格式入参，请检查");
         }
         //**************************************************必填参数校验************************************************
@@ -140,6 +141,9 @@ public class CompetitionController extends BaseController<Competition> {
         if (paramsObj.get("bonus") != null) {
             competition.setBonus(paramsObj.get("bonus").getAsInt());
         }
+
+        competition.setStatus(Constant.COMPETITION_DATA_CHECK);
+        competition.setStatusMsg(Constant.COMPETITION_DATA_CHECK_MSG);
         //************************************************业务调用与控制************************************************
         try {
             competitionService.createCompetition(competition, userList);
@@ -361,5 +365,19 @@ public class CompetitionController extends BaseController<Competition> {
         return Response.operateSucessNoData();
     }
 
+    /**
+     * @Description: 用户参赛办赛记录
+     * @param:
+     * @return:
+     * @date: 2018-8-17 16:55
+     */
+    @GetMapping(value = "/{userId}/user-competition")
+    @ResponseBody
+    public Response getUserComepetitions(@PathVariable String userId) {
+        UserCompetition userCompetition = new UserCompetition();
+        userCompetition.setUserId(userId);
+        List<UserCompetition> userCompetitions = userCompetitionService.selectByUid(userCompetition);
+        return Response.operateSucessAndHaveData(userCompetitions);
+    }
 
 }

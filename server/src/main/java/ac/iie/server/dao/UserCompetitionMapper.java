@@ -20,4 +20,6 @@ public interface UserCompetitionMapper {
     int updateByPrimaryKey(UserCompetition record);
 
     List<UserCompetition> selectByUidAndComId(UserCompetition userCompetition);
+
+    List<UserCompetition> selectByUid(UserCompetition userCompetition);
 }

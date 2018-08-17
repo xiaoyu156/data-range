@@ -40,6 +40,16 @@ public class VersionAnswers implements Serializable {
 
     private String userName;
 
+    private String statusMsg;
+
+    public String getStatusMsg() {
+        return statusMsg;
+    }
+
+    public void setStatusMsg(String statusMsg) {
+        this.statusMsg = statusMsg;
+    }
+
     public Integer getType() {
         return type;
     }
@@ -207,6 +217,7 @@ public class VersionAnswers implements Serializable {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", userId='" + userId + '\'' +
                 ", userName='" + userName + '\'' +
+                ", statusMsg='" + statusMsg + '\'' +
                 '}';
     }
 }

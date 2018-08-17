@@ -1,3 +1,15 @@
+GET http://localhost:8080/api/competition/5512ee609b6b11e8a4b3201a0633876d/user-competition
+
+--null
+
+
+< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
+--null--
+
+<> 2018-08-17T051021.200.json
+
+###
+
 POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip&name=MetaFile
 Content-Type: application/json
 
@@ -517,14 +529,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2018-08-14T102341.200.json
-
-###
-
-GET http://localhost:8080/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition?type=0&pageNum=1&pageSize=1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-08-14T102248.200.json
 
 ###
 

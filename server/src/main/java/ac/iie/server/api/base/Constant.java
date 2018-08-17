@@ -1,6 +1,12 @@
 package ac.iie.server.api.base;
 
-public interface Contants {
+/**
+ * @Description: java类作用描述
+ * @Author: wangxiaoyua
+ * @CreateDate: 2018-8-17 10:22
+ * @version: 1.0.0
+ */
+public interface Constant {
 
     /**
      * 比赛模式0:普通比赛模式，1：
@@ -46,6 +52,18 @@ public interface Contants {
     //6:已删除，默认0
     int COMPETITION_DELETE = 6;
     String COMPETITION_DELETE_MSG = "比赛已经删除";
+
+
+    /**
+     * 用户答案版本状态,及描述,创建检测任务失败，检测中，检测完成
+     */
+    int ANSWER_CREATE_DETE_FAILED = 1;
+    String ANSWER_CREATE_DETE_FAILED_MSG = "创建检测任务失败";
+    int ANSWER_DATECTING = 2;
+    String ANSWER_DETECTING_MSG = "检测中";
+    int ANSWER_DATECTED = 3;
+    String ANSWER_DATECTED_MSG = "检测完成";
+
 
     /**
      * 接口类型

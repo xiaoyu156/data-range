@@ -1,7 +1,7 @@
 package ac.iie.server.service.impl;
 
 import ac.iie.common.utils.SendHttpRequest;
-import ac.iie.server.api.base.Contants;
+import ac.iie.server.api.base.Constant;
 import ac.iie.server.config.SystemConfig;
 import ac.iie.server.service.ICloudService;
 import lombok.extern.slf4j.Slf4j;
@@ -39,10 +39,10 @@ public class CloudServiceImpl implements ICloudService {
         判断接口调用类型,返回结果
          */
         String result = null;
-        if (Contants.POST_INTERFACE.equals(type)) {
+        if (Constant.POST_INTERFACE.equals(type)) {
             result = SendHttpRequest.sendPost(url, param);
         }
-        if (Contants.GET_INTERFACE.equals(type)) {
+        if (Constant.GET_INTERFACE.equals(type)) {
             result = SendHttpRequest.sendGet(url, param);
         }
         return result;

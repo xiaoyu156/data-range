@@ -1,19 +1,10 @@
 package ac.iie.server.service.impl;
 
-import ac.iie.common.utils.FileUtil;
-import ac.iie.server.api.base.Contants;
 import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
-import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.AutomapConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 
 /**
  * @Description:

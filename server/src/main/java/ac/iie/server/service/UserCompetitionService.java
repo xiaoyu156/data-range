@@ -12,4 +12,6 @@ public interface UserCompetitionService {
     boolean joinCompetition(UserCompetition userCompetition);
 
     boolean isJoined(UserCompetition userCompetition);
+
+    List<UserCompetition> selectByUid(UserCompetition userCompetition);
 }

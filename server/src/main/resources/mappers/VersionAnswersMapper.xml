@@ -20,6 +20,7 @@
         <result column="user_id" jdbcType="INTEGER" property="userId"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
+        <result column="status_msg" jdbcType="VARCHAR" property="status_msg"/>
 
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
@@ -34,7 +35,7 @@
         upload_time, `status`, detail,
         `resource`, run_command, score_1,
         score_2, score_3, score_4,
-        score_5,`type`,image_url,user_id,user_name)
+        score_5,`type`,image_url,user_id,user_name,status_msg)
         values (#{userCompId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{resultUrl,jdbcType=VARCHAR},
         #{uploadTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR},
         #{resource,jdbcType=INTEGER}, #{runCommand,jdbcType=VARCHAR}, #{score1,jdbcType=DOUBLE},
@@ -56,18 +57,22 @@
       score_3 = #{score3,jdbcType=DOUBLE},
       score_4 = #{score4,jdbcType=DOUBLE},
       score_5 = #{score5,jdbcType=DOUBLE},
-      #{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR}
+      #{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR},,#{statusMsg,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
-    run_command, score_1, score_2, score_3, score_4, score_5
+    run_command, score_1, score_2, score_3, score_4, score_5,`type`,user_id,user_name,image_url,status_msg
     from t_version_answers
     where id = #{id,jdbcType=VARCHAR}
   </select>
     <select id="selectAll" resultMap="BaseResultMap">
     select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
-    run_command, score_1, score_2, score_3, score_4, score_5
+    run_command, score_1, score_2, score_3, score_4, score_5,`type`,user_id,user_name,image_url,status_msg
     from t_version_answers
+  </select>
+
+    <select id="selectAllByUserComp" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select * from t_version_answers where user_comp_id=#{userCompId,jdbcType=VARCHAR}
   </select>
 </mapper>

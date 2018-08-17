@@ -134,7 +134,15 @@
         <include refid="selectWhere"/>
     </select>
     <sql id="selectWhere">
-        <if test="conditions!=null">
+        <if test="conditions!=null and condition.ids!=null and condition.ids.size()!=0">
+            WHERE check_result.domain in (
+            <foreach item="ids" index="index" collection="condition.ids" separator=",">
+                #{ids}
+            </foreach>
+            )
+        </if>
+        <if test="conditions!=null and conditions.type!=null">
+            and `type`=#{type,jdbcType=INTEGER}
         </if>
     </sql>
 

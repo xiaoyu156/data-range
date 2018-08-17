@@ -9,6 +9,31 @@
         <result column="status" jdbcType="INTEGER" property="status"/>
         <result column="type" jdbcType="INTEGER" property="type"/>
     </resultMap>
+    <resultMap id="UserCompetitionResultMap" type="ac.iie.server.domain.UserCompetition" extends="BaseResultMap">
+        <association property="competition" javaType="ac.iie.server.domain.Competition">
+            <id column="id" jdbcType="VARCHAR" property="id"/>
+            <result column="title" jdbcType="VARCHAR" property="title"/>
+            <result column="description" jdbcType="VARCHAR" property="description"/>
+            <result column="data_desc" jdbcType="VARCHAR" property="dataDesc"/>
+            <result column="is_include_media" jdbcType="BIT" property="isIncludeMedia"/>
+            <result column="data_url" jdbcType="VARCHAR" property="dataUrl"/>
+            <result column="program_url" jdbcType="VARCHAR" property="programUrl"/>
+            <result column="type" jdbcType="INTEGER" property="type"/>
+            <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime"/>
+            <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+            <result column="join_num" jdbcType="INTEGER" property="joinNum"/>
+            <result column="status" jdbcType="INTEGER" property="status"/>
+            <result column="logo_url" jdbcType="VARCHAR" property="logoUrl"/>
+            <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+            <result column="type_id" jdbcType="VARCHAR" property="typeId"/>
+            <result column="bonus" jdbcType="INTEGER" property="bonus"/>
+            <result column="score_items" jdbcType="VARCHAR" property="scoreItems"/>
+            <result column="key_data_map" jdbcType="VARCHAR" property="keyDataMap"/>
+            <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+            <result column="run_command" jdbcType="LONGVARCHAR" property="runCommand"/>
+            <result column="status_msg" jdbcType="LONGVARCHAR" property="status_msg"/>
+        </association>
+    </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from t_user_competition
     where id = #{id,jdbcType=VARCHAR}
@@ -44,5 +69,15 @@
     select id, competition_id, user_id, create_time, `status`, `type`
     from t_user_competition
     where user_id = #{userId,jdbcType=VARCHAR} and  competition_id= #{competitionId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByUid" parameterType="ac.iie.server.domain.UserCompetition" resultMap="UserCompetitionResultMap">
+      select tc.*,t.* from t_user_competition as tc,t_competition as t
+      where tc.user_id=#{userId,jdbcType=VARCHAR} and tc.competition_id=t.id
+      <if test="type!=null">
+          and `type`=#{type,jdbcType=INTEGER}
+      </if>
+      <if test="status!=null">
+          and `status`=#{status,jdbcType=INTEGER}
+      </if>
   </select>
 </mapper>

@@ -1,7 +1,7 @@
 package ac.iie.server.service.impl;
 
 import ac.iie.common.utils.CompressUtil;
-import ac.iie.server.api.base.Contants;
+import ac.iie.server.api.base.Constant;
 import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.Competition;
@@ -60,7 +60,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
          */
         List<Competition> competitions;
         try {
-            competitions = competitionMapper.getCompetitonByStatus(1);
+            competitions = competitionMapper.getCompetitonByStatus(Constant.COMPETITION_DATA_CHECK);
         } catch (Exception e) {
             log.error("获取需要处理的比赛数据失败！");
             return;
@@ -100,7 +100,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
          */
         flag = compressData(dataZipUrl, path);
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Contants.COMPETITION_DATA_CHECK_FAILED, Contants.COMPETITION_DATA_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG);
             return false;
         }
 
@@ -111,15 +111,15 @@ public class ProcServiceImpl extends BaseService implements IProcService {
             flag = dealTextFile(competition, filePath);
         }
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Contants.COMPETITION_DATA_CHECK_FAILED, Contants.COMPETITION_DATA_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG);
             return false;
         }
         flag = createEvaluation(competition);
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Contants.COMPETITION_DATA_CHECK_FAILED, Contants.COMPETITION_PROGRAM_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_PROGRAM_CHECK_FAILED_MSG);
             return false;
         } else {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Contants.COMPETITION_CHECKING, Contants.COMPETITION_CHECKING_MSG);
+            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_CHECKING, Constant.COMPETITION_CHECKING_MSG);
         }
         return true;
     }
@@ -161,7 +161,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         try {
             @Cleanup InputStream inputStream = new FileInputStream(file);
             byte[] metaByte = new byte[1024];
-            int read = inputStream.read(metaByte);
+            inputStream.read(metaByte);
             descJson = new String(metaByte);
         } catch (Exception e) {
             e.printStackTrace();
@@ -270,7 +270,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         param.addProperty("serviceVersion", 1);
         param.addProperty("requestAddress", "/test/evalution");
         try {
-            String result = cloudService.cloudService("", Contants.CLOUD_CREATE_EVA, Contants.POST_INTERFACE);
+            String result = cloudService.cloudService("", Constant.CLOUD_CREATE_EVA, Constant.POST_INTERFACE);
             JsonObject jsonObject = gson.fromJson(result, JsonObject.class);
             log.info("***************创建测评服务云平台返回结果：" + result);
             return "ok".equals(jsonObject.get("status").getAsString());

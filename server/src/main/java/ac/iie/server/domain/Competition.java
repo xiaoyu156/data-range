@@ -45,6 +45,16 @@ public class Competition implements Serializable {
 
     private String runCommand;
 
+    private String statusMsg;
+
+    public String getStatusMsg() {
+        return statusMsg;
+    }
+
+    public void setStatusMsg(String statusMsg) {
+        this.statusMsg = statusMsg;
+    }
+
     public Boolean getIncludeMedia() {
         return isIncludeMedia;
     }
@@ -59,16 +69,6 @@ public class Competition implements Serializable {
 
     public void setRunCommand(String runCommand) {
         this.runCommand = runCommand;
-    }
-
-    private List<User> users;
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
     }
 
     private static final long serialVersionUID = 1L;
@@ -248,7 +248,7 @@ public class Competition implements Serializable {
                 ", keyDataMap='" + keyDataMap + '\'' +
                 ", content='" + content + '\'' +
                 ", runCommand='" + runCommand + '\'' +
-                ", users=" + users +
+                ", statusMsg='" + statusMsg +
                 '}';
     }
 }

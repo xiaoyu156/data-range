@@ -46,4 +46,9 @@ public class UserCompetitionServiceImpl extends BaseService implements UserCompe
     public boolean isJoined(UserCompetition userCompetition) {
         return userCompetitionMapper.selectByUidAndComId(userCompetition).size() != 0;
     }
+
+    @Override
+    public List<UserCompetition> selectByUid(UserCompetition userCompetition) {
+        return userCompetitionMapper.selectByUid(userCompetition);
+    }
 }

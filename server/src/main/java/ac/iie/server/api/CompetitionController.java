@@ -1,5 +1,6 @@
 package ac.iie.server.api;
 
+import ac.iie.common.utils.DateUtils;
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.base.Constant;
@@ -17,9 +18,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description: 比赛操作接口
@@ -45,7 +49,7 @@ public class CompetitionController extends BaseController<Competition> {
      */
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseBody
-    public Response createCompetition(@RequestBody String param) {
+    public Response createCompetition(@RequestBody String param, HttpServletResponse response) {
         Gson gson = new Gson();
         Competition competition = new Competition();
         /*
@@ -102,6 +106,17 @@ public class CompetitionController extends BaseController<Competition> {
         }
         competition.setTypeId(paramsObj.get("type_id").getAsString());
 
+        //比赛的起止日期
+        if (paramsObj.get("end_time") == null || StringUtils.isBlank(paramsObj.get("end_time").getAsString())) {
+            return Response.paramError("end_time为必填项");
+        }
+        try {
+            competition.setEndTime(DateUtils.formateDateTime(paramsObj.get("end_time").getAsString(), DateUtils.DATE_FORMATE_NORMAL));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.paramError("比赛截至时间获取错误");
+        }
+
         //比赛模式
         if (paramsObj.get("type") == null) {
             return Response.paramError("type为必填项");
@@ -116,6 +131,7 @@ public class CompetitionController extends BaseController<Competition> {
         List<String> userList = gson.fromJson(userObj.getAsJsonArray(), new TypeToken<List<String>>() {
         }.getType());
 
+
         //************************************************非必填参数校验************************************************
         //赛程描述
         if (paramsObj.get("description") != null) {
@@ -125,6 +141,11 @@ public class CompetitionController extends BaseController<Competition> {
         //数据集描述
         if (paramsObj.get("data_desc") != null) {
             competition.setDataDesc(paramsObj.get("data_desc").getAsString());
+        }
+
+        //数据集描述
+        if (paramsObj.get("run_command") != null) {
+            competition.setRunCommand(paramsObj.get("run_command").getAsString());
         }
 
         //是否包含多媒体默认为不包含
@@ -144,6 +165,8 @@ public class CompetitionController extends BaseController<Competition> {
 
         competition.setStatus(Constant.COMPETITION_DATA_CHECK);
         competition.setStatusMsg(Constant.COMPETITION_DATA_CHECK_MSG);
+
+        response.setHeader("Access-Control-Allow-Origin", "*");
         //************************************************业务调用与控制************************************************
         try {
             competitionService.createCompetition(competition, userList);
@@ -326,7 +349,7 @@ public class CompetitionController extends BaseController<Competition> {
      */
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     @ResponseBody
-    public Response joinCompetion(UserCompetition userCompetition) {
+    public Response joinCompetion(@RequestBody UserCompetition userCompetition) {
 
         if (userCompetition == null || StringUtils.isEmpty(userCompetition.getCompetitionId()) || StringUtils.isEmpty(userCompetition.getUserId())) {
             Response.paramError("用户或则比赛ID不能为空");

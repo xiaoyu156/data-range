@@ -14,20 +14,48 @@ import java.util.Map;
 @SpringBootTest
 public class ServerApplicationTests {
 
-	@Autowired
-	RedisTemplate redisTemplate;
-	@Test
-	public void contextLoads() {
-	}
+    @Autowired
+    RedisTemplate redisTemplate;
 
-	@Test
-	public void testRedisTemplate(){
-		Map<Integer,Object> map=new HashMap<>();
-		map.put(1,"sds");
-		map.put(2,"dfdfdfd");
-		redisTemplate.opsForHash().putAll("cccc",map);
-	    System.out.println(redisTemplate.opsForHash().get("cccc",1));
+    @Test
+    public void contextLoads() {
+    }
 
-	}
+    @Test
+    public void testRedisTemplate() {
+        System.out.println(redisTemplate.opsForHash().get("fe34183ca5ae11e88a8c00ffe63e4089", 1));
+    }
+
+
+    @Test
+    public void testCreateEva() {
+
+    }
+
+    @Test
+    public void testGetEvaStatus() {
+
+    }
+
+    @Test
+    public void testCreateDetection() {
+
+    }
+
+    @Test
+    public void testQueryDetection() {
+
+    }
+
+    @Test
+    public void testUploadResult() {
+
+    }
+
+    @Test
+    public void dd() {
+        String ss="J:\\work\\cloudtest\\zip_data\\testPro.zip";
+        System.out.println(ss.substring(ss.lastIndexOf("\\")+1,ss.indexOf(".",-1)));
+    }
 
 }

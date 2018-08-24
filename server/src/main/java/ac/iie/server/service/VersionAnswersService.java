@@ -7,4 +7,6 @@ import java.util.List;
 public interface VersionAnswersService {
     boolean commitAnswer(VersionAnswers versionAnswers);
     List<VersionAnswers> getUserAnswerByUserCompId(String userCompId );
+    int updateScore(VersionAnswers versionAnswers);
+
 }

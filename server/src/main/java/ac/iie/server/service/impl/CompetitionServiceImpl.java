@@ -55,12 +55,14 @@ public class CompetitionServiceImpl extends BaseService implements CompetitionSe
         /*
         创建关联关系
          */
-        if (StringUtils.isBlank(competition.getId())) {
+        if (!StringUtils.isBlank(competition.getId())) {
             users.forEach(user -> {
                 UserCompetition userCompetition = new UserCompetition();
                 userCompetition.setCompetitionId(competition.getId());
                 userCompetition.setStatus(0);
                 userCompetition.setType(0);
+                userCompetition.setUserId(user);
+                userCompetitionMapper.insert(userCompetition);
             });
         }
     }

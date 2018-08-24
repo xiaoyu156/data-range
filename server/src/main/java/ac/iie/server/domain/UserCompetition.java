@@ -2,7 +2,6 @@ package ac.iie.server.domain;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 public class UserCompetition implements Serializable {
     private String id;

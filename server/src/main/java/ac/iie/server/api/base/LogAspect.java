@@ -8,6 +8,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Description: 接口记录切面
@@ -60,6 +61,9 @@ public class LogAspect {
      */
     @After("accessPoint()")
     public void doAfter() {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletResponse response=attributes.getResponse();
+        response.setHeader("Access-Control-Allow-Origin","*");
         log.info("-----------------------------doAfter------------------------");
     }
 

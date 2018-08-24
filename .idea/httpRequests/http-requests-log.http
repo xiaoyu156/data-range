@@ -1,3 +1,336 @@
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": [     "5512ee609b6b11e8a4b3201a0633876d"   ],   "end_time": "2018-08-28 12:00:00",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "sdss" }
+
+<> 2018-08-24T022715.200.json
+
+###
+
+POST http://localhost:8080/api/competition
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": [     "5512ee609b6b11e8a4b3201a0633876d"   ],   "end_time": "2018-08-28 12:00:00",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "sdss" }
+
+<> 2018-08-24T022630.404.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "ss",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121","comp_id":"0b544566a5e511e88a8c00ffe63e4089","type":"0" }
+
+<> 2018-08-22T050545.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121","comp_id":"0b544566a5e511e88a8c00ffe63e4089","type":"0" }
+
+<> 2018-08-22T050529.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121","comp_id":"0b544566a5e511e88a8c00ffe63e4089" }
+
+<> 2018-08-22T050459.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T050352.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T050008.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T045850.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T045805.200.json
+
+###
+
+POST http://localhost:8080/api/answers/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T045653.400.json
+
+###
+
+POST http://localhost:8080/api/answer/
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T045639.404.json
+
+###
+
+POST http://localhost:8080/api/answer
+Content-Type: application/json
+
+{   "user_comp_id": "0f15eef8a5e711e88a8c00ffe63e4089",   "version": "1.0",   "image_url": "",   "upload_time": "",   "status": 0,   "detail": "",   "resource": "",   "run_command": "java -jar",   "user_id":"5512ee609b6b11e8a4b3201a06338762",   "user_name":"2121" }
+
+<> 2018-08-22T045603.404.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competitionId":"0b544566a5e511e88a8c00ffe63e4089", "userId":"5512ee609b6b11e8a4b3201a06338762", "type":1 }
+
+<> 2018-08-22T044030.200.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competitionId":"0b544566a5e511e88a8c00ffe63e4089", "userId":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043702.200.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competitionId":"0b544566a5e511e88a8c00ffe63e4089", "userId":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043507.500.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competitionId":"0b544566a5e511e88a8c00ffe63e4089", "userId":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043430.500.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competition_id":"0b544566a5e511e88a8c00ffe63e4089", "user_id":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043242.500.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competition_id":"0b544566a5e511e88a8c00ffe63e4089", "user_id":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043220.500.json
+
+###
+
+POST http://localhost:8080/api/competition/join
+Content-Type: application/json
+
+{   "competition_id":"0b544566a5e511e88a8c00ffe63e4089", "user_id":"5512ee609b6b11e8a4b3201a0633876d", "type":1 }
+
+<> 2018-08-22T043130.500.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042605.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042428.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042350.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042230-1.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042230.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042229.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042228.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042225.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042214-1.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T042214.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T041808.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T041641.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T041616.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T041326.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T095910.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "run_command": "java -jar",   "join_num": "",   "logo_url": "",   "users": ["5512ee609b6b11e8a4b3201a0633876d"],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T095429.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "update_time": "",   "join_num": "",   "logo_url": "",   "users": [“ssds”,”sds”],   "end_time": "",   "content": "sdsdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T095217.200.json
+
+###
+
+POST http://localhost:8080/api/competition/
+Content-Type: application/json
+
+{   "title": "cloudtest",   "description": "文本算法比赛",   "data_desc": "数据集",   "is_include_media": false,   "data_url": "J:\\work\\cloudtest\\zip_data\\testPro.zip",   "program_url": "J:\\work\\cloudtest\\program\\server2cloud_test-0.0.1-SNAPSHOT.tar",   "type": "1",   "publish_time": "",   "update_time": "",   "join_num": "",   "logo_url": "",   "users": [“ssds”,”sds”],   "end_time": "",   "content": "",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1  ,   "score_items": "ss",   "key_data_map": "s" }
+
+<> 2018-08-22T095150.200.json
+
+###
+
 GET http://localhost:8080/api/competition/5512ee609b6b11e8a4b3201a0633876d/user-competition
 
 --null
@@ -151,384 +484,6 @@ Content-Type: application/json
 --null--
 
 <> 2018-08-15T095225.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip&name=MetaFile
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip&name=MetaFile
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T095220.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip&name=MetaFile
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T095204.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094729.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094400.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094333.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094323.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094318.400.json
-
-###
-
-POST http://localhost:8080/api/data/upload?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094251.400.json
-
-###
-
-POST http://localhost:8080/api/competition/?type=1&comName=演示文稿1.zip
-Content-Type: application/json
-
---null
-
-
-< C:\Users\wangxiaoyu\Desktop\演示文稿1.zip
---null--
-
-<> 2018-08-15T094222.500.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "users": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": 1000,   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115928.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "users": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115823.500.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115710.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115608.500.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "5bf61c3b93cd11e88121201a0633876d",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115513.500.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115414.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115328.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115042.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115041.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115040.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{   "title": "test competition",   "description": "test ",   "data_desc": "test data",   "is_include_media": true,   "data_url": "/sdss",   "program_url": "sdss",   "type": 0,   "publish_time": "",   "update_time": "",   "logo_url": "",   "user_ids": ["1","2","3"],   "end_time": "",   "content": "sdsds",   "type_id": "",   "bonus": "sds",   "score_items": "dsd",   "key_data_map": "ds" }
-
-<> 2018-08-14T115030.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "dddf", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T114508.200.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: application/json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112948.500.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112916.415.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112857.415.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112818.415.json
-
-###
-
-POST http://localhost:8080/api/competition
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112753.404.json
-
-###
-
-POST http://localhost:8080/api/competition/
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112750.415.json
-
-###
-
-POST http://localhost:8080/api/competitione/
-Content-Type: json
-
-{ 	"title": "test", 	"description": "hello", 	"data_desc": "数据集", 	"is_include_media": true, 	"data_url": "/sdss", 	"program_url": "/ddd.zip", 	"type": "0", 	"publish_time": "", 	"update_time": "", 	"join_num": "", 	"status": "", 	"logo_url": "sdsds", 	"user_ids": ["1","2"], 	"end_time": "", 	"content": "dfdf", 	"type_id": "1", 	"bonus": 10000, 	"score_items": "["":]", 	"key_data_map": "sdsd" }
-
-<> 2018-08-14T112740.404.json
-
-###
-
-GET http://localhost:8080/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition?type=0&pageNum=2&pageSize=3
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-08-14T102620.200.json
-
-###
-
-GET http://localhost:8080/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition?type=0&pageNum=2&pageSize=3
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-08-14T102427.200.json
-
-###
-
-GET http://localhost:8080/api/competition-type/5bf61c3b93cd11e88121201a0633876d/competition?type=0&pageNum=1&pageSize=3
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-08-14T102341.200.json
 
 ###
 

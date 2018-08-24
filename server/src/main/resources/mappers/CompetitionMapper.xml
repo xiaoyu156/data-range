@@ -22,7 +22,8 @@
         <result column="key_data_map" jdbcType="VARCHAR" property="keyDataMap"/>
         <result column="content" jdbcType="LONGVARCHAR" property="content"/>
         <result column="run_command" jdbcType="LONGVARCHAR" property="runCommand"/>
-        <result column="status_msg" jdbcType="LONGVARCHAR" property="status_msg"/>
+        <result column="status_msg" jdbcType="LONGVARCHAR" property="statusMsg"/>
+        <result column="program_status" jdbcType="LONGVARCHAR" property="programStatus"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete from t_competition
@@ -37,7 +38,7 @@
         `type`, publish_time, update_time,
         join_num, `status`, logo_url,
         end_time, type_id, bonus,
-        score_items, key_data_map, content, run_command,status_msg
+        score_items, key_data_map, content, run_command,status_msg,program_status
         )
         values (#{id,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
         #{dataDesc,jdbcType=VARCHAR},
@@ -46,7 +47,8 @@
         #{joinNum,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{logoUrl,jdbcType=VARCHAR},
         #{endTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=VARCHAR}, #{bonus,jdbcType=INTEGER},
         #{scoreItems,jdbcType=VARCHAR}, #{keyDataMap,jdbcType=VARCHAR},
-        #{content,jdbcType=LONGVARCHAR},#{runCommand,jdbcType=LONGVARCHAR},#{statusMsg,jdbcType=LONGVARCHAR}
+        #{content,jdbcType=LONGVARCHAR},#{runCommand,jdbcType=LONGVARCHAR},#{statusMsg,jdbcType=LONGVARCHAR},
+        #{programStatus,jdbcType=LONGVARCHAR}
         )
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Competition">
@@ -70,7 +72,8 @@
             key_data_map     = #{keyDataMap,jdbcType=VARCHAR},
             content          = #{content,jdbcType=LONGVARCHAR},
             run_command      = #{runCommand,jdbcType=VARCHAR},
-            status_msg      = #{status,jdbcType=VARCHAR}
+            status_msg      = #{status,jdbcType=VARCHAR}.
+            program_status  =#{programStatus,jdbcType=LONGVARCHAR}
         where id = #{id,jdbcType=VARCHAR}
     </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -94,7 +97,8 @@
             score_items,
             key_data_map,
             content,
-            run_command
+            run_command,
+            program_status
         from t_competition
         where id = #{id,jdbcType=VARCHAR}
     </select>
@@ -119,7 +123,8 @@
             score_items,
             key_data_map,
             content,
-            run_command
+            run_command,
+            program_status
         from t_competition
     </select>
 
@@ -149,11 +154,23 @@
     <select id="getCompetitonByStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select *
         from t_competition
-        where status = {#status,jdbcType = INTEGER}
+        where status = #{status,jdbcType =INTEGER}
+    </select>
+
+    <select id="getCompetitonByProgramStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select *
+        from t_competition
+        where program_status = #{status,jdbcType =INTEGER}
     </select>
     <update id="updateCompetitionStatus">
-    update `t_competition`
-    set `status` = #{status,jdbcType=INTEGER},`status_msg`= #{statusMsg,jdbcType=VARCHAR}
-    where `id` = #{id,jdbcType=VARCHAR}
+        update `t_competition`
+        set `status` = #{param1,jdbcType=INTEGER},`status_msg`= #{param2,jdbcType=VARCHAR}
+        where `id` = #{param3,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateCompetitionProgramStatus">
+        update `t_competition`
+        set `program_status` = #{param1,jdbcType=INTEGER}
+        where `id` = #{param2,jdbcType=VARCHAR}
     </update>
 </mapper>

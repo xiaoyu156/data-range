@@ -45,4 +45,9 @@ public class VersionAnswersServiceImpl extends BaseService implements VersionAns
         return versionAnswersMapper.selectAllByUserComp(userCompId);
     }
 
+    @Override
+    public int updateScore(VersionAnswers versionAnswers) {
+        return versionAnswersMapper.updateScore(versionAnswers);
+    }
+
 }

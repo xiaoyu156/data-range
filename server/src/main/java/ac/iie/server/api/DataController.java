@@ -41,7 +41,7 @@ public class DataController extends BaseController<Competition> {
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public Response dataUpload(@RequestParam("MetaFile") MultipartFile file, int type, String comName) {
+    public Response dataUpload(@RequestParam("MetaFile") MultipartFile file, int type, String comName,HttpServletResponse response,HttpServletRequest request) {
         if (type < Constant.FILE_LOGO || type > Constant.FILE_USER_ANSWER_ENGINE) {
             return Response.paramError("type不合法，请检查！");
         }
@@ -50,6 +50,7 @@ public class DataController extends BaseController<Competition> {
         }
         String path = this.getAbsolutePath(type, comName,null,null);
         String url = path + File.separator + file.getOriginalFilename();
+        response.setHeader("Access-Control-Allow-Origin","*");
         boolean flag = this.saveFile(file, url, path);
         if (flag) {
             return Response.operateSucessAndHaveData(url);

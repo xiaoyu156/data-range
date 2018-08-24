@@ -1,11 +1,13 @@
 package ac.iie.server.service.impl;
 
 import ac.iie.common.utils.CompressUtil;
+import ac.iie.common.utils.UUIDFactory;
 import ac.iie.server.api.base.Constant;
 import ac.iie.server.config.SystemConfig;
 import ac.iie.server.dao.*;
 import ac.iie.server.domain.Competition;
 import ac.iie.server.domain.Data;
+import ac.iie.server.domain.VersionAnswers;
 import ac.iie.server.service.ICloudService;
 import ac.iie.server.service.IProcService;
 import com.google.gson.Gson;
@@ -69,8 +71,8 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         log.info("*****************本次任务获取[" + dealNum + "]个比赛任务进行处理***************");
         for (Competition competition : competitions) {
             log.info("********************开始处理[" + competition.getTitle() + "]比赛");
-            boolean flag = dealData(competition);
             try {
+                boolean flag = dealData(competition);
                 if (flag) {
                     log.info("*****************处理[" + competition.getTitle() + "}比赛成功，请联系管理员审核");
                 } else {
@@ -84,23 +86,132 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         }
     }
 
+    /**
+     * @Description: 实时检测测评程序的状态
+     * @param:
+     * @return:
+     * @date: 2018-8-22 15:33
+     */
     @Override
-    public void dealProgram() {
+    public void dealProgramStatus() {
+         /*
+        获取需要处理的比赛的评测程序
+         */
+        List<Competition> competitions;
+        try {
+            competitions = competitionMapper.getCompetitonByProgramStatus(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取需要处理的比赛评测程序数据失败！");
+            return;
+        }
+        int dealNum = competitions.size();
+        log.info("*****************本次任务获取[" + dealNum + "]个比赛评测程序任务进行处理***************");
+        if (dealNum > 0) {
+            Object param = generateGetEvaStatusJson(competitions);
 
+            String service = cloudService.cloudService(param.toString(), Constant.CLOUD_QUERY_EVA, Constant.POST_INTERFACE);
+            JsonObject jsonObject = gson.fromJson(service, JsonObject.class);
+            log.info(jsonObject.toString());
+            String flag = jsonObject.get("status").getAsString();
+            if ("ok".equalsIgnoreCase(flag)) {
+                log.info("*************************成功接收云平台返回的评测程序状态，开始处理返回结果********************");
+                JsonArray array = jsonObject.getAsJsonArray("message");
+                for (JsonElement element : array) {
+                    JsonObject object = element.getAsJsonObject();
+                    int serviceStatus = object.get("serviceStatus").getAsInt();
+                    String compId = object.get("projectID").getAsString();
+                    String serviceVersion = object.get("serviceVersion").getAsString();
+                    competitionMapper.updateCompetitionProgramStatus(serviceStatus, compId);
+                }
+
+            } else {
+                log.error("************************接收云平台返回测评程序状态异常****************************************");
+            }
+        }
     }
 
+    /**
+     * @Description: 实时检测检测程序状态
+     * @param:
+     * @return:
+     * @date: 2018-8-24 10:28
+     */
+    @Override
+    public void dealDetecStatus() {
+        List<VersionAnswers> versionAnswers = null;
+        try {
+            versionAnswers = versionAnswersMapper.selectAllByStatus(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取比赛用户检测程序核查状态");
+            return;
+        }
+        int dealNum = versionAnswers.size();
+
+        if (dealNum > 0) {
+            Object param = generateGetDetcStatus(versionAnswers);
+            String result = cloudService.cloudService(param.toString(), Constant.CLOUD_QUERY_DETE, Constant.POST_INTERFACE);
+            JsonObject jsonObject = gson.fromJson(result, JsonObject.class);
+
+            String flag = jsonObject.get("status").getAsString();
+            if ("ok".equals(flag)) {
+                log.info("*************************成功接收云平台返回的检测程序状态，开始处理返回结果********************");
+                JsonArray message = jsonObject.getAsJsonArray("message");
+                for (JsonElement jsonElement : message) {
+                    JsonObject temp = jsonElement.getAsJsonObject();
+                    int serviceStatus = temp.get("serviceStatus").getAsInt();
+                    String compId = temp.get("projectID").getAsString();
+                    String serviceVersion = temp.get("serviceVersion").getAsString();
+                    versionAnswersMapper.updateStatus(serviceStatus, compId, serviceVersion, "");
+                }
+            } else {
+                log.error("************************接收云平台返回的检测程序状态失败");
+            }
+
+        }
+    }
+
+    /**
+     * @Description: 生成获取检测程序运行状态json
+     * @param:
+     * @return:
+     * @date: 2018-8-22 17:40
+     */
+    private Object generateGetDetcStatus(List<VersionAnswers> versionAnswers) {
+        JsonObject param = new JsonObject();
+        JsonArray items = new JsonArray();
+        for (VersionAnswers versionAnswer : versionAnswers) {
+            JsonObject item = new JsonObject();
+            item.addProperty("projectID", versionAnswer.getCompId());
+            item.addProperty("projectName", versionAnswer.getCompName());
+            item.addProperty("teamName", versionAnswer.getUserName());
+            item.addProperty("serviceVersion", versionAnswer.getVersion());
+            items.add(item);
+        }
+        param.add("Items", items);
+        param.addProperty("ItemNum", items.size());
+        return param;
+    }
+
+    /**
+     * @Description: 处理数据集，调用创建测评程序
+     * @param:
+     * @return:
+     * @date: 2018-8-22 15:34
+     */
     private boolean dealData(Competition competition) {
         log.info("*******************开始处理数据集**************");
         boolean flag;
         String dataZipUrl = competition.getDataUrl();
-        String path = dataZipUrl.substring(0, dataZipUrl.indexOf("/", -2)) + File.separator + systemConfig.getDataUrl();
-        String filePath = dataZipUrl.substring(0, dataZipUrl.indexOf(".", -1)) + ".txt";
+        String path = systemConfig.getBaseUrl() + File.separator + competition.getTitle() + File.separator + systemConfig.getDataUrl();
+        String filePath = path + File.separator + dataZipUrl.substring(dataZipUrl.lastIndexOf("\\"), dataZipUrl.lastIndexOf(".")) + ".txt";
         /*
         类型标志，如果是true则是多媒体类型多媒体类型读取描述文件；如果是false则直接读取文本文件
          */
         flag = compressData(dataZipUrl, path);
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG, competition.getId());
             return false;
         }
 
@@ -111,15 +222,15 @@ public class ProcServiceImpl extends BaseService implements IProcService {
             flag = dealTextFile(competition, filePath);
         }
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_DATA_CHECK_FAILED_MSG, competition.getId());
             return false;
         }
         flag = createEvaluation(competition);
         if (!flag) {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_PROGRAM_CHECK_FAILED_MSG);
+            competitionMapper.updateCompetitionStatus(Constant.COMPETITION_DATA_CHECK_FAILED, Constant.COMPETITION_PROGRAM_CHECK_FAILED_MSG, competition.getId());
             return false;
         } else {
-            competitionMapper.updateCompetitionStatus(competition.getId(), Constant.COMPETITION_CHECKING, Constant.COMPETITION_CHECKING_MSG);
+            competitionMapper.updateCompetitionStatus(Constant.COMPETITION_CHECKING, Constant.COMPETITION_CHECKING_MSG, competition.getId());
         }
         return true;
     }
@@ -210,7 +321,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return true;
     }
 
     /**
@@ -260,20 +371,22 @@ public class ProcServiceImpl extends BaseService implements IProcService {
      * @return: boolean
      * @date: 2018-8-15 15:12
      */
-    private boolean createEvaluation(Competition competition) {
+    public boolean createEvaluation(Competition competition) {
         JsonObject param = new JsonObject();
         param.addProperty("projectID", competition.getId());
         param.addProperty("projectName", competition.getTitle());
         param.addProperty("imageUrl", competition.getProgramUrl());
         param.addProperty("type", competition.getType());
         param.addProperty("runCommand", competition.getRunCommand());
-        param.addProperty("serviceVersion", 1);
-        param.addProperty("requestAddress", "/test/evalution");
+        param.addProperty("serviceVersion", "3");
+        param.addProperty("resource",1);
+        param.addProperty("requestAddress", "8080/evaluating/request");
+        String ss=param.toString();
         try {
-            String result = cloudService.cloudService("", Constant.CLOUD_CREATE_EVA, Constant.POST_INTERFACE);
+            String result = cloudService.cloudService(ss, Constant.CLOUD_CREATE_EVA, Constant.POST_INTERFACE);
             JsonObject jsonObject = gson.fromJson(result, JsonObject.class);
             log.info("***************创建测评服务云平台返回结果：" + result);
-            return "ok".equals(jsonObject.get("status").getAsString());
+            return "OK".equalsIgnoreCase(jsonObject.get("status").getAsString());
         } catch (Exception e) {
             e.printStackTrace();
             log.error("调用云平台创建测评服务失败：" + param);
@@ -281,4 +394,32 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         }
     }
 
+    /**
+     * @Description: 生成获取测评程序的json文件
+     * @param:
+     * @return:
+     * @date: 2018-8-22 15:36
+     */
+    private Object generateGetEvaStatusJson(List<Competition> competitions) {
+
+        int itemNum = competitions.size();
+        JsonObject param = new JsonObject();
+        JsonArray items = new JsonArray();
+
+        for (Competition competition : competitions) {
+            JsonObject item = new JsonObject();
+            item.addProperty("projectID", competition.getId());
+            item.addProperty("projectName", competition.getTitle());
+            item.addProperty("serviceVersion", "3");
+            item.addProperty("type", competition.getType());
+            items.add(item);
+        }
+
+        param.add("Items", items);
+        param.addProperty("ItemNum", itemNum);
+
+        return param;
+    }
+
 }
+

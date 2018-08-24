@@ -11,17 +11,14 @@
         <result column="detail" jdbcType="VARCHAR" property="detail"/>
         <result column="resource" jdbcType="INTEGER" property="resource"/>
         <result column="run_command" jdbcType="VARCHAR" property="runCommand"/>
-        <result column="score_1" jdbcType="DOUBLE" property="score1"/>
-        <result column="score_2" jdbcType="DOUBLE" property="score2"/>
-        <result column="score_3" jdbcType="DOUBLE" property="score3"/>
-        <result column="score_4" jdbcType="DOUBLE" property="score4"/>
-        <result column="score_5" jdbcType="DOUBLE" property="score5"/>
+        <result column="score" jdbcType="VARCHAR" property="score"/>
         <result column="type" jdbcType="INTEGER" property="type"/>
         <result column="user_id" jdbcType="INTEGER" property="userId"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
         <result column="status_msg" jdbcType="VARCHAR" property="status_msg"/>
-
+        <result column="comp_id" jdbcType="VARCHAR" property="compId"/>
+        <result column="comp_name" jdbcType="VARCHAR" property="compName"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from t_version_answers
@@ -33,14 +30,12 @@
         </selectKey>
         insert into t_version_answers (user_comp_id, version, result_url,
         upload_time, `status`, detail,
-        `resource`, run_command, score_1,
-        score_2, score_3, score_4,
-        score_5,`type`,image_url,user_id,user_name,status_msg)
+        `resource`, run_command, score,
+        `type`,image_url,user_id,user_name,status_msg),`comp_id`
         values (#{userCompId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{resultUrl,jdbcType=VARCHAR},
         #{uploadTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR},
-        #{resource,jdbcType=INTEGER}, #{runCommand,jdbcType=VARCHAR}, #{score1,jdbcType=DOUBLE},
-        #{score2,jdbcType=DOUBLE}, #{score3,jdbcType=DOUBLE}, #{score4,jdbcType=DOUBLE},
-        #{score5,jdbcType=DOUBLE},#{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR})
+        #{resource,jdbcType=INTEGER}, #{runCommand,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR},
+        #{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR},#{compId,jdbcType=VARCHAR}))
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.VersionAnswers">
     update t_version_answers
@@ -52,27 +47,41 @@
       detail = #{detail,jdbcType=VARCHAR},
       `resource` = #{resource,jdbcType=INTEGER},
       run_command = #{runCommand,jdbcType=VARCHAR},
-      score_1 = #{score1,jdbcType=DOUBLE},
-      score_2 = #{score2,jdbcType=DOUBLE},
-      score_3 = #{score3,jdbcType=DOUBLE},
-      score_4 = #{score4,jdbcType=DOUBLE},
-      score_5 = #{score5,jdbcType=DOUBLE},
-      #{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR},,#{statusMsg,jdbcType=VARCHAR}
+      score = #{score,jdbcType=VARCHAR},
+      `type=`#{type,jdbcType=INTEGER},
+      user_id=#{userId,jdbcType=VARCHAR},
+      user_name=#{userName,jdbcType=VARCHAR},
+      image_url#{imageUrl,jdbcType=VARCHAR},
+      satus_msg#{statusMsg,jdbcType=VARCHAR}.
+      comp_id=#{compId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
-    run_command, score_1, score_2, score_3, score_4, score_5,`type`,user_id,user_name,image_url,status_msg
+    run_command, score,`type`,user_id,user_name,image_url,status_msg,comp_id
     from t_version_answers
     where id = #{id,jdbcType=VARCHAR}
   </select>
     <select id="selectAll" resultMap="BaseResultMap">
     select id, user_comp_id, version, result_url, upload_time, `status`, detail, `resource`, 
-    run_command, score_1, score_2, score_3, score_4, score_5,`type`,user_id,user_name,image_url,status_msg
+    run_command, score,`type`,user_id,user_name,image_url,status_msg,comp_id
     from t_version_answers
   </select>
-
     <select id="selectAllByUserComp" parameterType="java.lang.String" resultMap="BaseResultMap">
       select * from t_version_answers where user_comp_id=#{userCompId,jdbcType=VARCHAR}
   </select>
+
+    <select id="selectAllByStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      select * from t_version_answers where status=#{status,jdbcType=INTEGER}
+  </select>
+
+    <update id="updateScore" parameterType="ac.iie.server.domain.VersionAnswers">
+      update t_version_answer set score=#{score,jdbcType=VARCHAR},
+      detail=#{score,jdbcType=VARCHAR}
+      where comp_id=#{compId,jdbcType=VARCHAR} and version=#{version,jdbcType=VARCHAR} and user_id=#{userId,jdbcType=VARCHAR}
+  </update>
+    <update id="updateStatus">
+        update t_version_answer set `status`=#{param1,jdbcType=INTEGER} where `comp_id`=#{param2,jdbcType=VARCHAR} and `version`=#{param3,jdbcType=VARCHAR}
+        and  user_name=#{param4,jdbcType=VARCHAR}
+    </update>
 </mapper>

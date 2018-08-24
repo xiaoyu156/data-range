@@ -51,8 +51,8 @@ yaml:
    programUrl: "program"
    userAnswerResultUrl: "userAnswerResult"
    userAnswerEngineUrl: "userAnswerEngine"
-   cloudTarget: "localhost:8080"
-   cloudService: {"createEvaluation":"/evaluating/create/evaluating/create","queryEvaluation":"/evaluating/query","createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
+   cloudTarget: "http://192.168.13.17:8000"
+   cloudService: {"createEvaluation":"/evaluating/create","queryEvaluation":"/evaluating/query","createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
 
 
 

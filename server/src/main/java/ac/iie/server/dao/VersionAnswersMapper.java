@@ -20,4 +20,10 @@ public interface VersionAnswersMapper {
     int updateByPrimaryKey(VersionAnswers record);
 
     List<VersionAnswers> selectAllByUserComp(String userComp);
+
+    int updateScore(VersionAnswers versionAnswers);
+
+    List<VersionAnswers> selectAllByStatus(int status);
+
+    int updateStatus(int status, String compId, String version, String userName);
 }

@@ -8,5 +8,6 @@ package ac.iie.server.service;
  */
 public interface IProcService {
     void dealCreateCompetitionProc();
-    void dealProgram();
+    void dealProgramStatus();
+    void dealDetecStatus();
 }

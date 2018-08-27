@@ -80,7 +80,7 @@ public class UserAnswerController extends BaseController<Competition> {
      * @return:
      * @date: 2018-8-10 17:36
      */
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/commit", method = RequestMethod.POST)
     @ResponseBody
     public Response answerCommit(@RequestBody String param) {
         Gson gson = new Gson();
@@ -108,11 +108,7 @@ public class UserAnswerController extends BaseController<Competition> {
         versionAnswers.setVersion(paramsObj.get("version").getAsString());
 
 
-        //答案的运行命令
-        if (paramsObj.get("run_command") == null || StringUtils.isBlank(paramsObj.get("run_command").getAsString())) {
-            return Response.paramError("run_command为必填项");
-        }
-        versionAnswers.setRunCommand(paramsObj.get("run_command").getAsString());
+
 
         //答案的运行命令
         if (paramsObj.get("user_id") == null || StringUtils.isBlank(paramsObj.get("user_id").getAsString())) {
@@ -125,6 +121,12 @@ public class UserAnswerController extends BaseController<Competition> {
             return Response.paramError("comp_id为必填项");
         }
         versionAnswers.setCompId(paramsObj.get("comp_id").getAsString());
+
+        //比赛id
+        if (paramsObj.get("comp_name") == null || StringUtils.isBlank(paramsObj.get("comp_id").getAsString())) {
+            return Response.paramError("comp_name为必填项");
+        }
+        versionAnswers.setCompName(paramsObj.get("comp_name").getAsString());
 
         //答案的运行命令
         if (paramsObj.get("user_name") == null || StringUtils.isBlank(paramsObj.get("user_name").getAsString())) {
@@ -139,11 +141,16 @@ public class UserAnswerController extends BaseController<Competition> {
         }
         type = paramsObj.get("type").getAsInt();
 
-        if (type == 0) {
+        if (type == 1) {
             //检测程序url
             if (paramsObj.get("image_url") == null || StringUtils.isBlank(paramsObj.get("image_url").getAsString())) {
                 return Response.paramError("image_url为必填项");
             }
+            //答案的运行命令
+            if (paramsObj.get("run_command") == null || StringUtils.isBlank(paramsObj.get("run_command").getAsString())) {
+                return Response.paramError("run_command为必填项");
+            }
+            versionAnswers.setRunCommand(paramsObj.get("run_command").getAsString());
             versionAnswers.setImageUrl(paramsObj.get("image_url").getAsString());
         } else {
             //数据集url，需要校验是否上传数据集
@@ -194,9 +201,9 @@ public class UserAnswerController extends BaseController<Competition> {
      * @return:
      * @date: 2018-8-20 14:21
      */
-    @RequestMapping(value = "/ss", method = RequestMethod.POST)
+    @RequestMapping(value = "/receive", method = RequestMethod.POST)
     @ResponseBody
-    public Response uploadResult(@RequestParam String param) {
+    public Response uploadResult(@RequestBody String param) {
         if (StringUtils.isBlank(param) || StringUtils.isEmpty(param)) {
             return Response.paramError("参数不可以为空！请检查！");
         }
@@ -204,13 +211,29 @@ public class UserAnswerController extends BaseController<Competition> {
         if (!jsonObject.isJsonObject()) {
             return Response.paramError("参数非法！不能解析成json对象");
         }
+
         VersionAnswers versionAnswers = new VersionAnswers();
+        if (StringUtils.isBlank(jsonObject.get("teamName").getAsString())||StringUtils.isEmpty(jsonObject.get("teamName").getAsString())){
+            return Response.paramError("teamName不能为空");
+        }
         versionAnswers.setUserId(jsonObject.get("teamName").getAsString());
+
+        if (StringUtils.isBlank(jsonObject.get("version").getAsString())||StringUtils.isEmpty(jsonObject.get("version").getAsString())){
+            return Response.paramError("version不能为空");
+        }
+        String version = jsonObject.get("version").getAsString();
+        versionAnswers.setVersion(version);
+
+        if (StringUtils.isBlank(jsonObject.get("projectID").getAsString())||StringUtils.isEmpty(jsonObject.get("vprojectID").getAsString())){
+            return Response.paramError("projectID不能为空");
+        }
+        versionAnswers.setCompId(jsonObject.get("projectID").getAsString());
+
         JsonObject evaluatingResult = jsonObject.get("evaluatingResult").getAsJsonObject();
         JsonArray score = evaluatingResult.get("score").getAsJsonArray();
-        evaluatingResult.get("detail").getAsString();
+        String detail = evaluatingResult.getAsJsonObject("detail").toString();
         versionAnswers.setScore(score.toString());
-        versionAnswers.setCompId(jsonObject.get("projectID").getAsString());
+        versionAnswers.setDetail(detail);
         /*
          数据库更新操作
          */
@@ -238,11 +261,12 @@ public class UserAnswerController extends BaseController<Competition> {
         } else {
             interfaceKey = Constant.CLOUD_UPLOAD_RESULT;
         }
+        log.info("dddddddddddddddddddddddddddddd"+interfaceKey);
         try {
             results = cloudService.cloudService(param, interfaceKey, Constant.POST_INTERFACE);
             JsonObject jsonObject = gson.fromJson(results, JsonObject.class);
             log.info("***************创建评测任务云平台返回结果：" + results);
-            return "ok".equals(jsonObject.get("status").getAsString());
+            return "ok".equalsIgnoreCase(jsonObject.get("status").getAsString());
         } catch (Exception e) {
             e.printStackTrace();
             log.error("调用云平台创建测评服务失败：");
@@ -258,20 +282,22 @@ public class UserAnswerController extends BaseController<Competition> {
      */
     private String gnerateJson(VersionAnswers versionAnswers) {
         JsonObject result = new JsonObject();
+        if (versionAnswers.getType() == Constant.TARGET_PATTERN) {
+            result.addProperty("projectID", versionAnswers.getCompId());
+            result.addProperty("projectName", versionAnswers.getCompName());
+            result.addProperty("imageUrl", versionAnswers.getImageUrl());
+            result.addProperty("type", versionAnswers.getType());
+            result.addProperty("resource", 1);
+            result.addProperty("runCommand", versionAnswers.getRunCommand());
+            result.addProperty("version", versionAnswers.getVersion());
+            result.addProperty("teamName", versionAnswers.getUserId());
+
+        }
         if (versionAnswers.getType() == Constant.COMMON_PATTERN) {
             result.addProperty("projectID", versionAnswers.getCompId());
-            result.addProperty("projectName", versionAnswers.getUserName());
-            result.addProperty("imageUrl", versionAnswers.getResultUrl());
-            result.addProperty("type", versionAnswers.getType());
-            result.addProperty("resource", versionAnswers.getResource());
-            result.addProperty("requestAddress", "");
-            result.addProperty("runCommand", versionAnswers.getRunCommand());
-            result.addProperty("serviceVersion", versionAnswers.getVersion());
-        }
-        if (versionAnswers.getType() == Constant.TARGET_PATTERN) {
-            result.addProperty("projectID", versionAnswers.getId());
-            result.addProperty("teamName", versionAnswers.getUserName());
-            result.addProperty("Url", versionAnswers.getResultUrl());
+            result.addProperty("projectName", versionAnswers.getCompName());
+            result.addProperty("teamName", versionAnswers.getUserId());
+            result.addProperty("url", versionAnswers.getResultUrl());
             result.addProperty("version", versionAnswers.getVersion());
         }
         return result.toString();

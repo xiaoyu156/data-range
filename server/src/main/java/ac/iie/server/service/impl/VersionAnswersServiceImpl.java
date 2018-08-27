@@ -35,6 +35,7 @@ public class VersionAnswersServiceImpl extends BaseService implements VersionAns
         try {
             num = this.versionAnswersMapper.insert(versionAnswers);
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
         return num > 0;

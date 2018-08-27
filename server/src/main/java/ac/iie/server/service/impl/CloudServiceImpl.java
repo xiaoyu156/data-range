@@ -28,9 +28,7 @@ public class CloudServiceImpl implements ICloudService {
 
     @Override
     public String cloudService(String param, String addKey, String type) {
-        if (StringUtils.isBlank(param) || StringUtils.isBlank(addKey) || StringUtils.isBlank(type)) {
-            throw new RuntimeException("接口参数不能为空");
-        }
+
         /*
         根据接口key获取接口地址，拼接url
          */
@@ -45,6 +43,8 @@ public class CloudServiceImpl implements ICloudService {
         if (Constant.GET_INTERFACE.equals(type)) {
             result = SendHttpRequest.sendGet(url, param);
         }
+        log.info("------------------------------:"+result);
         return result;
     }
+
 }

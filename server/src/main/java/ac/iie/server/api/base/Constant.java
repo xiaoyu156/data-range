@@ -93,6 +93,7 @@ public interface Constant {
     /**
      * 竞赛模式下上传结果答案
      */
-    String CLOUD_UPLOAD_RESULT = "/result_file/upload";
+    String CLOUD_UPLOAD_RESULT = "uploadResult";
+    String CLOUD_CLUSTER_SUMMARY = "getClusterSummary";
 
 }

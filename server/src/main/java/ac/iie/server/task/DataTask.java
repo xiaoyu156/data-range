@@ -19,4 +19,9 @@ public class DataTask {
     public void updateEvaStatusTask() {
         procService.dealProgramStatus();
     }
+
+    @Scheduled(fixedRate = 60 * 1000)
+    public void updateDetectionStatusTask() {
+        procService.dealDetecStatus();
+    }
 }

@@ -52,7 +52,7 @@ yaml:
    userAnswerResultUrl: "userAnswerResult"
    userAnswerEngineUrl: "userAnswerEngine"
    cloudTarget: "http://192.168.13.17:8000"
-   cloudService: {"createEvaluation":"/evaluating/create","queryEvaluation":"/evaluating/query","createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":" /result_file/upload"}
+   cloudService: {"createEvaluation":"/evaluating/create","queryEvaluation":"/evaluating/query","createDetection":"/detection/create","queryDetection":"/detection/query","uploadResult":"/result_file/upload","getClusterSummary":"/cluster/summary"}
 
 
 

@@ -16,7 +16,7 @@
         <result column="user_id" jdbcType="INTEGER" property="userId"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
-        <result column="status_msg" jdbcType="VARCHAR" property="status_msg"/>
+        <result column="status_msg" jdbcType="VARCHAR" property="statusMsg"/>
         <result column="comp_id" jdbcType="VARCHAR" property="compId"/>
         <result column="comp_name" jdbcType="VARCHAR" property="compName"/>
     </resultMap>
@@ -28,14 +28,14 @@
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual;
         </selectKey>
-        insert into t_version_answers (user_comp_id, version, result_url,
+        insert into t_version_answers (id,user_comp_id, version, result_url,
         upload_time, `status`, detail,
         `resource`, run_command, score,
-        `type`,image_url,user_id,user_name,status_msg),`comp_id`
-        values (#{userCompId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{resultUrl,jdbcType=VARCHAR},
+        `type`,image_url,user_id,user_name,status_msg,`comp_id`)
+        values (#{id,jdbcType=VARCHAR},#{userCompId,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{resultUrl,jdbcType=VARCHAR},
         #{uploadTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR},
         #{resource,jdbcType=INTEGER}, #{runCommand,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR},
-        #{type,jdbcType=INTEGER},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{imageUrl,jdbcType=VARCHAR},#{compId,jdbcType=VARCHAR}))
+        #{type,jdbcType=INTEGER},#{imageUrl,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},#{statusMsg,jdbcType=VARCHAR},#{compId,jdbcType=VARCHAR})
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.VersionAnswers">
     update t_version_answers
@@ -76,12 +76,12 @@
   </select>
 
     <update id="updateScore" parameterType="ac.iie.server.domain.VersionAnswers">
-      update t_version_answer set score=#{score,jdbcType=VARCHAR},
+      update t_version_answers set score=#{score,jdbcType=VARCHAR},
       detail=#{score,jdbcType=VARCHAR}
       where comp_id=#{compId,jdbcType=VARCHAR} and version=#{version,jdbcType=VARCHAR} and user_id=#{userId,jdbcType=VARCHAR}
   </update>
     <update id="updateStatus">
-        update t_version_answer set `status`=#{param1,jdbcType=INTEGER} where `comp_id`=#{param2,jdbcType=VARCHAR} and `version`=#{param3,jdbcType=VARCHAR}
-        and  user_name=#{param4,jdbcType=VARCHAR}
+        update t_version_answers set `status`=#{param1,jdbcType=INTEGER} where `comp_id`=#{param2,jdbcType=VARCHAR} and `version`=#{param3,jdbcType=VARCHAR}
+        and  user_id=#{param4,jdbcType=VARCHAR}
     </update>
 </mapper>

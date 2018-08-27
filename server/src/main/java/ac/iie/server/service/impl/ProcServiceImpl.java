@@ -155,7 +155,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
             JsonObject jsonObject = gson.fromJson(result, JsonObject.class);
 
             String flag = jsonObject.get("status").getAsString();
-            if ("ok".equals(flag)) {
+            if ("ok".equalsIgnoreCase(flag)) {
                 log.info("*************************成功接收云平台返回的检测程序状态，开始处理返回结果********************");
                 JsonArray message = jsonObject.getAsJsonArray("message");
                 for (JsonElement jsonElement : message) {
@@ -163,7 +163,8 @@ public class ProcServiceImpl extends BaseService implements IProcService {
                     int serviceStatus = temp.get("serviceStatus").getAsInt();
                     String compId = temp.get("projectID").getAsString();
                     String serviceVersion = temp.get("serviceVersion").getAsString();
-                    versionAnswersMapper.updateStatus(serviceStatus, compId, serviceVersion, "");
+                    String userId=temp.get("teamName").getAsString();
+                    versionAnswersMapper.updateStatus(serviceStatus, compId, serviceVersion, userId);
                 }
             } else {
                 log.error("************************接收云平台返回的检测程序状态失败");
@@ -185,7 +186,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
             JsonObject item = new JsonObject();
             item.addProperty("projectID", versionAnswer.getCompId());
             item.addProperty("projectName", versionAnswer.getCompName());
-            item.addProperty("teamName", versionAnswer.getUserName());
+            item.addProperty("teamName", versionAnswer.getUserId());
             item.addProperty("serviceVersion", versionAnswer.getVersion());
             items.add(item);
         }

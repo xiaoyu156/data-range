@@ -9,7 +9,7 @@ package ac.iie.server.api.base;
 public interface Constant {
 
     /**
-     * 比赛模式0:普通比赛模式，1：
+     * 比赛模式0:靶场模式，1：
      */
     int COMMON_PATTERN = 0;
     int TARGET_PATTERN = 1;

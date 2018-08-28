@@ -54,4 +54,8 @@ public class Competition implements Serializable {
 
     private int programStatus;
 
+    private String sponsor;
+
+    private User user;
+
 }

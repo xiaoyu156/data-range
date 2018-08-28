@@ -1,5 +1,6 @@
 package ac.iie.server.api;
 
+import ac.iie.common.utils.RegularUtil;
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.base.Constant;
@@ -41,16 +42,19 @@ public class DataController extends BaseController<Competition> {
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public Response dataUpload(@RequestParam("MetaFile") MultipartFile file, int type, String comName,HttpServletResponse response,HttpServletRequest request) {
+    public Response dataUpload(@RequestParam("MetaFile") MultipartFile file, int type, String comName, HttpServletResponse response, HttpServletRequest request) {
         if (type < Constant.FILE_LOGO || type > Constant.FILE_USER_ANSWER_ENGINE) {
             return Response.paramError("type不合法，请检查！");
         }
         if (StringUtils.isBlank(comName) || StringUtils.isBlank(comName)) {
-            return Response.paramError("comName不合法，请检查！");
+            return Response.paramError("comName不能为空，请检查！");
         }
-        String path = this.getAbsolutePath(type, comName,null,null);
+        if (RegularUtil.isEnglishOrChinese(comName, RegularUtil.CHINESE_PATTERN)) {
+            return Response.paramError("comName不能为中文，请检查！");
+        }
+
+        String path = this.getAbsolutePath(type, comName, null, null);
         String url = path + File.separator + file.getOriginalFilename();
-        response.setHeader("Access-Control-Allow-Origin","*");
         boolean flag = this.saveFile(file, url, path);
         if (flag) {
             return Response.operateSucessAndHaveData(url);
@@ -59,10 +63,22 @@ public class DataController extends BaseController<Competition> {
         }
     }
 
-    @GetMapping(value = "/{fileName}/logo")
-    public  void getLogo( HttpServletResponse response,@PathVariable String fileName ,String competitionTitle ) throws IOException {
+    /**
+     * @Description: 显示logo
+     * @param:
+     * @return:
+     * @date: 2018-8-28 14:25
+     */
+    @GetMapping(value = "/{compId}/logo")
+    public void getLogo(HttpServletResponse response, @PathVariable String compId) throws IOException {
+        Competition competition = competitionService.getCompetitionById(compId);
+        String logoUrl = competition.getDataUrl();
+        if (StringUtils.isBlank(logoUrl)) {
+            log.info("比赛" + compId + "没有获取到logo路径");
+            return;
+        }
         response.setContentType("image/png");
-        File file = new File("J:\\work\\bisai\\logo\\programmer_1920.png");
+        File file = new File(logoUrl);
         byte[] bytes = FileUtils.readFileToByteArray(file);
         ServletOutputStream outputStream = response.getOutputStream();
         outputStream.write(bytes);
@@ -70,7 +86,35 @@ public class DataController extends BaseController<Competition> {
         outputStream.close();
     }
 
+    /**
+     * @Description: 数据集下载
+     * @param:
+     * @return:
+     * @date: 2018-8-28 14:26
+     */
+    @GetMapping(value = "/{compId}/data")
+    public void getData(HttpServletResponse response, @PathVariable String compId) {
+        Competition competition = competitionService.getCompetitionById(compId);
+        String dataUrl = competition.getDataUrl();
+        if (StringUtils.isBlank(dataUrl)) {
+            log.info("比赛" + compId + "没有获取到数据集路径");
+            return;
+        }
+        response.setHeader("content-type", "application/octet-stream");
+        response.setContentType("application/octet-stream");
+        File data = new File(dataUrl);
+        byte[] bytes;
+        try {
+            bytes = FileUtils.readFileToByteArray(data);
+            ServletOutputStream outputStream = response.getOutputStream();
+            outputStream.write(bytes);
+            outputStream.flush();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.error("----------------------数据集下载失败------------");
+        }
 
-
+    }
 
 }

@@ -1,6 +1,7 @@
 package ac.iie.server.api;
 
 import ac.iie.common.utils.DateUtils;
+import ac.iie.common.utils.RegularUtil;
 import ac.iie.common.utils.Response;
 import ac.iie.server.api.base.BaseController;
 import ac.iie.server.api.base.Constant;
@@ -68,7 +69,11 @@ public class CompetitionController extends BaseController<Competition> {
         if (paramsObj.get("title") == null || StringUtils.isBlank(paramsObj.get("title").getAsString())) {
             return Response.paramError("title为必填项");
         }
-        competition.setTitle(paramsObj.get("title").getAsString());
+        String title = paramsObj.get("title").getAsString();
+        if (RegularUtil.isEnglishOrChinese(title, RegularUtil.CHINESE_PATTERN)) {
+            return Response.paramError("comName不能为中文，请检查！");
+        }
+        competition.setTitle(title);
 
         //比赛内容
         if (paramsObj.get("content") == null || StringUtils.isBlank(paramsObj.get("content").getAsString())) {
@@ -87,18 +92,6 @@ public class CompetitionController extends BaseController<Competition> {
             return Response.paramError("program_url为必填项");
         }
         competition.setProgramUrl(paramsObj.get("program_url").getAsString());
-
-        //评分项不能为空，最多支持5项（格式）
-        if (paramsObj.get("score_items") == null || StringUtils.isBlank(paramsObj.get("score_items").getAsString())) {
-            return Response.paramError("score_items为必填项");
-        }
-        competition.setScoreItems(paramsObj.get("score_items").getAsString());
-
-        //数据集展示字段，
-        if (paramsObj.get("key_data_map") == null || StringUtils.isBlank(paramsObj.get("key_data_map").getAsString())) {
-            return Response.paramError("key_data_map为必填项");
-        }
-        competition.setKeyDataMap(paramsObj.get("key_data_map").getAsString());
 
         //比赛类型
         if (paramsObj.get("type_id") == null || StringUtils.isBlank(paramsObj.get("type_id").getAsString())) {
@@ -138,6 +131,16 @@ public class CompetitionController extends BaseController<Competition> {
             competition.setDescription(paramsObj.get("description").getAsString());
         }
 
+        //评分项不能为空，最多支持5项（格式）
+        if (paramsObj.get("score_items") != null && !StringUtils.isBlank(paramsObj.get("score_items").getAsString())) {
+            competition.setScoreItems(paramsObj.get("score_items").getAsString());
+        }
+
+        //数据集展示字段，
+        if (paramsObj.get("key_data_map") != null && !StringUtils.isBlank(paramsObj.get("key_data_map").getAsString())) {
+            competition.setKeyDataMap(paramsObj.get("key_data_map").getAsString());
+        }
+
         //数据集描述
         if (paramsObj.get("data_desc") != null) {
             competition.setDataDesc(paramsObj.get("data_desc").getAsString());
@@ -146,6 +149,8 @@ public class CompetitionController extends BaseController<Competition> {
         //数据集描述
         if (paramsObj.get("run_command") != null) {
             competition.setRunCommand(paramsObj.get("run_command").getAsString());
+        } else {
+            competition.setRunCommand("/start.sh");
         }
 
         //是否包含多媒体默认为不包含
@@ -161,12 +166,13 @@ public class CompetitionController extends BaseController<Competition> {
         //奖金
         if (paramsObj.get("bonus") != null) {
             competition.setBonus(paramsObj.get("bonus").getAsInt());
+        } else {
+            competition.setBonus(0);
         }
 
         competition.setStatus(Constant.COMPETITION_DATA_CHECK);
         competition.setStatusMsg(Constant.COMPETITION_DATA_CHECK_MSG);
 
-        response.setHeader("Access-Control-Allow-Origin", "*");
         //************************************************业务调用与控制************************************************
         try {
             competitionService.createCompetition(competition, userList);
@@ -226,7 +232,7 @@ public class CompetitionController extends BaseController<Competition> {
         competition.setDataUrl(paramsObj.get("data_url").getAsString());
 
         //评测程序，需要校验是否上传评测程序
-        if (paramsObj.get("program_url") == null || StringUtils.isBlank(paramsObj.get("program_url").getAsString())) {
+        if (StringUtils.isBlank(paramsObj.get("program_url").getAsString())) {
             return Response.paramError("program_url为必填项");
         }
         competition.setProgramUrl(paramsObj.get("program_url").getAsString());
@@ -238,10 +244,9 @@ public class CompetitionController extends BaseController<Competition> {
         competition.setScoreItems(paramsObj.get("score_items").getAsString());
 
         //数据集展示字段，
-        if (paramsObj.get("key_data_map") == null || StringUtils.isBlank(paramsObj.get("key_data_map").getAsString())) {
-            return Response.paramError("key_data_map为必填项");
+        if (!StringUtils.isBlank(paramsObj.get("key_data_map").getAsString())) {
+            competition.setKeyDataMap(paramsObj.get("key_data_map").getAsString());
         }
-        competition.setKeyDataMap(paramsObj.get("key_data_map").getAsString());
 
         //比赛类型
         if (paramsObj.get("type_id") == null || StringUtils.isBlank(paramsObj.get("type_id").getAsString())) {
@@ -332,6 +337,7 @@ public class CompetitionController extends BaseController<Competition> {
         try {
             competition = competitionService.getCompetitionById(id);
         } catch (Exception e) {
+            e.printStackTrace();
             log.error("获取id:" + id + "比赛错误");
         }
         if (competition == null) {

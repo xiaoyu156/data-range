@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8eba026-5408-4559-9051-35802b86a00e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/TestCluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/RegularUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserCompetitionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserCompetitionMapperTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,122 +63,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProcServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java">
+      <file leaf-file-name="CompetitionMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2700">
-              <caret line="188" column="66" lean-forward="true" selection-start-line="188" selection-start-column="66" selection-end-line="188" selection-end-column="66" />
+            <state relative-caret-position="176">
+              <caret line="143" column="59" selection-start-line="143" selection-start-column="59" selection-end-line="143" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-869">
+              <caret line="337" column="53" lean-forward="true" selection-start-line="337" selection-start-column="53" selection-end-line="337" selection-end-column="53" />
               <folding>
-                <element signature="method#dealData#0;class#ProcServiceImpl#0" />
-                <element signature="method#compressData#0;class#ProcServiceImpl#0" />
-                <element signature="method#dealMediaFile#0;class#ProcServiceImpl#0" />
-                <element signature="method#dealTextFile#0;class#ProcServiceImpl#0" />
-                <element signature="method#saveRedis#0;class#ProcServiceImpl#0" />
-                <element signature="method#saveData#0;class#ProcServiceImpl#0" />
+                <element signature="method#updateCompetition#0;class#CompetitionController#0" />
+                <element signature="method#getCompetitions#0;class#CompetitionController#0" />
+                <element signature="method#joinCompetion#0;class#CompetitionController#0" />
+                <element signature="method#updateCompetitionStatus#0;class#CompetitionController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAnswerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java">
+      <file leaf-file-name="DataController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-310">
-              <caret line="238" column="11" lean-forward="true" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
+            <state relative-caret-position="2295">
+              <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/CompetitionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCompetition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-216">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Competition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-23">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompetitionServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-192">
+              <caret line="33" column="48" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#UserAnswerController#0;class#UserAnswerController#0" />
-                <element signature="docComment;method#dataUpload#0;class#UserAnswerController#0" />
-                <element signature="method#dataUpload#0;class#UserAnswerController#0" />
-                <element signature="method#answerCommit#0;class#UserAnswerController#0" />
-                <element signature="method#getAnswersByUserCompId#0;class#UserAnswerController#0" />
-                <element signature="method#answerCommitCloud#0;class#UserAnswerController#0" />
-                <element signature="method#gnerateJson#0;class#UserAnswerController#0" />
+                <element signature="e#1645#1646#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataTask.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java">
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding>
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#585#586#0" expanded="true" />
-                <element signature="e#678#679#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReturnCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/ReturnCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionAnswersService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/VersionAnswersService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionAnswersServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-              <folding>
-                <element signature="method#VersionAnswersServiceImpl#0;class#VersionAnswersServiceImpl#0" />
-                <element signature="method#commitAnswer#0;class#VersionAnswersServiceImpl#0" />
-                <element signature="e#1670#1671#0" expanded="true" />
-                <element signature="e#1741#1742#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionAnswersMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MethodProxy.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionAnswers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/VersionAnswers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="421">
+              <caret line="16" column="74" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="16" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -200,15 +173,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response118.json" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/server/doc/ReadMe.md" />
-        <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/SendHttpRequest.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/ICloudService.java" />
         <option value="$PROJECT_DIR$/server/src/main/resources/META-INF/additional-spring-configuration-metadata.json" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/config/TaskConfig.java" />
@@ -223,21 +190,15 @@
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Contants.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java" />
-        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserCompetitionMapperTest.java" />
-        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserCompetitionController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/UserCompetitionService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/ServerApplication.java" />
         <option value="$PROJECT_DIR$/server/doc/work.md" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/VersionAnswersService.java" />
         <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/impl/ProcServiceImplTest.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java" />
         <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/ServerApplicationTests.java" />
-        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java" />
         <option value="$PROJECT_DIR$/server/src/main/resources/log4j2-test.xml" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java" />
@@ -245,25 +206,29 @@
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/IProcService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/VersionAnswersMapper.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/DataUtils.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/DateUtils.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java" />
         <option value="$PROJECT_DIR$/server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/TestCluster.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CloudServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/RegularUtil.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/CompetitonUser.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserCompetitionMapperTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java" />
+        <option value="$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java" />
       </list>
     </option>
-  </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="UserCompetitionMapperTest.selectByUid" />
-    </enabled-run-configurations>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -331,7 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -387,6 +351,16 @@
             <path>
               <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
               <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -437,8 +411,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
@@ -530,6 +503,16 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data-range" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data-range" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -537,6 +520,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -562,13 +546,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ac.iie.server.service.impl" />
       <recent name="ac.iie.server.dao" />
+      <recent name="ac.iie.server.service.impl" />
       <recent name="ac.iie.server.service" />
       <recent name="ac.iie.server.api.base" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\work\workspacei\data-range\doc" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ac.iie.server" />
@@ -577,21 +564,18 @@
       <recent name="ac.iie.server.service" />
       <recent name="ac.iie.common" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\work\workspacei\data-range\server\doc" />
-      <recent name="I:\work\workspacei\data-range\common\src\main\java\ac\iie\common\utils" />
-      <recent name="I:\work\workspacei\data-range\server" />
-      <recent name="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources" />
-      <recent name="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ac.iie.server.api" />
       <recent name="ac.iie.server.api.base" />
       <recent name="ac.iie.server.service.impl" />
       <recent name="ac.iie.server.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\work\workspacei\data-range\doc" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\work\workspacei\data-range\server\doc" />
+      <recent name="I:\work\workspacei\data-range\common\src\main\java\ac\iie\common\utils" />
+      <recent name="I:\work\workspacei\data-range\server" />
+      <recent name="$PROJECT_DIR$/SpringCloud/permission_manager/src/main/resources" />
+      <recent name="$PROJECT_DIR$/SpringCloud/eureka/src/main/resources" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1549,13 +1533,13 @@
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.Test" />
-      <module name="server" />
+    <configuration name="RegularUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ac.iie.common.utils.RegularUtil" />
+      <module name="common" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ac.iie.server.dao.*" />
+          <option name="PATTERN" value="ac.iie.common.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1563,19 +1547,19 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="ServerApplicationTests.dd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionMapperTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ac.iie.server.*" />
+          <option name="PATTERN" value="ac.iie.server.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ac.iie.server" />
-      <option name="MAIN_CLASS_NAME" value="ac.iie.server.ServerApplicationTests" />
-      <option name="METHOD_NAME" value="dd" />
+      <option name="PACKAGE_NAME" value="ac.iie.server.dao" />
+      <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.CompetitionMapperTest" />
+      <option name="METHOD_NAME" value="selectAll" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1632,7 +1616,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="UserCompetitionMapperTest.selectByUid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -1644,7 +1628,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ac.iie.server.dao" />
       <option name="MAIN_CLASS_NAME" value="ac.iie.server.dao.UserCompetitionMapperTest" />
-      <option name="METHOD_NAME" value="selectByUid" />
+      <option name="METHOD_NAME" value="selectByCompIdAndType" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1736,19 +1720,19 @@
       <item itemvalue="Spring Boot.PermissionManagerApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.UserCompetitionMapperTest.selectByUid" />
-      <item itemvalue="JUnit.ServerApplicationTests.dd" />
       <item itemvalue="JUnit.ServerApplicationTests.testRedisTemplate" />
       <item itemvalue="JUnit.TestCluster.testClusterSummary" />
+      <item itemvalue="Application.RegularUtil" />
+      <item itemvalue="JUnit.UserCompetitionMapperTest.selectByCompIdAndType" />
+      <item itemvalue="JUnit.CompetitionMapperTest.selectAll" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CompetitionMapperTest.selectAll" />
+        <item itemvalue="JUnit.UserCompetitionMapperTest.selectByCompIdAndType" />
+        <item itemvalue="Application.RegularUtil" />
         <item itemvalue="JUnit.TestCluster.testClusterSummary" />
         <item itemvalue="JUnit.ServerApplicationTests.testRedisTemplate" />
-        <item itemvalue="JUnit.ServerApplicationTests.dd" />
-        <item itemvalue="JUnit.UserCompetitionMapperTest.selectByUid" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -1803,7 +1787,8 @@
       <workItem from="1534989108893" duration="1385000" />
       <workItem from="1535014538031" duration="786000" />
       <workItem from="1535072548058" duration="19820000" />
-      <workItem from="1535332674820" duration="20078000" />
+      <workItem from="1535332674820" duration="20191000" />
+      <workItem from="1535418353969" duration="21174000" />
     </task>
     <task id="LOCAL-00001" summary="框架搭建完毕">
       <created>1531909610905</created>
@@ -1945,43 +1930,50 @@
       <option name="project" value="LOCAL" />
       <updated>1535105726701</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="cloud test ok">
+      <created>1535364088439</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1535364088440</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ServerApplicationTests_dd - 2018.08.22 at 11h 04m 23s.xml">
-      <configuration name="ServerApplicationTests.dd" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 15h 57m 04s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ServerApplicationTests_dd - 2018.08.22 at 11h 06m 08s.xml">
-      <configuration name="ServerApplicationTests.dd" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 03m 11s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ServerApplicationTests_testRedisTemplate - 2018.08.22 at 11h 20m 35s.xml">
-      <configuration name="ServerApplicationTests.testRedisTemplate" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 05m 16s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ServerApplicationTests_testRedisTemplate - 2018.08.22 at 11h 24m 05s.xml">
-      <configuration name="ServerApplicationTests.testRedisTemplate" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 06m 14s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 20m 06s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 06m 40s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 21m 00s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 07m 30s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 24m 16s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 08m 32s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 25m 30s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="UserCompetitionMapperTest_selectByCompIdAndType - 2018.08.28 at 16h 30m 57s.xml">
+      <configuration name="UserCompetitionMapperTest.selectByCompIdAndType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 27m 34s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="CompetitionMapperTest_selectAll - 2018.08.28 at 16h 52m 39s.xml">
+      <configuration name="CompetitionMapperTest.selectAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCluster_testClusterSummary - 2018.08.27 at 16h 27m 49s.xml">
-      <configuration name="TestCluster.testClusterSummary" configurationId="JUnit" />
+    <history-entry file="CompetitionMapperTest_selectAll - 2018.08.28 at 16h 54m 54s.xml">
+      <configuration name="CompetitionMapperTest.selectAll" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394824000" />
+    <option name="totallyTimeSpent" value="416111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1993,8 +1985,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50341684" side_tool="true" weight="0.51419556" />
@@ -2006,27 +1997,27 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.475969" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.76434106" />
       <window_info anchor="bottom" id="TODO" order="17" weight="0.4604651" />
       <window_info anchor="bottom" id="Messages" order="6" weight="0.3503876" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32868218" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49713877" weight="0.7100775" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.47997138" weight="0.4635659" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49658313" visible="true" weight="0.29302326" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.47997138" weight="0.324031" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49658313" weight="0.0" />
       <window_info anchor="bottom" id="Spring" order="11" weight="0.32868218" />
       <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.48215643" weight="0.5968992" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984985" visible="true" weight="0.26172465" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984985" visible="true" weight="0.3774584" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.5015015" side_tool="true" weight="0.2987897" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="10" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.6561514" />
+      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49713877" weight="0.7100775" />
       <window_info anchor="bottom" id="Jindent" order="13" visible="true" weight="0.14003044" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -2034,11 +2025,11 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="10" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="8" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="REST Client" order="12" sideWeight="0.49713877" visible="true" weight="0.23410852" />
+      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49713877" weight="0.7100775" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49658313" weight="0.751938" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49658313" visible="true" weight="0.29767442" />
       <window_info anchor="bottom" id="Spring" order="11" weight="0.32868218" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -2055,12 +2046,12 @@
       <window_info anchor="bottom" id="Messages" order="6" weight="0.3503876" />
       <window_info anchor="bottom" id="TODO" order="17" weight="0.4604651" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32868218" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32868218" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.47997138" weight="0.4635659" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.47997138" weight="0.324031" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.12708019" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984985" visible="true" weight="0.2927383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984985" visible="true" weight="0.3774584" />
       <window_info anchor="right" id="Database" order="5" weight="0.3290469" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="6" side_tool="true" />
@@ -2068,7 +2059,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.68372095" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.19844961" />
       <window_info anchor="right" id="Bean Validation" order="8" />
     </layout-to-restore>
   </component>
@@ -2122,7 +2113,8 @@
     <MESSAGE value="任务流程完善" />
     <MESSAGE value="完善" />
     <MESSAGE value="调试版" />
-    <option name="LAST_COMMIT_MESSAGE" value="调试版" />
+    <MESSAGE value="cloud test ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="cloud test ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2135,7 +2127,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java</url>
-          <line>224</line>
+          <line>222</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -2153,7 +2145,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java</url>
-          <line>390</line>
+          <line>388</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -2177,13 +2169,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java</url>
-          <line>143</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java</url>
-          <line>141</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -2198,149 +2190,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6210">
-          <caret line="230" column="32" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="204" column="11" lean-forward="true" selection-start-line="204" selection-start-column="11" selection-end-line="204" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/ServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/impl/DataServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-347">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/ServerApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/CompetitionTypeServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/impl/ProcServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/resources/log4j2-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/CompetitionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.7.RELEASE/spring-aop-5.0.7.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="507" selection-start-line="507" selection-end-line="507" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.7.RELEASE/spring-tx-5.0.7.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="181" selection-start-line="181" selection-end-line="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1189">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/VersionAnswersMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -2355,24 +2204,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/DateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8370">
-          <caret line="354" column="48" lean-forward="true" selection-start-line="354" selection-start-column="48" selection-end-line="354" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -2414,13 +2249,6 @@
     <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionTypeMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/IProcService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -2439,20 +2267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/UserCompetitionServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="96" column="53" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -2496,14 +2310,14 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="2457">
           <caret line="106" selection-start-line="106" selection-end-line="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/VersionAnswersServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
+        <state relative-caret-position="864">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
             <element signature="method#VersionAnswersServiceImpl#0;class#VersionAnswersServiceImpl#0" />
@@ -2523,22 +2337,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="378">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/response/ReturnCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="324">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/ac/iie/common/utils/RegularUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="method#dealCreateCompetitionProc#0;class#ProcServiceImpl#0" />
+            <element signature="method#dealProgramStatus#0;class#ProcServiceImpl#0" />
+            <element signature="method#dealDetecStatus#0;class#ProcServiceImpl#0" />
+            <element signature="method#generateGetDetcStatus#0;class#ProcServiceImpl#0" />
+            <element signature="method#dealData#0;class#ProcServiceImpl#0" />
+            <element signature="method#compressData#0;class#ProcServiceImpl#0" />
+            <element signature="method#dealMediaFile#0;class#ProcServiceImpl#0" />
+            <element signature="method#dealTextFile#0;class#ProcServiceImpl#0" />
+            <element signature="method#saveRedis#0;class#ProcServiceImpl#0" />
+            <element signature="method#saveData#0;class#ProcServiceImpl#0" />
+            <element signature="method#createEvaluation#0;class#ProcServiceImpl#0" />
+            <element signature="method#generateGetEvaStatusJson#0;class#ProcServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1645">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/LogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/base/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1439">
+          <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/UserAnswerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-310">
-          <caret line="238" column="11" lean-forward="true" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
+        <state relative-caret-position="309">
+          <caret line="238" column="11" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#UserAnswerController#0;class#UserAnswerController#0" />
@@ -2552,38 +2436,168 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/DataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-472">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/service/UserCompetitionServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/UserCompetitionMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/UserCompetitionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionTypeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+          <folding>
+            <element signature="method#addType#0;class#CompetitionTypeController#0" />
+            <element signature="method#updateCompetitionBy#0;class#CompetitionTypeController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/VersionAnswersMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="1701">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/ProcServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="188" column="66" lean-forward="true" selection-start-line="188" selection-start-column="66" selection-end-line="188" selection-end-column="66" />
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/UserCompetitionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="12" column="37" selection-start-line="12" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/java/ac/iie/server/dao/CompetitionMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
           <folding>
-            <element signature="method#dealData#0;class#ProcServiceImpl#0" />
-            <element signature="method#compressData#0;class#ProcServiceImpl#0" />
-            <element signature="method#dealMediaFile#0;class#ProcServiceImpl#0" />
-            <element signature="method#dealTextFile#0;class#ProcServiceImpl#0" />
-            <element signature="method#saveRedis#0;class#ProcServiceImpl#0" />
-            <element signature="method#saveData#0;class#ProcServiceImpl#0" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1459#1460#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/task/DataTask.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/UserCompetitionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="583">
+          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/UserCompetition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/dao/CompetitionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/Competition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="16" column="74" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="16" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/CompetitionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/service/impl/CompetitionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="33" column="48" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="48" />
           <folding>
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#1645#1646#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/CompetitionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-869">
+          <caret line="337" column="53" lean-forward="true" selection-start-line="337" selection-start-column="53" selection-end-line="337" selection-end-column="53" />
+          <folding>
+            <element signature="method#updateCompetition#0;class#CompetitionController#0" />
+            <element signature="method#getCompetitions#0;class#CompetitionController#0" />
+            <element signature="method#joinCompetion#0;class#CompetitionController#0" />
+            <element signature="method#updateCompetitionStatus#0;class#CompetitionController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/domain/CompetitonUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ac/iie/server/api/DataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mappers/CompetitionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="143" column="59" selection-start-line="143" selection-start-column="59" selection-end-line="143" selection-end-column="59" />
         </state>
       </provider>
     </entry>

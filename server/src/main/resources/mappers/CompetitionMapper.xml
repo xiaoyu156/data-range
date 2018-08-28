@@ -24,6 +24,24 @@
         <result column="run_command" jdbcType="LONGVARCHAR" property="runCommand"/>
         <result column="status_msg" jdbcType="LONGVARCHAR" property="statusMsg"/>
         <result column="program_status" jdbcType="LONGVARCHAR" property="programStatus"/>
+        <result column="sponsor" jdbcType="VARCHAR" property="sponsor"/>
+    </resultMap>
+    <resultMap id="CompetitionUserMap" type="ac.iie.server.domain.Competition" extends="BaseResultMap">
+        <association property="user" javaType="ac.iie.server.domain.User">
+            <id column="id" jdbcType="VARCHAR" property="id"/>
+            <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+            <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+            <result column="address" jdbcType="VARCHAR" property="address"/>
+            <result column="email" jdbcType="VARCHAR" property="email"/>
+            <result column="id_card" jdbcType="VARCHAR" property="idCard"/>
+            <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp"/>
+            <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+            <result column="password" jdbcType="VARCHAR" property="password"/>
+            <result column="phone" jdbcType="VARCHAR" property="phone"/>
+            <result column="realname" jdbcType="VARCHAR" property="realname"/>
+            <result column="status" jdbcType="INTEGER" property="status"/>
+            <result column="username" jdbcType="VARCHAR" property="username"/>
+        </association>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete from t_competition
@@ -38,7 +56,7 @@
         `type`, publish_time, update_time,
         join_num, `status`, logo_url,
         end_time, type_id, bonus,
-        score_items, key_data_map, content, run_command,status_msg,program_status
+        score_items, key_data_map, content, run_command,status_msg,program_status,sponsor
         )
         values (#{id,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
         #{dataDesc,jdbcType=VARCHAR},
@@ -48,7 +66,7 @@
         #{endTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=VARCHAR}, #{bonus,jdbcType=INTEGER},
         #{scoreItems,jdbcType=VARCHAR}, #{keyDataMap,jdbcType=VARCHAR},
         #{content,jdbcType=LONGVARCHAR},#{runCommand,jdbcType=LONGVARCHAR},#{statusMsg,jdbcType=LONGVARCHAR},
-        #{programStatus,jdbcType=LONGVARCHAR}
+        #{programStatus,jdbcType=LONGVARCHAR},#{sponsor,jdbcType=VARCHAR}
         )
     </insert>
     <update id="updateByPrimaryKey" parameterType="ac.iie.server.domain.Competition">
@@ -72,60 +90,19 @@
             key_data_map     = #{keyDataMap,jdbcType=VARCHAR},
             content          = #{content,jdbcType=LONGVARCHAR},
             run_command      = #{runCommand,jdbcType=VARCHAR},
-            status_msg      = #{status,jdbcType=VARCHAR}.
-            program_status  =#{programStatus,jdbcType=LONGVARCHAR}
+            status_msg      = #{status,jdbcType=VARCHAR},
+            program_status  =#{programStatus,jdbcType=LONGVARCHAR},
+            sponsor=       #{sponsor,jdbcType=VARCHAR}
         where id = #{id,jdbcType=VARCHAR}
     </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select
-            id,
-            title,
-            description,
-            data_desc,
-            is_include_media,
-            data_url,
-            program_url,
-            `type`,
-            publish_time,
-            update_time,
-            join_num,
-            `status`,
-            logo_url,
-            end_time,
-            type_id,
-            bonus,
-            score_items,
-            key_data_map,
-            content,
-            run_command,
-            program_status
-        from t_competition
-        where id = #{id,jdbcType=VARCHAR}
+        select t.*,u.*
+        from t_competition as t,t_user as u where u.id=t.sponsor
+        and t.id = #{id,jdbcType=VARCHAR}
     </select>
-    <select id="selectAll" resultMap="BaseResultMap">
-        select
-            id,
-            title,
-            description,
-            data_desc,
-            is_include_media,
-            data_url,
-            program_url,
-            `type`,
-            publish_time,
-            update_time,
-            join_num,
-            `status`,
-            logo_url,
-            end_time,
-            type_id,
-            bonus,
-            score_items,
-            key_data_map,
-            content,
-            run_command,
-            program_status
-        from t_competition
+    <select id="selectAll" resultMap="CompetitionUserMap">
+         select t.*,u.*
+        from t_competition as t,t_user as u where u.id=t.sponsor
     </select>
 
     <update id="updateCompetitionTypeByTypeId" parameterType="java.lang.String">
@@ -154,7 +131,7 @@
     <select id="getCompetitonByStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select *
         from t_competition
-        where status = #{status,jdbcType =INTEGER}
+        where status >=#{status,jdbcType =INTEGER}
     </select>
 
     <select id="getCompetitonByProgramStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">

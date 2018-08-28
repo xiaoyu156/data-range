@@ -34,6 +34,21 @@
             <result column="status_msg" jdbcType="LONGVARCHAR" property="status_msg"/>
         </association>
     </resultMap>
+    <resultMap id="userResultMap" type="ac.iie.server.domain.User">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="id_card" jdbcType="VARCHAR" property="idCard"/>
+        <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp"/>
+        <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="realname" jdbcType="VARCHAR" property="realname"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+    </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from t_user_competition
     where id = #{id,jdbcType=VARCHAR}
@@ -80,4 +95,8 @@
           and `status`=#{status,jdbcType=INTEGER}
       </if>
   </select>
+    <select id="selectByCompIdAndType" parameterType="ac.iie.server.domain.UserCompetition" resultMap="userResultMap">
+        select u.id,username from t_user_competition as tc,t_user as u
+        where  u.id=tc.user_id and tc.competition_id=#{competitionId,jdbcType=VARCHAR}
+    </select>
 </mapper>

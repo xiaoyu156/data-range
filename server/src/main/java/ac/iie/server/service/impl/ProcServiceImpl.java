@@ -87,7 +87,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
     }
 
     /**
-     * @Description: 实时检测测评程序的状态
+     * @Description: 实时检测测评程序的状态(前提条件测评程序已经创建成功)
      * @param:
      * @return:
      * @date: 2018-8-22 15:33
@@ -99,7 +99,7 @@ public class ProcServiceImpl extends BaseService implements IProcService {
          */
         List<Competition> competitions;
         try {
-            competitions = competitionMapper.getCompetitonByProgramStatus(0);
+            competitions = competitionMapper.getCompetitonByProgramStatus(Constant.COMPETITION_CHECKING);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取需要处理的比赛评测程序数据失败！");
@@ -109,7 +109,6 @@ public class ProcServiceImpl extends BaseService implements IProcService {
         log.info("*****************本次任务获取[" + dealNum + "]个比赛评测程序任务进行处理***************");
         if (dealNum > 0) {
             Object param = generateGetEvaStatusJson(competitions);
-
             String service = cloudService.cloudService(param.toString(), Constant.CLOUD_QUERY_EVA, Constant.POST_INTERFACE);
             JsonObject jsonObject = gson.fromJson(service, JsonObject.class);
             log.info(jsonObject.toString());
@@ -124,7 +123,6 @@ public class ProcServiceImpl extends BaseService implements IProcService {
                     String serviceVersion = object.get("serviceVersion").getAsString();
                     competitionMapper.updateCompetitionProgramStatus(serviceStatus, compId);
                 }
-
             } else {
                 log.error("************************接收云平台返回测评程序状态异常****************************************");
             }

@@ -15,13 +15,13 @@ public class DataTask {
 //        procService.dealCreateCompetitionProc();
 //    }
 
-    @Scheduled(fixedRate = 60 * 1000)
-    public void updateEvaStatusTask() {
-        procService.dealProgramStatus();
-    }
-
-    @Scheduled(fixedRate = 60 * 1000)
-    public void updateDetectionStatusTask() {
-        procService.dealDetecStatus();
-    }
+//    @Scheduled(fixedRate = 60 * 1000)
+//    public void updateEvaStatusTask() {
+//        procService.dealProgramStatus();
+//    }
+//
+//    @Scheduled(fixedRate = 60 * 1000)
+//    public void updateDetectionStatusTask() {
+//        procService.dealDetecStatus();
+//    }
 }

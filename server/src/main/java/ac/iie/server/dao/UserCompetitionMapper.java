@@ -1,5 +1,6 @@
 package ac.iie.server.dao;
 
+import ac.iie.server.domain.User;
 import ac.iie.server.domain.UserCompetition;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -22,4 +23,6 @@ public interface UserCompetitionMapper {
     List<UserCompetition> selectByUidAndComId(UserCompetition userCompetition);
 
     List<UserCompetition> selectByUid(UserCompetition userCompetition);
+
+    List<User> selectByCompIdAndType(UserCompetition userCompetition);
 }

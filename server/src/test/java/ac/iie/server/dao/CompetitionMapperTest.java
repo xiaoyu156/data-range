@@ -47,6 +47,7 @@ public class CompetitionMapperTest {
 
     @Test
     public void selectAll() {
+        System.out.println(competitionMapper.selectAll());
     }
 
     @Test

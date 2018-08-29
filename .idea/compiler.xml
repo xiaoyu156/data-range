@@ -10,8 +10,10 @@
         <module name="auth" />
         <module name="cloud" />
         <module name="common" />
-        <module name="eureka_server" />
+        <module name="eureka" />
+        <module name="permission_server" />
         <module name="server" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,8 +26,10 @@
       <module name="gateway" target="1.8" />
       <module name="permission_manager" target="1.8" />
       <module name="permission_manager_2" target="1.8" />
+      <module name="permission_server" target="1.8" />
       <module name="server" target="1.8" />
       <module name="SpringCloud" target="1.8" />
+      <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,25 @@
+server:
+  port: 12345
+spring:
+  application:
+    name: test-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: 123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  jackson:
+    serialization:
+      indent_output: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  #\u670D\u52A1\u6CE8\u518C\u4E2D\u5FC3

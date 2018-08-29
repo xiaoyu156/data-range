@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/SpringCloud/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/SpringCloud/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/SpringCloud/permission_manager/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/permission_server/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

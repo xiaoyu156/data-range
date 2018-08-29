@@ -5,9 +5,14 @@
       <module fileurl="file://$PROJECT_DIR$/SpringCloud/SpringCloud.iml" filepath="$PROJECT_DIR$/SpringCloud/SpringCloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/data-range.iml" filepath="$PROJECT_DIR$/data-range.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/eureka/eureka.iml" filepath="$PROJECT_DIR$/cloud/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/eureka_server/eureka_server.iml" filepath="$PROJECT_DIR$/cloud/eureka_server/eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/permission_server/permission_server.iml" filepath="$PROJECT_DIR$/cloud/permission_server/permission_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/zuul/zuul.iml" filepath="$PROJECT_DIR$/cloud/zuul/zuul.iml" />
     </modules>
   </component>
 </project>

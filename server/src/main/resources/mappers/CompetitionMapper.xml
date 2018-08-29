@@ -150,4 +150,7 @@
         set `program_status` = #{param1,jdbcType=INTEGER}
         where `id` = #{param2,jdbcType=VARCHAR}
     </update>
+    <update id="updateCompetitionJoinNum" parameterType="java.lang.String">
+        update `t_competition` set join_num=join_num+1 where id=#{compId,jdbcType=VARCHAR}
+    </update>
 </mapper>

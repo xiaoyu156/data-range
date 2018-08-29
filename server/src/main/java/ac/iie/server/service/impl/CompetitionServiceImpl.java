@@ -72,5 +72,10 @@ public class CompetitionServiceImpl extends BaseService implements CompetitionSe
         return competitionMapper.updateByPrimaryKey(competition);
     }
 
+    @Override
+    public int updateCompetitionJoinNum(String compId) {
+        return competitionMapper.updateCompetitionJoinNum(compId);
+    }
+
 
 }

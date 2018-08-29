@@ -358,15 +358,20 @@ public class CompetitionController extends BaseController<Competition> {
     public Response joinCompetion(@RequestBody UserCompetition userCompetition) {
 
         if (userCompetition == null || StringUtils.isEmpty(userCompetition.getCompetitionId()) || StringUtils.isEmpty(userCompetition.getUserId())) {
-            Response.paramError("用户或则比赛ID不能为空");
+            Response.paramError("用户或者比赛ID不能为空");
         }
 
         if (userCompetitionService.isJoined(userCompetition)) {
-            return Response.paramError("不可以重复报名！");
+            return Response.paramError("-------------------不可以重复报名！");
         }
         boolean isJoined = userCompetitionService.joinCompetition(userCompetition);
         if (isJoined) {
-            return Response.operateSucessNoData();
+            int num = competitionService.updateCompetitionJoinNum(userCompetition.getCompetitionId());
+            if (num > 0) {
+                return Response.operateSucessNoData();
+            } else {
+                return Response.databaseError("------------后台处理错误，请检查！");
+            }
         } else {
             return Response.databaseError("报名失败请联系管理员！");
         }

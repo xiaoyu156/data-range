@@ -19,4 +19,6 @@ public interface CompetitionService {
     void createCompetition(Competition competition, List<String> users);
 
     int updateCompetition(Competition competition);
+
+    int updateCompetitionJoinNum(String compId);
 }

@@ -29,5 +29,6 @@ public interface CompetitionMapper {
 
     List<Competition> getCompetitonByProgramStatus(int status);
 
+    int updateCompetitionJoinNum(String compId);
 
 }
